@@ -15,10 +15,7 @@
       :border="border"
       :point="point"
     />
-    <s-tooltip
-      :attrs="{lineHight:22}"
-      :formatter="data => `${data.category}: ${data.label}-${data.value}`"
-    />
+    <s-tooltip :attrs="tooltipAttrs" />
     <s-legend />
   </s-chart>
 </template>
@@ -47,6 +44,10 @@
           { label: '管理', category: '节能减排', value: 41 },
           { label: '技术', category: '节能减排', value: 32 }
         ],
+        tooltipAttrs:{
+          lineHight: 22,
+        	formatter: data => `${data.category}: ${data.label}-${data.value}`
+        },
         dataFields: { x: 'label', y: 'value', category: 'category' },
         grid: (attrs, data, i) => {
           if (i % 2 !== 0) {

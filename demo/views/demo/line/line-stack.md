@@ -13,9 +13,7 @@
     />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-tooltip
-      :formatter="data => {return `${data.city}-${data.month}-${data.value}`}"
-    />
+    <s-tooltip :attrs="tooltipAttrs"/>
     <s-legend :attrs="{vertical:0}" />
   </s-chart>
 </template>
@@ -41,6 +39,9 @@
           { month: 'Jun', city: 'Tokyo', value: 21.5 },
           { month: 'Feb', city: 'Tokyo', value: 6.9 }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.city}-${data.month}-${data.value}`
+        },
         dataFields: { x: 'month', y: 'value', category: 'city' },
         areaHover: function(attrs, data, i) {
           if (i === 0) {

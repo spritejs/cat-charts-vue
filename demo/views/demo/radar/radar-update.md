@@ -11,10 +11,7 @@
       :dataFields="dataFields"
       :point="point"
     />
-    <s-tooltip
-      :attrs="{lineHight:22}"
-      :formatter="data => `${data.category}: ${data.label}-${data.value}`"
-    />
+    <s-tooltip :attrs="tooltipAttrs"/>
     <s-legend />
   </s-chart>
 </template>
@@ -69,6 +66,10 @@
           { label: '管理', category: '添加测试', value: 66 },
           { label: '技术', category: '添加测试', value: 70 }
         ],
+        tooltipAttrs:{
+          lineHight: 22,
+        	formatter: data => `${data.category}: ${data.label}-${data.value}`
+        },
         dataFields: { x: 'label', y: 'value', category: 'category' },
         point: (attrs, data, i) => {
           const { category } = data

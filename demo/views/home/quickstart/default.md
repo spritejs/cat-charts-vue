@@ -36,7 +36,7 @@ Vue.use(install)
     <s-line :attrs="attrs" :data="lineData" :dataFields="dataFields" />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-tooltip :formatter="data => {return `${data.city}-${data.month}-${data.value}`}"/>
+    <s-tooltip :attrs="tooltipAttrs"/>
   </s-chart>
 </template>
 <script>
@@ -54,6 +54,9 @@ Vue.use(install)
           { month: 'May', city: 'London', value: 11.9 },
           { month: 'Jun', city: 'London', value: 15.2 }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.city}-${data.month}-${data.value}`
+        },
         dataFields: {
           x: 'month',
           y: 'value'
