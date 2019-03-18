@@ -30,7 +30,6 @@ export default {
     }
   },
   created: function() {
-    debugger
     if (
       this.$vnode.componentOptions.tag &&
       visualObject[this.$vnode.componentOptions.tag]
