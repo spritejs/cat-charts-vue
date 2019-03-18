@@ -1,5 +1,5 @@
 <script>
-import { Bar, Pie, Line, Radar } from 'q-charts'
+import { Bar, Pie, Line, Radar } from '@qcharts/core'
 const visualObject = {
   's-line': Line,
   's-bar': Bar,

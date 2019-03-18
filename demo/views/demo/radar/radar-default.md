@@ -6,9 +6,7 @@
 <template>
   <s-chart>
     <s-radar :attrs="attrs" :data="radarData" :data-fields="dataFields" />
-    <s-tooltip
-      :formatter="data => `${data.category}: ${data.label}-${data.value}`"
-    />
+    <s-tooltip :attrs="tooltipAttrs" />
     <s-legend />
   </s-chart>
 </template>
@@ -36,8 +34,8 @@
           { label: '管理', category: '节能减排', value: 41 },
           { label: '技术', category: '节能减排', value: 32 }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.category}: ${data.label}-${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.category}: ${data.label}-${data.value}`
         },
         dataFields: { x: 'label', y: 'value', category: 'category' }
       }
