@@ -5,7 +5,7 @@
 ```html
 <template>
   <s-chart>
-    <s-radar :attrs="attrs" :data="radarData" :dataFields="dataFields" />
+    <s-radar :attrs="attrs" :data="radarData" :data-fields="dataFields" />
     <s-tooltip
       :formatter="data => `${data.category}: ${data.label}-${data.value}`"
     />

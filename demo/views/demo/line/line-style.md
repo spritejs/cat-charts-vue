@@ -8,12 +8,12 @@
     <s-line
       :attrs="attrs"
       :data="lineData"
-      :dataFields="dataFields"
-      :line="line"
-      :line:hover="lineHover"
-      :symbol="symbol"
-      :symbol:hover="symbolHover"
-      :guideline="{fillColor:'#f00'}"
+      :data-fields="dataFields"
+      :css-line="line"
+      :css-line:hover="lineHover"
+      :css-symbol="symbol"
+      :css-symbol:hover="symbolHover"
+      :css-guideline="{fillColor:'#f00'}"
     />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />

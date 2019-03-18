@@ -8,8 +8,8 @@
     <s-radar
       :attrs="attrs"
       :data="data"
-      :dataFields="dataFields"
-      :point="point"
+      :data-fields="dataFields"
+      :css-point="point"
     />
     <s-tooltip
       :attrs="{lineHight:22}"

@@ -8,9 +8,9 @@
     <s-pie
       :attrs="attrs"
       :data="pieData"
-      :dataFields="dataFields"
-      :guideline="true"
-      :guidetext="true"
+      :data-fields="dataFields"
+      :css-guideline="true"
+      :css-guidetext="true"
     />
     <s-legend />
     <s-tooltip :formatter="data => `${data.label} ${data.value}`" />

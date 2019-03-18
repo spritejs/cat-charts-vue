@@ -8,10 +8,10 @@
     <s-pie
       :attrs="attrs"
       :data="pieData"
-      :dataFields="dataFields"
-      :text="text"
-      :guideLine="true"
-      :guideText="true"
+      :data-fields="dataFields"
+      :css-text="text"
+      :css-guideLine="true"
+      :css-guideText="true"
     />
     <s-legend />
     <s-tooltip

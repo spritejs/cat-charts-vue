@@ -8,12 +8,12 @@
     <s-radar
       :attrs="attrs"
       :data="radarData"
-      :dataFields="dataFields"
-      :grid="grid"
-      :axis="axis"
-      :label="label"
-      :border="border"
-      :point="point"
+      :data-fields="dataFields"
+      :css-grid="grid"
+      :css-axis="axis"
+      :css-label="label"
+      :css-border="border"
+      :css-point="point"
     />
     <s-tooltip
       :attrs="{lineHight:22}"

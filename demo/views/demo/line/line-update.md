@@ -5,7 +5,7 @@
 ```html
 <template>
   <s-chart>
-    <s-line :attrs="attrs" :data="data" :dataFields="dataFields" />
+    <s-line :attrs="attrs" :data="data" :data-fields="dataFields" />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-tooltip

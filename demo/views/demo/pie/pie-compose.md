@@ -8,14 +8,14 @@
     <s-pie
       :attrs="attrs"
       :data="pieData"
-      :dataFields="dataFields"
-      :text="true"
+      :data-fields="dataFields"
+      :css-text="true"
     />
     <s-pie
       :attrs="attrs2"
       :data="pieData2"
       :dataFields="dataFields2"
-      :text="{color:'#f00'}"
+      :css-text="{color:'#f00'}"
     />
     <s-legend />
   </s-chart>
