@@ -13,7 +13,7 @@
       :css-guidetext="true"
     />
     <s-legend />
-    <s-tooltip :formatter="data => `${data.label} ${data.value}`" />
+    <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
 <script>
@@ -30,6 +30,9 @@
           { value: 1350, label: '视频广告' },
           { value: 1548, label: '搜索引擎' }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.label} ${data.value}`
+        },
         dataFields: { x: 'label', y: 'value' }
       }
     }

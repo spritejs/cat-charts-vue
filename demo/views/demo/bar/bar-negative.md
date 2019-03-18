@@ -15,7 +15,7 @@
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend :attrs="{vertical: 0}" />
     <s-grid />
-    <s-tooltip :formatter="data => `${data.label} ${data.value}`" />
+    <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
 <script>
@@ -41,6 +41,9 @@
           { department: '客服', type: '实际开销', value: '800' },
           { department: '客服', type: '节能减排', value: '-500' }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.label} ${data.value}`
+        },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {
           return { text: attrs.value }

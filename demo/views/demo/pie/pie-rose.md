@@ -14,9 +14,7 @@
       :css-guideText="true"
     />
     <s-legend />
-    <s-tooltip
-      :formatter="data => `居民负债比：${data.year}: ${data.population}%`"
-    />
+    <s-tooltip :attrs="tooltipAttrs"/>
   </s-chart>
 </template>
 <script>
@@ -78,6 +76,9 @@
             population: 30.3
           }
         ],
+        tooltipAttrs:{
+        	formatter: data => `居民负债比：${data.year}: ${data.population}%`
+        },
         dataFields: { x: 'year', y: 'population' },
         text: (attrs, data, i) => {
           return { text: data.label }

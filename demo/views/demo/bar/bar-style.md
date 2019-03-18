@@ -5,8 +5,7 @@
 ```html
 <template>
   <s-chart>
-    <s-bar
-      :attrs="attrs"
+    <s-bar :attrs="attrs"
       :data="barData"
       :dataFields="dataFields"
       :css-text="text"
@@ -20,7 +19,7 @@
     <s-axis :attrs="{orient:'bottom'}" />
     <s-grid />
     <s-legend />
-    <s-tooltip :formatter="data => `${data.label} ${data.value}`" />
+    <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
 <script>
@@ -39,6 +38,9 @@
           { value: 60, label: '搜索引擎-5' },
           { value: 78, label: '直接访问-6' }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.label} ${data.value}`
+        },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {
           return { text: data.value }

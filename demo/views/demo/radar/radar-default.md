@@ -36,6 +36,9 @@
           { label: '管理', category: '节能减排', value: 41 },
           { label: '技术', category: '节能减排', value: 32 }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.category}: ${data.label}-${data.value}`
+        },
         dataFields: { x: 'label', y: 'value', category: 'category' }
       }
     }

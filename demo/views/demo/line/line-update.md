@@ -8,9 +8,7 @@
     <s-line :attrs="attrs" :data="data" :data-fields="dataFields" />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-tooltip
-      :formatter="data => {return `${data.city}-${data.month}-${data.value}`}"
-    />
+    <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
 <script>
@@ -37,6 +35,9 @@
           { month: 'Apr', city: 'London', value: 11 },
           { month: 'May', city: 'London', value: 21 }
         ],
+        tooltipAttrs:{
+        	formatter: data => `${data.city}-${data.month}-${data.value}`
+        },
         dataFields: { x: 'month', y: 'value', category: 'city' }
       }
     },
