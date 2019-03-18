@@ -1,0 +1,21 @@
+## 图表介绍
+CatCharts 基于Vue 为用户封装了常用图表组件，方便用户来构建图表。
+
+### 组件构成
+
+CatCharts由图表Chart，图表绘制部分Visula，图表插件部分Plugin组成。其中Chart是容器，Visual绘制图表主体，如饼图，折线图等，Plugin为图表相关插件，如axis，tooltip等
+
+| 名称       | 说明                             | 其它   |
+| ------------ | -------------------------------- | ------ |
+|Chart|	图表组件，申明使用CatCharts,作为CatCharts的绘图容器，包裹其它的组件 `<s-chart></s-chart>`| |
+| Visual |	绘图组件，其中包含各种图表，如：`<s-line />` `<s-bar />` `<s-pie />`  `<s-radar />` 等等| |
+| Plugin |	绘图插件，其中包含各种插件，如：`<s-tooltip />` `s-legend />` `<s-axis />` 等等| |
+
+### 相关属性
+| 名称       | 属性                             | 其它   |
+| ------------ | -------------------------------- | ------ |
+|Chart|size: `['100%','100%']` 图表大小<br/> force-fit: `[true | false]` 适应容器大小| |
+| Visual |	attrs:`{}`属性,各个visual特有 <br/> data:`[]` 数据，一维数据，所有visual结构相同 <br/> data-fields:`{x:'month',y:'value',category:'city'}`数据字段对应关系 <br/> css-xxx:`{} | function` 属性设置,各个visual特有  ||
+| Plugin |	attrs:`{}` 属性,各个Plugin特有 <br/>css-xxx: `{} | function` 属性设置,各个Plugin特有| |
+
+

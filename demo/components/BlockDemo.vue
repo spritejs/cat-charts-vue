@@ -1,0 +1,219 @@
+<template>
+  <div ref="block" :class="['block-demo', isFullscreen ? 'block-demo--fixed' : '']">
+    <div class="editor">
+      <div class="bock-demo__ctrl">
+        <button @click="fullscreen">{{ isFullscreen ? '还原' : '全屏' }}</button>
+        <!-- <button>复制</button> -->
+        <button @click="syncCode">运行</button>
+      </div>
+      <div class="bock-demo__code">
+        <div ref="editor">
+          <editor :source="source" class="panel" @change="updateCode"></editor>
+        </div>
+        <div ref="preview">
+          <preview :value="preview" class="panel"></preview>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Editor from './editor.vue'
+import Preview from './preview.vue'
+import { parseComponent } from 'vue-template-compiler/browser'
+import getImports from '../utils/get-imports'
+import getPkgs from '../utils/get-pkgs'
+import Split from 'split.js'
+import * as params from '../utils/params'
+
+export default {
+  components: {
+    Editor,
+    Preview
+  },
+  props: {
+    tip: {
+      type: String,
+      default: ''
+    },
+    source: {
+      type: String,
+      default: ''
+    }
+  },
+  data: () => ({
+    preview: '',
+    code: '',
+    visible: true,
+    isJSON: false,
+    isFullscreen: false
+  }),
+  created() {},
+  mounted() {
+    this.compile(this.code)
+    Split([this.$refs['editor'], this.$refs['preview']], {
+        sizes: [50, 50]
+      })
+  },
+  methods: {
+    toggle() {
+      this.visible = !this.visible
+    },
+    fullscreen() {
+      this.isFullscreen = !this.isFullscreen
+    },
+    syncCode() {
+      this.compile(this.code)
+    },
+    updateCode(code) {
+      this.code = code
+    },
+    async compile(code) {
+      this.code = code
+      if (!code) {
+        return
+      }
+      const imports = []
+      const { template, script, styles, customBlocks } = parseComponent(code)
+      let config
+
+      if ((config = customBlocks.find(n => n.type === 'config'))) {
+        params.clear()
+        params.parse(config.content)
+      }
+
+      let compiled
+      const pkgs = []
+      let scriptContent = 'exports = { default: {} }'
+      if (script) {
+        try {
+          compiled = window.Babel.transform(script.content, {
+            presets: ['es2015', 'es2016', 'es2017', 'stage-0'],
+            plugins: [[getImports, { imports }]]
+          }).code
+        } catch (e) {
+          this.preview = `<pre style="color: red">${e.message}</pre>`
+          return
+        }
+        scriptContent = await getPkgs(compiled, imports, pkgs)
+      }
+      //const heads = this.genHeads()
+      const heads = []
+      heads.push(
+        `<script src="https://s3.ssl.qhres.com/!f868948f/vue.min.js"><\/script>`
+      )
+      heads.push(
+        '<style>html,body{height:100%;padding:0;margin:0}body>div{height:100%;overflow:hidden}</style>'
+      )
+      const scripts = []
+      pkgs.forEach(pkg => {
+        scripts.push(
+          `<script src=//packd.now.sh/${pkg.module}${pkg.path}?name=${
+            pkg.name
+          }><\/script>`
+        )
+      })
+      styles.forEach(style => {
+        heads.push(`<style>${style.content}</style>`)
+      })
+      scripts.push(
+        `<script src="https://s3.ssl.qhres.com/!f868948f/spritejs.min.js"><\/script>`
+      )
+      scripts.push(`<script src="./cat-charts.js"><\/script>`)
+      scripts.push(`
+      <script>
+        var exports = {};
+        ${scriptContent}
+        var component = exports.default;
+        component.template = component.template || ${JSON.stringify(
+          template.content
+        )}
+        Vue.use(CatCharts);
+        new Vue(component).$mount('#app')
+      <\/script>`)
+
+      this.preview = {
+        head: heads.join('\n'),
+        body: '<div id="app"></div>' + scripts.join('\n')
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+h2 {
+  margin-bottom: 0;
+}
+.block-demo {
+  position: relative;
+  box-sizing: border-box;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid #efefef;
+  background: #fff;
+}
+
+.block-demo--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  margin-top: 0 !important;
+}
+
+.block-demo + .block-demo {
+  margin-top: 30px;
+}
+
+.block-demo  .editor,
+.block-demo  .preview {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.block-demo > .preview {
+  box-sizing: border-box;
+  max-height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.bock-demo__ctrl {
+  height: 45px;
+  padding: 0 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+button {
+  line-height: 1.2;
+}
+.bock-demo__ctrl button + button {
+  margin-left: 10px;
+}
+
+.bock-demo__code {
+  height: calc(100% - 46px);
+  display: flex;
+  flex-grow: 1;
+}
+.bock-demo__code > div {
+  width: 50%;
+}
+.bock-demo__code > div.editor {
+  border-right: 1px solid #ddd;
+}
+
+.block-demo .demo {
+  height: 100%;
+}
+</style>
