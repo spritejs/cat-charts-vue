@@ -1,6 +1,6 @@
 {
   "name": "cat-charts",
-  "version": "0.1.30",
+  "version": "0.2.0",
   "description": "A visulization library based on spritejs and sprite-extend-shapes",
   "main": "index.js",
   "scripts": {

@@ -29,6 +29,6 @@ const install = Vue => {
   Vue.prototype.$bus = Bus //由于放在原型上
 }
 
-const version = '0.1.30'
+const version = '0.2.0'
 
 export { Chart, Bar, Line, Radar, Pie, install, version }

@@ -5,7 +5,12 @@ import TooltipRoutes from './tooltip/routes'
 
 export default [
   {
-    title: '坐标轴',
+    title: '',
+    path: '',
+    redirect:'axis',
+  },
+  {
+    title: 'Axis',
     path: 'axis',
     component: generateCommonPage('/plugin/axis/', AxisRoutes),
     children: AxisRoutes
