@@ -21,7 +21,17 @@ const pluginObject = {
 
 export default {
   name: 's-chart',
-  props: {},
+  props: {
+    pos: { type: Array, default: () => [0, 0] },
+    size: {
+      type: Array,
+      default: () => ['100%', '100%']
+    },
+    forceFit: {
+      type: Boolean,
+      default: true
+    }
+  },
   data: () => {
     return {
       chart: null,
@@ -36,8 +46,9 @@ export default {
   mounted() {
     this.chart = new Chart({
       container: this.$el,
-      size: ['100%', '100%'],
-      forceFit: true
+      size: this.size,
+      pos: this.pos,
+      forceFit: this.forceFit
     })
 
     this.$slots.default.forEach(vnode => {
