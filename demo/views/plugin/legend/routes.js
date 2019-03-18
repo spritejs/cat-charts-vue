@@ -1,10 +1,14 @@
 export default [
   {
-    title: '基本使用',
+    title: '',
     path: '',
+    redirect:'default'
+  },
+  {
+    title: '基本使用',
+    path: 'default',
     component: () => import('./basic.md')
   },
-
   {
     title: '位置调整',
     path: 'position',

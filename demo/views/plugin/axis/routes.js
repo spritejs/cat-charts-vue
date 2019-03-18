@@ -1,7 +1,12 @@
 export default [
   {
-    title: '基础坐标轴',
+    title: '',
     path: '',
+    redirect:'default'
+  },
+  {
+    title: '基础坐标轴',
+    path: 'default',
     component: () => import('./axis-default.md')
   },
   {

@@ -10,7 +10,7 @@ export default [
     redirect:'axis',
   },
   {
-    title: '坐标轴',
+    title: 'Axis',
     path: 'axis',
     component: generateCommonPage('/plugin/axis/', AxisRoutes),
     children: AxisRoutes
