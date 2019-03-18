@@ -13,6 +13,9 @@
         <li>
           <router-link :to="{path:'/demo'}">图表示例</router-link>
         </li>
+        <li>
+          <router-link :to="{path:'/plugin'}">插件示例</router-link>
+        </li>
       </ul>
     </nav>
   </header>
