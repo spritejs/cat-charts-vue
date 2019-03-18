@@ -8,15 +8,15 @@
     <s-pie
       :attrs="attrs"
       :data="pieData"
-      :dataFields="dataFields"
-      :sector="sector"
-      :sector:hover="sectorHover"
-      :text="text"
-      :text:hover="textHover"
-      :guideline="true"
-      :guideline:hover="guideLineHover"
-      :guidetext="true"
-      :guidetext:hover="guideTextHover"
+      :data-fields="dataFields"
+      :css-sector="sector"
+      :css-sector:hover="sectorHover"
+      :css-text="text"
+      :css-text:hover="textHover"
+      :css-guideline="true"
+      :css-guideline:hover="guideLineHover"
+      :css-guidetext="true"
+      :css-guidetext:hover="guideTextHover"
     />
     <s-legend />
     <s-tooltip :attrs="tooltipAttrs" />

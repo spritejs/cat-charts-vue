@@ -8,12 +8,12 @@
     <s-bar :attrs="attrs"
       :data="barData"
       :dataFields="dataFields"
-      :text="text"
-      :text:hover="textHover"
-      :pillar="pillar"
-      :pillar:hover="pillarHover"
-      :backgroundpillar="backgroundpillar"
-      :backgroundpillar:hover="backgroundpillarHover"
+      :css-text="text"
+      :css-text:hover="textHover"
+      :css-pillar="pillar"
+      :css-pillar:hover="pillarHover"
+      :css-backgroundpillar="backgroundpillar"
+      :css-backgroundpillar:hover="backgroundpillarHover"
     />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />

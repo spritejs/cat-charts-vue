@@ -8,8 +8,8 @@
     <s-line
       :attrs="attrs"
       :data="lineData"
-      :dataFields="dataFields"
-      :area:hover="areaHover"
+      :data-fields="dataFields"
+      :css-area:hover="areaHover"
     />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />

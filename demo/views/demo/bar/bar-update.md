@@ -5,7 +5,12 @@
 ```html
 <template>
   <s-chart>
-    <s-bar :attrs="attrs" :data="data" :dataFields="dataFields" :text="text" />
+    <s-bar
+      :attrs="attrs"
+      :data="data"
+      :data-fields="dataFields"
+      :css-text="text"
+    />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-grid />

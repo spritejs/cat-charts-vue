@@ -30,6 +30,7 @@ export default {
     }
   },
   created: function() {
+    debugger
     if (
       this.$vnode.componentOptions.tag &&
       visualObject[this.$vnode.componentOptions.tag]
@@ -41,7 +42,10 @@ export default {
         .setDataFields(this.dataFields)
 
       Object.keys(this.$attrs).forEach(element => {
-        this.visual.style(element, this.$attrs[element])
+        if (element.indexOf('css-') === -1) {
+          return
+        }
+        this.visual.style(element.substr(4), this.$attrs[element])
       })
 
       this.$bus.emit('add', this.visual)
