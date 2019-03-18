@@ -3,7 +3,7 @@ A visulization library based on spritejs , qcharts and Vue
 
 
 ### 特点
-CatCharts 是一个基于<a href="https://www.spritejs.com">sprites</a>,<a href="https://www.npmjs.com/package/q-charts">qcharts</a>封装的Vue图表库，可以让用户以组件的形式组合出各种图表。
+CatCharts 是一个基于 <a href="https://www.spritejs.com">sprites</a> , <a href="https://www.npmjs.com/package/q-charts">qcharts</a> 封装的  <a href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。
 
 ### 如何使用
 
