@@ -1,5 +1,5 @@
 # cat-charts
-A visulization library based on spritejs , qcharts and Vue
+A visulization library based on spritejs , qcharts and Vue → <a href="https://www.spritejs.com/catcharts/">文档 docs </a>
 
 
 ### 特点
