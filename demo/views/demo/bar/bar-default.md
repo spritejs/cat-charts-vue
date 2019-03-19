@@ -4,7 +4,7 @@
 
 ```html
 <template>
-  <s-chart>
+  <s-chart @render="chartRender">
     <s-bar
       :attrs="attrs"
       :data="barData"
@@ -40,6 +40,11 @@
         text: (attrs, data, i) => {
           return { text: data.value }
         }
+      }
+    },
+    methods: {
+      chartRender() {
+        console.log('chartRender')
       }
     }
   }

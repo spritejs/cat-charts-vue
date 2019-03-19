@@ -1,8 +1,13 @@
 export default [
   {
+    title: 'API',
+    path: 'API',
+    component: () => import('./line-api.md')
+  },
+  {
     title: '',
     path: '',
-    redirect:'default',
+    redirect: 'default'
     //component: () => import('./line-default.md')
   },
   {

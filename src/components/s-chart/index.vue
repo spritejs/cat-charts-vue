@@ -44,12 +44,17 @@ export default {
       pos: this.pos,
       forceFit: this.forceFit
     })
-
+    debugger
     this.$slots.default.forEach(vnode => {
       if (vnode.tag && pluginObject[vnode.tag]) {
         this.addPlugin(vnode)
       }
     })
+
+    this.$listeners &&
+      Object.keys(this.$listeners).forEach(event => {
+        this.chart.on(`chart:${event}`, this.$listeners[event])
+      })
 
     this.visuals.forEach(element => {
       this.chart.add(element)
