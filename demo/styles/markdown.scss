@@ -114,9 +114,12 @@
 .markdown-body pre .tex .formula {
   color: #b3b3b3;
 }
-.markdown-body a {
+.markdown-body .nav-item a {
   text-decoration: none;
   color: #34495e;
+}
+.markdown-body a{
+  color: #3273dc;
 }
 .markdown-body img {
   border: none;
