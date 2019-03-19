@@ -5,33 +5,17 @@
 
 ```html
 <template>
-  <s-chart ref="abc">
-    <s-line :attrs="attrs" :data="lineData" :data-fields="dataFields" />
+  <s-chart ref="chart">
     <s-axis :attrs="{orient:'left'}" />
-    <s-axis :css-label="cssLabel" :css-scale="cssScale" :css-axis="cssAxis" :attrs="{orient:'bottom'}" />
+    <s-axis :attrs="{orient:'bottom'}" />
   </s-chart>
 </template>
 <script>
   export default {
-    data() {
+    data: function() {
       return {
         attrs: {
           padding: [80, 30, 50, 50]
-        },
-        cssAxis:{fillColor:'#0ff'},
-        cssLabel:function(attrs,data,index){
-          if(index % 2 ==0 ){
-            return {rotate:45,anchor:[0,0],color:'#f00'}
-          }else{
-            return {color:'#0ff'}
-          }
-        },
-        cssScale:function(attrs,data,index){
-          if(index % 2 ==0 ){
-            return {fillColor:'#f00'}
-          }else{
-            return {fillColor:'#f0f'}
-          }
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
@@ -46,10 +30,14 @@
           y: 'value'
         }
       }
+    },
+    mounted(){
+      let chart = this.$refs['chart'].chart;
+      let padding = [60,30,30,50];
+      let scales = [{label: "Jan", offset: "0%"},{label: "Apr", offset: "60%"},{label: "Jun", offset: "100%"}];
+      chart.emit('axis:ready', {orient:'bottom',padding,scales});
+      chart.emit('axis:ready', {orient:'left',padding,scales});
     }
   }
 </script>
 ```
-
-:::
-

@@ -6,14 +6,17 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 | ------ | ----- | ----------------- | ---------------------------------------- |
 | size   | Array | `['100%','100%']` | 组件大小，可设置百分比或者像素           |
 | pos    | Array | `[0, 0]`          | 组件左上角相对于 canvas 容器的像素偏移素 |
+| stack    | Boolean | false          | 图形数据是否堆叠 |
+| padding    | Array | [10,10,10,10]         | 到边框的距离 |
+| smooth    | Boolean | false         | 曲线是否平滑 |
 
 ### data
 
-传入待展示数据，数据类型为 Array，参照 demo
+传入待展示数据，数据类型为 Array，参照 [demo](#/demo/line/default)
 
 ### data-fields
 
-数据维度和坐标轴对应关系，数据类型为 Object
+数据维度和坐标轴对应关系，数据类型为 Object 参照 [demo](#/demo/line/default)
 
 ### css 属性
 

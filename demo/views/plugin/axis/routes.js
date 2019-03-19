@@ -5,6 +5,11 @@ export default [
     redirect:'default'
   },
   {
+    title: 'API',
+    path: 'api',
+    component: () => import('./axis-api.md')
+  },
+  {
     title: '基础坐标轴',
     path: 'default',
     component: () => import('./axis-default.md')
@@ -13,5 +18,10 @@ export default [
     title: '坐标轴样式',
     path: 'style',
     component: () => import('./axis-style.md')
-  }
+  },
+  {
+    title: '单独使用',
+    path: 'alone',
+    component: () => import('./axis-alone.md')
+  },
 ]
