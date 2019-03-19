@@ -1,8 +1,13 @@
 export default [
   {
+    title: 'API',
+    path: 'api',
+    component: () => import('./pie-api.md')
+  },
+  {
     title: '',
     path: '',
-    redirect:'default'
+    redirect: 'default'
     //component: () => import('./pie-default.md')
   },
   {
