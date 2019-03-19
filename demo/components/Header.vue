@@ -2,13 +2,20 @@
   <header>
     <div class="logo">
       <router-link class="home" to="/"></router-link>
-      <img class="img-logo" src="http://p0.qhimg.com/d/inn/34fb0b9078a8/cat-charts.png" alt="cat-charts">
+      <img
+        class="img-logo"
+        src="http://p0.qhimg.com/d/inn/34fb0b9078a8/cat-charts.png"
+        alt="cat-charts"
+      >
     </div>
 
     <nav>
       <ul>
         <li>
           <router-link to="/home" :exact="false">介绍</router-link>
+        </li>
+        <li>
+          <router-link :to="{path:'/api'}">API</router-link>
         </li>
         <li>
           <router-link :to="{path:'/demo'}">图表示例</router-link>
@@ -26,8 +33,19 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.home{width:200px;position:absolute;height:68px;z-index: 10}
-.img-logo{height:59px;width:180px;position:relative;top:20px;pointer-events: none;}
+.home {
+  width: 200px;
+  position: absolute;
+  height: 68px;
+  z-index: 10;
+}
+.img-logo {
+  height: 59px;
+  width: 180px;
+  position: relative;
+  top: 20px;
+  pointer-events: none;
+}
 header {
   position: relative;
   z-index: 100;
