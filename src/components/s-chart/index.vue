@@ -44,7 +44,7 @@ export default {
       pos: this.pos,
       forceFit: this.forceFit
     })
-    debugger
+
     this.$slots.default.forEach(vnode => {
       if (vnode.tag && pluginObject[vnode.tag]) {
         this.addPlugin(vnode)
