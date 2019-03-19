@@ -17,18 +17,22 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法在[定义样式 demo](#/demo/line/style)中查看，下面列出 css 属性
+组件中的元素样式均可通过 css 属性自定义，使用方法在[定义样式 demo](#/demo/radar/style)中查看，下面列出 css 属性
 
-| 名称                | 描述                                        |
-| ------------------- | ------------------------------------------- |
-| css-line            | 线条样式                                    |
-| css-line:hover      | 鼠标 hover 时线条样式                       |
-| css-guideline       | 指导线样式                                  |
-| css-guideline:hover | 鼠标 hover 时指导线样式                     |
-| css-symbol          | 点样式                                      |
-| css-symbol:hover    | 鼠标 hover 时点样式                         |
-| css-area            | 堆叠图面积样式（堆叠图时生效）              |
-| css-area:hover      | 鼠标 hover 时堆叠图面积样式（堆叠图时生效） |
+| 名称              | 描述                  |
+| ----------------- | --------------------- |
+| css-axis          | 轴线样式              |
+| css-axis:hover    | 鼠标 hover 时轴线样式 |
+| css-border        | 边框样式              |
+| css-border:hover  | 鼠标 hover 时边框样式 |
+| css-grid          | 网格样式              |
+| css-grid:hover    | 鼠标 hover 时网格样式 |
+| css-label         | 文字样式              |
+| css-label:hover   | 鼠标 hover 时文字样式 |
+| css-point         | 点样式                |
+| css-point:hover   | 鼠标 hover 时点样式   |
+| css-section       | 区域样式              |
+| css-section:hover | 鼠标 hover 示区域样式 |
 
 ### event
 

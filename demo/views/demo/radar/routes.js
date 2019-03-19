@@ -1,8 +1,13 @@
 export default [
   {
+    title: 'API',
+    path: 'api',
+    component: () => import('./radar-api.md')
+  },
+  {
     title: '',
     path: '',
-    redirect:'default'
+    redirect: 'default'
     //component: () => import('./radar-default.md')
   },
   {
