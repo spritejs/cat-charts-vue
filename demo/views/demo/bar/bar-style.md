@@ -8,7 +8,7 @@
     <s-bar
       :attrs="attrs"
       :data="barData"
-      :dataFields="dataFields"
+      :data-fields="dataFields"
       :css-text="text"
       :css-text:hover="textHover"
       :css-pillar="pillar"
