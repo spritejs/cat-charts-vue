@@ -15,9 +15,6 @@
           <router-link to="/home" :exact="false">介绍</router-link>
         </li>
         <li>
-          <router-link :to="{path:'/api'}">API</router-link>
-        </li>
-        <li>
           <router-link :to="{path:'/demo'}">图表示例</router-link>
         </li>
         <li>

@@ -1,8 +1,13 @@
 export default [
   {
+    title: 'API',
+    path: 'api',
+    component: () => import('./bar-api.md')
+  },
+  {
     title: '柱状图',
     path: '',
-    redirect:'default'
+    redirect: 'default'
     //component: () => import('./bar-default.md')
   },
   {

@@ -1,5 +1,3 @@
-柱状图组件
-
 ### attrs
 
 attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
@@ -54,7 +52,7 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法在定义样式 demo 中查看，下面列出 css 属性
+组件中的元素样式均可通过 css 属性自定义，使用方法在[定义样式 demo](https://github.com/spritejs/cat-charts/blob/master/demo/views/demo/bar/bar-style.md)中查看，下面列出 css 属性
 
 | name                       | introduction              |
 | -------------------------- | ------------------------- |

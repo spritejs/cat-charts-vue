@@ -14,7 +14,7 @@
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-grid />
-    <s-tooltip :attrs="tooltipAttrs"/>
+    <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
 <script>
@@ -33,8 +33,8 @@
           { value: 60, label: '搜索引擎-5' },
           { value: 78, label: '直接访问-6' }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.label} ${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.label} ${data.value}`
         },
         dataFields: { x: 'department', y: 'value' },
         text: (attrs, data, i) => {

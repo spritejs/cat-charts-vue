@@ -1,8 +1,13 @@
 export default [
   {
+    title: 'API',
+    path: 'API',
+    component: () => import('./api.md')
+  },
+  {
     title: '',
     path: '',
-    redirect:'default'
+    redirect: 'default'
   },
   {
     title: '基本使用',

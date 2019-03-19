@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import demos from '../views/demo/routes.js'
 import plugins from '../views/plugin/routes.js'
 import homes from '../views/home/routes.js'
-import api from '../views/api/routes.js'
 
 Vue.use(Router)
 
@@ -20,12 +19,6 @@ export default new Router({
       redirect: '/home/quickstart',
       component: () => import('../views/home/index.vue'),
       children: homes
-    },
-    {
-      path: '/api',
-      redirect: '/api/Chart',
-      component: () => import('../views/api/index.vue'),
-      children: api
     },
     {
       path: '/demo',
