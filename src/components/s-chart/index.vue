@@ -65,9 +65,11 @@ export default {
 
     addPlugin(vnode) {
       let cssKeys = null
+      let events = null
       let Kls = pluginObject[vnode.tag]
       let props = vnode.data && vnode.data.attrs ? vnode.data.attrs : null
       const plugin = props && props.attrs ? new Kls(props.attrs) : new Kls()
+      events = vnode.data && vnode.data.on ? vnode.data.on : null
       if (props) {
         cssKeys = Object.keys(props).filter(prop => prop.indexOf('css-') !== -1)
       }
@@ -75,6 +77,10 @@ export default {
         cssKeys.forEach(key => {
           let keyName = key.substr(4)
           plugin.style(keyName, props[key])
+        })
+      events &&
+        Object.keys(events).forEach(event => {
+          plugin.on(event, events[event])
         })
       this.chart.add(plugin)
     }

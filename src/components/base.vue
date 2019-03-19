@@ -46,7 +46,13 @@ export default {
         }
         this.visual.style(element.substr(4), this.$attrs[element])
       })
-
+      this.$vnode.componentOptions.listeners &&
+        Object.keys(this.$vnode.componentOptions.listeners).forEach(element => {
+          this.visual.on(
+            element,
+            this.$vnode.componentOptions.listeners[element]
+          )
+        })
       this.$bus.emit('add', this.visual)
     }
   }

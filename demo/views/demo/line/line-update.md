@@ -35,8 +35,8 @@
           { month: 'Apr', city: 'London', value: 11 },
           { month: 'May', city: 'London', value: 21 }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.city}-${data.month}-${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.city}-${data.month}-${data.value}`
         },
         dataFields: { x: 'month', y: 'value', category: 'city' }
       }
