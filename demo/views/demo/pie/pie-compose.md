@@ -14,7 +14,7 @@
     <s-pie
       :attrs="attrs2"
       :data="pieData2"
-      :dataFields="dataFields2"
+      :data-fields="dataFields2"
       :css-text="{color:'#f00'}"
     />
     <s-legend />

@@ -783,6 +783,16 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
+"@qcharts/core@0.0.13":
+  version "0.0.13"
+  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.0.13.tgz#289b5e4d4295c45a4b1c5f6b2b08c3ab70b0f377"
+  dependencies:
+    d3-geo "^1.11.3"
+    d3-interpolate "^1.3.2"
+    d3-scale "^2.1.2"
+    sprite-draggable "0.1.13"
+    sprite-extend-shapes "^0.1.60"
+
 "@vue/component-compiler-utils@^2.5.1":
   version "2.6.0"
   resolved "https://registry.npmjs.org/@vue/component-compiler-utils/-/component-compiler-utils-2.6.0.tgz#aa46d2a6f7647440b0b8932434d22f12371e543b"
@@ -4892,16 +4902,6 @@ punycode@^1.2.4, punycode@^1.4.1:
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
-
-q-charts@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.npmjs.org/q-charts/-/q-charts-0.0.12.tgz#9d3712e2106853a1130e3bf305cc240d269b7fd9"
-  dependencies:
-    d3-geo "^1.11.3"
-    d3-interpolate "^1.3.2"
-    d3-scale "^2.1.2"
-    sprite-draggable "0.1.13"
-    sprite-extend-shapes "^0.1.60"
 
 qs@6.5.2, qs@~6.5.2:
   version "6.5.2"
