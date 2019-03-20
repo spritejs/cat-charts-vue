@@ -34,8 +34,8 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 ### event
 
 基本事件用法如下：
-`<s-bar :pillar:click:="handlerFunction" />`
+`<s-bar @pillar:click="handlerFunction" />`
 
-| 名称         | 描述             |
-| ------------ | ---------------- |
-| pillar:click | 点击柱形事件监听 |
+| 名称         | 描述                 | 附带数据    |
+| ------------ | -------------------- | ----------- |
+| pillar:click | 点击 pillar 事件监听 | pillar 属性 |

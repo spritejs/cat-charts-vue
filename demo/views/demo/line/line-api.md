@@ -35,6 +35,6 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 基本事件用法如下：
 `<s-bar @symbol:click="handlerFunction" />`
 
-| 名称         | 描述                 | 附带数据                         |
-| ------------ | -------------------- | -------------------------------- |
-| symbol:click | 点击 symbol 事件监听 | `{label:Sting,value:String,...}` |
+| 名称         | 描述                 | 附带数据    |
+| ------------ | -------------------- | ----------- |
+| symbol:click | 点击 symbol 事件监听 | symbol 属性 |
