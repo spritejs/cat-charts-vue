@@ -2,22 +2,44 @@
 
 attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
-| 属性名 | 类型  | 默认值            | 描述                                     |
-| ------ | ----- | ----------------- | ---------------------------------------- |
-| size   | Array | `['100%','100%']` | 组件大小，可设置百分比或者像素           |
-| pos    | Array | `[0, 0]`          | 组件左上角相对于 canvas 容器的像素偏移素 |
+| 属性名      | 类型         | 默认值      | 描述                   |
+| ----------- | ------------ | ----------- | ---------------------- |
+| labelOffset | Number       | `6`         | 雷达图轴标记偏移量     |
+| padding     | Number,Array | `[0,0,0,0]` | 间距配配置             |
+| radius      | Number       | `0.6`       | 雷达图的轴长,范围[0,1] |
+| splitNumber | Number       | `4`         | 背景网格的层数         |
+| startAngle  | Number       | `-90`       | 坐标轴起始角度         |
 
 ### data
 
-传入待展示数据，数据类型为 Array，参照 demo
+传入待展示数据，数据类型为 Array，参照 [demo](#/demo/radar/default)
 
 ### data-fields
 
-数据维度和坐标轴对应关系，数据类型为 Object
+数据维度和坐标轴对应关系，数据类型为 Object，参照 [demo](#/demo/radar/default)
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法在[定义样式 demo](#/demo/radar/style)中查看，下面列出 css 属性
+组件中的元素样式均可通过 css 属性自定义，使用方法可在[定义样式 demo](#/demo/radar/style)中查看，用法如下：
+
+`<s-radar :css-section="sectionStyle" />`
+
+在 data 中定义 section obj 属性或者函数，例如：
+
+```
+//设置鼠标移入区域时样式
+sectionStyle: {fillColor：'#f00', opacity:'0.5'}`
+
+sectionStyle: (attrs, data, i) => {
+    //将偶数序列的区域设置为红色
+    if (i % 2 === 0) {
+      return {
+        fillColor: 'red'
+      }
+    }
+    return { opacity: 0.5, fillColor: 'blue' }
+  }
+```
 
 | 名称              | 描述                  |
 | ----------------- | --------------------- |
@@ -33,12 +55,3 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 | css-point:hover   | 鼠标 hover 时点样式   |
 | css-section       | 区域样式              |
 | css-section:hover | 鼠标 hover 示区域样式 |
-
-### event
-
-基本事件用法如下：
-`<s-bar @symbol:click="handlerFunction" />`
-
-| 名称         | 描述                 | 附带数据                         |
-| ------------ | -------------------- | -------------------------------- |
-| symbol:click | 点击 symbol 事件监听 | `{label:Sting,value:String,...}` |
