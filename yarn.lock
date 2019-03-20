@@ -783,14 +783,13 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@0.0.13":
-  version "0.0.13"
-  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.0.13.tgz#289b5e4d4295c45a4b1c5f6b2b08c3ab70b0f377"
+"@qcharts/core@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.0.14.tgz#9b6ed9d9c13d03667b967ca7f9580bbbb01a60dd"
   dependencies:
     d3-geo "^1.11.3"
     d3-interpolate "^1.3.2"
     d3-scale "^2.1.2"
-    sprite-draggable "0.1.13"
     sprite-extend-shapes "^0.1.60"
 
 "@vue/component-compiler-utils@^2.5.1":
@@ -5603,14 +5602,6 @@ sprintf-js@~1.0.2:
 sprite-draggable@0.0.13:
   version "0.0.13"
   resolved "https://registry.npmjs.org/sprite-draggable/-/sprite-draggable-0.0.13.tgz#9f05a4d71b057f24997d2c7170c7760eed4489c4"
-  dependencies:
-    babel-decorators-runtime "^0.2.0"
-    babel-runtime "^6.26.0"
-    sprite-math "^1.0.5"
-
-sprite-draggable@0.1.13:
-  version "0.1.13"
-  resolved "https://registry.npmjs.org/sprite-draggable/-/sprite-draggable-0.1.13.tgz#51dc2df2fa5f2855f3c6e180e73e16d41d954edb"
   dependencies:
     babel-decorators-runtime "^0.2.0"
     babel-runtime "^6.26.0"
