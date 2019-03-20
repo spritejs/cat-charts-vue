@@ -2,13 +2,13 @@
 
 attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
-| 属性名 | 类型  | 默认值            | 描述                                     |
-| ------ | ----- | ----------------- | ---------------------------------------- |
-| size   | Array | `['100%','100%']` | 组件大小，可设置百分比或者像素           |
-| pos    | Array | `[0, 0]`          | 组件左上角相对于 canvas 容器的像素偏移素 |
-| stack    | Boolean | false          | 图形数据是否堆叠 |
-| padding    | Array | [10,10,10,10]         | 到边框的距离 |
-| smooth    | Boolean | false         | 曲线是否平滑 |
+| 属性名  | 类型    | 默认值            | 描述                                     |
+| ------- | ------- | ----------------- | ---------------------------------------- |
+| pos     | Array   | `[0, 0]`          | 组件左上角相对于 canvas 容器的像素偏移素 |
+| padding | Array   | [10,10,10,10]     | 到边框的距离                             |
+| size    | Array   | `['100%','100%']` | 组件大小，可设置百分比或者像素           |
+| smooth  | Boolean | false             | 曲线是否平滑                             |
+| stack   | Boolean | false             | 图形数据是否堆叠                         |
 
 ### data
 
@@ -16,22 +16,41 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 ### data-fields
 
-数据维度和坐标轴对应关系，数据类型为 Object 参照 [demo](#/demo/line/default)
+数据维度和坐标轴对应关系，数据类型为 Object，参照 [demo](#/demo/line/default)
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法在[定义样式 demo](#/demo/line/style)中查看，下面列出 css 属性
+组件中的元素样式均可通过 css 属性自定义，使用方法可在[定义样式 demo](#/demo/line/style)中查看，用法如下：
+
+`<s-bar :css-area="area" />`
+
+在 data 中定义 area，可以是 obj 属性或者函数，例如：
+
+```
+//设置鼠标移入面积时样式
+area: {fillColor：'#f00', opacity:'0.5'}`
+
+area: (attrs, data, i) => {
+    //将偶数序列的面积元素设置为红色
+    if (i % 2 === 0) {
+      return {
+        fillColor: 'red'
+      }
+    }
+    return { opacity: 0.5, fillColor: 'blue' }
+  }
+```
 
 | 名称                | 描述                                        |
 | ------------------- | ------------------------------------------- |
-| css-line            | 线条样式                                    |
-| css-line:hover      | 鼠标 hover 时线条样式                       |
-| css-guideline       | 指导线样式                                  |
-| css-guideline:hover | 鼠标 hover 时指导线样式                     |
-| css-symbol          | 点样式                                      |
-| css-symbol:hover    | 鼠标 hover 时点样式                         |
 | css-area            | 堆叠图面积样式（堆叠图时生效）              |
 | css-area:hover      | 鼠标 hover 时堆叠图面积样式（堆叠图时生效） |
+| css-guideline       | 指导线样式                                  |
+| css-guideline:hover | 鼠标 hover 时指导线样式                     |
+| css-line            | 线条样式                                    |
+| css-line:hover      | 鼠标 hover 时线条样式                       |
+| css-symbol          | 点样式                                      |
+| css-symbol:hover    | 鼠标 hover 时点样式                         |
 
 ### event
 
