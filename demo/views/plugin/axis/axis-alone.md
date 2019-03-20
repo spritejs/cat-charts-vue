@@ -5,8 +5,7 @@
 
 ```html
 <template>
-  <s-chart ref="abc">
-    <s-line :attrs="attrs" :data="lineData" :data-fields="dataFields" />
+  <s-chart ref="chart">
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
   </s-chart>
@@ -31,10 +30,14 @@
           y: 'value'
         }
       }
+    },
+    mounted(){
+      let chart = this.$refs['chart'].chart;
+      let padding = [60,30,30,50];
+      let scales = [{label: "Jan", offset: "0%"},{label: "Apr", offset: "60%"},{label: "Jun", offset: "100%"}];
+      chart.emit('axis:ready', {orient:'bottom',padding,scales});
+      chart.emit('axis:ready', {orient:'left',padding,scales});
     }
   }
 </script>
 ```
-
-:::
-

@@ -21,7 +21,10 @@ export default function(prefix, routes) {
                 return h(
                   'li',
                   {
-                    key: i
+                    key: i,
+                    domProps: {
+                      className:'nav-item',
+                    }
                   },
                   [
                     h('router-link', {
