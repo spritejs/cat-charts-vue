@@ -22,7 +22,7 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 组件中的元素样式均可通过 css 属性自定义，使用方法可在[定义样式 demo](#/demo/line/style)中查看，用法如下：
 
-`<s-bar :css-area="area" />`
+`<s-line :css-area="area" />`
 
 在 data 中定义 area，可以是 obj 属性或者函数，例如：
 
