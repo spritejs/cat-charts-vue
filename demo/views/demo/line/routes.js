@@ -1,7 +1,7 @@
 export default [
   {
     title: 'API',
-    path: 'API',
+    path: 'api',
     component: () => import('./line-api.md')
   },
   {
