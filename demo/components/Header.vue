@@ -62,6 +62,7 @@ export default {}
   position: relative;
   top: 20px;
   pointer-events: none;
+  left:-4px;
 }
 header {
   position: relative;
