@@ -33,7 +33,7 @@ const install = Vue => {
   Vue.prototype.$bus = Bus //由于放在原型上
 }
 
-const version = '0.2.0'
+const version = '0.2.2'
 
 export {
   Chart,
