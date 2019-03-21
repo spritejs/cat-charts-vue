@@ -1,6 +1,6 @@
 <script>
 import { Axis, Grid, Legend, Tooltip } from '@qcharts/core'
-const visualObject = {
+const pluginObject = {
   's-axis': Axis,
   's-grid': Grid,
   's-legend': Legend,
@@ -30,9 +30,9 @@ export default {
   created: function() {
     if (
       this.$vnode.componentOptions.tag &&
-      visualObject[this.$vnode.componentOptions.tag]
+      pluginObject[this.$vnode.componentOptions.tag]
     ) {
-      const Plug = visualObject[this.$vnode.componentOptions.tag]
+      const Plug = pluginObject[this.$vnode.componentOptions.tag]
 
       this.plugin = new Plug(this.attrs)
 
