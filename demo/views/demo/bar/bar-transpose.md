@@ -24,7 +24,7 @@
         attrs: {
           transpose: true,
           barWidth: 30,
-          margin: [50, 50, 50, 100],
+          padding: [50, 50, 50, 100],
           labelPosition: 'right'
         },
         barData: [
@@ -35,8 +35,8 @@
           { value: 60, label: '搜索引擎-5' },
           { value: 78, label: '直接访问-6' }
         ],
-        tooltipAttrs:{
-          formatter:data => `${data.label} ${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.label} ${data.value}`
         },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {

@@ -25,7 +25,7 @@
       return {
         data: [],
         attrs: {
-          margin: [50, 50, 50, 110]
+          padding: [50, 50, 50, 110]
         },
         barData: [
           { value: 11, label: '直接访问' },
@@ -35,8 +35,8 @@
           { value: 60, label: '搜索引擎' },
           { value: 78, label: '直接访问' }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.label} ${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.label} ${data.value}`
         },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {

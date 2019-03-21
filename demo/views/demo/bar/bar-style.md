@@ -29,7 +29,7 @@
       return {
         attrs: {
           labelPosition: 'top',
-          margin: [50, 50, 50, 150]
+          padding: [50, 50, 50, 150]
         },
         barData: [
           { value: 11, label: '直接访问-1' },
@@ -55,7 +55,7 @@
           }
           return {
             opacity: 1.0,
-            fillColor: {
+            bgcolor: {
               vector: [0, 0, 0, 100],
               colors: [
                 { color: 'red', offset: 0 },
@@ -70,7 +70,7 @@
               borderRadius: 10
             }
           }
-          return { opacity: 0.5, fillColor: 'blue' }
+          return { opacity: 0.5, bgcolor: 'blue' }
         },
         backgroundpillar: { borderRadius: 10 },
         backgroundpillarHover: { borderRadius: 20 }

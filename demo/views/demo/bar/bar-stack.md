@@ -25,7 +25,7 @@
         attrs: {
           stack: true,
           barWidth: 40,
-          margin: [50, 50, 50, 150]
+          padding: [50, 50, 50, 150]
         },
         barData: [
           { department: '销售', type: '预算分配', value: '500' },
@@ -41,8 +41,8 @@
           { department: '客服', type: '实际开销', value: '800' },
           { department: '客服', type: '节能减排', value: '500' }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.label} ${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.label} ${data.value}`
         },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {

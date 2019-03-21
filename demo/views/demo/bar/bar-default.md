@@ -23,7 +23,7 @@
       return {
         attrs: {
           barWidth: 30,
-          margin: [50, 50, 50, 100]
+          padding: [50, 50, 50, 100]
         },
         barData: [
           { value: 11, label: '直接访问-1' },
