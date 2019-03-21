@@ -29,12 +29,16 @@ export default {
   data: () => {
     return {
       chart: null,
-      visuals: []
+      visuals: [],
+      plugins: []
     }
   },
   created: function() {
-    this.$bus.on('add', data => {
+    this.$bus.on('addVisuals', data => {
       this.visuals.push(data)
+    })
+    this.$bus.on('addPlugins', data => {
+      this.plugins.push(data)
     })
   },
   mounted() {
@@ -43,11 +47,6 @@ export default {
       size: this.size,
       pos: this.pos,
       forceFit: this.forceFit
-    })
-    this.$slots.default.forEach(vnode => {
-      if (vnode.tag && pluginObject[vnode.tag]) {
-        this.addPlugin(vnode)
-      }
     })
 
     this.$listeners &&
@@ -58,36 +57,10 @@ export default {
     this.visuals.forEach(element => {
       this.chart.add(element)
     })
+    this.plugins.forEach(element => {
+      this.chart.add(element)
+    })
     this.chart.render()
-  },
-
-  methods: {
-    addVisualNew(visual) {
-      this.chart.add(visual)
-      this.chart.render()
-    },
-
-    addPlugin(vnode) {
-      let cssKeys = null
-      let events = null
-      let Kls = pluginObject[vnode.tag]
-      let props = vnode.data && vnode.data.attrs ? vnode.data.attrs : null
-      const plugin = props && props.attrs ? new Kls(props.attrs) : new Kls()
-      events = vnode.data && vnode.data.on ? vnode.data.on : null
-      if (props) {
-        cssKeys = Object.keys(props).filter(prop => prop.indexOf('css-') !== -1)
-      }
-      cssKeys &&
-        cssKeys.forEach(key => {
-          let keyName = key.substr(4)
-          plugin.style(keyName, props[key])
-        })
-      events &&
-        Object.keys(events).forEach(event => {
-          plugin.on(event, events[event])
-        })
-      this.chart.add(plugin)
-    }
   }
 }
 </script>

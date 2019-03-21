@@ -1,9 +1,13 @@
 import Chart from './components/s-chart/'
-import Bar from './components/s-bar/'
-import Pie from './components/s-pie/'
-import Line from './components/s-line/'
-import Radar from './components/s-radar/'
-const components = [Chart, Bar, Pie, Radar, Line]
+import Bar from './components/visuals/s-bar/'
+import Pie from './components/visuals/s-pie/'
+import Line from './components/visuals/s-line/'
+import Radar from './components/visuals/s-radar/'
+import Axis from './components/plugins/s-axis'
+import Grid from './components/plugins/s-Grid'
+import Tooltip from './components/plugins/s-Tooltip'
+import Legend from './components/plugins/s-Legend'
+const components = [Chart, Bar, Pie, Radar, Line, Axis, Grid, Tooltip, Legend]
 
 components.map(component => {
   // 按需加载组件
@@ -31,4 +35,16 @@ const install = Vue => {
 
 const version = '0.2.0'
 
-export { Chart, Bar, Line, Radar, Pie, install, version }
+export {
+  Chart,
+  Bar,
+  Line,
+  Radar,
+  Pie,
+  Axis,
+  Grid,
+  Tooltip,
+  Legend,
+  install,
+  version
+}

@@ -55,7 +55,7 @@ area: (attrs, data, i) => {
 ### event
 
 基本事件用法如下：
-`<s-bar @symbol:click="handlerFunction" />`
+`<s-line @symbol:click="handlerFunction" />`
 
 | 名称         | 描述                 | 附带数据    |
 | ------------ | -------------------- | ----------- |

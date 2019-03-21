@@ -1,10 +1,10 @@
 <script>
-import { Bar, Pie, Line, Radar } from '@qcharts/core'
+import { Axis, Grid, Legend, Tooltip } from '@qcharts/core'
 const visualObject = {
-  's-line': Line,
-  's-bar': Bar,
-  's-pie': Pie,
-  's-radar': Radar
+  's-axis': Axis,
+  's-grid': Grid,
+  's-legend': Legend,
+  's-tooltip': Tooltip
 }
 /**
  * 所有组件的基类
@@ -12,20 +12,18 @@ const visualObject = {
  */
 export default {
   props: {
-    attrs: { type: Object, defualt: () => {} },
-    data: { type: Array, defualt: [] },
-    dataFields: { type: Object, defualt: () => {} }
+    attrs: { type: Object, default: () => {} }
   },
   data: () => {
     return {
-      visual: null
+      plugin: null
     }
   },
   watch: {
-    data: {
+    attrs: {
       deep: true,
       handler(data) {
-        this.visual.source(data)
+        this.plugin.attrs(data)
       }
     }
   },
@@ -34,26 +32,24 @@ export default {
       this.$vnode.componentOptions.tag &&
       visualObject[this.$vnode.componentOptions.tag]
     ) {
-      const Shape = visualObject[this.$vnode.componentOptions.tag]
+      const Plug = visualObject[this.$vnode.componentOptions.tag]
 
-      this.visual = new Shape(this.attrs)
-        .source(this.data)
-        .setDataFields(this.dataFields)
+      this.plugin = new Plug(this.attrs)
 
       Object.keys(this.$attrs).forEach(element => {
         if (element.indexOf('css-') === -1) {
           return
         }
-        this.visual.style(element.substr(4), this.$attrs[element])
+        this.plugin.style(element.substr(4), this.$attrs[element])
       })
       this.$vnode.componentOptions.listeners &&
         Object.keys(this.$vnode.componentOptions.listeners).forEach(element => {
-          this.visual.on(
+          this.plugin.on(
             element,
             this.$vnode.componentOptions.listeners[element]
           )
         })
-      this.$bus.emit('add', this.visual)
+      this.$bus.emit('addPlugins', this.plugin)
     }
   }
 }
