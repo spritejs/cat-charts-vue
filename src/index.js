@@ -31,7 +31,7 @@ const install = Vue => {
       }
     }
   })
-  Vue.prototype[bus] = Bus //由于放在原型上
+  Vue.prototype[bus] = Bus //事件总线放在原型上
 }
 
 const version = '0.2.2'
