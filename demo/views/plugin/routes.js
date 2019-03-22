@@ -1,5 +1,6 @@
 import generateCommonPage from '../generateCommonPage'
 import AxisRoutes from './axis/routes'
+import GridRoutes from './grid/routes'
 import LegendRoutes from './legend/routes'
 import TooltipRoutes from './tooltip/routes'
 
@@ -7,7 +8,7 @@ export default [
   {
     title: '',
     path: '',
-    redirect:'axis',
+    redirect: 'axis'
   },
   {
     title: 'Axis',
@@ -28,5 +29,12 @@ export default [
     path: 'tooltip',
     component: generateCommonPage('/plugin/tooltip/', TooltipRoutes),
     children: TooltipRoutes
+  },
+
+  {
+    title: 'Grid',
+    path: 'Grid',
+    component: generateCommonPage('/plugin/grid/', GridRoutes),
+    children: GridRoutes
   }
 ]

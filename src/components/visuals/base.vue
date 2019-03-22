@@ -1,5 +1,6 @@
 <script>
 import { Bar, Pie, Line, Radar } from '@qcharts/core'
+import { bus } from '../../utils'
 const visualObject = {
   's-line': Line,
   's-bar': Bar,
@@ -53,7 +54,7 @@ export default {
             this.$vnode.componentOptions.listeners[element]
           )
         })
-      this.$bus.emit('addVisuals', this.visual)
+      this[bus].emit('addVisuals', this.visual)
     }
   }
 }

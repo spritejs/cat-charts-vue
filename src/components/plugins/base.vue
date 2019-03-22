@@ -1,5 +1,6 @@
 <script>
 import { Axis, Grid, Legend, Tooltip } from '@qcharts/core'
+import { bus } from '../../utils'
 const pluginObject = {
   's-axis': Axis,
   's-grid': Grid,
@@ -17,14 +18,6 @@ export default {
   data: () => {
     return {
       plugin: null
-    }
-  },
-  watch: {
-    attrs: {
-      deep: true,
-      handler(data) {
-        this.plugin.attrs(data)
-      }
     }
   },
   created: function() {
@@ -49,7 +42,7 @@ export default {
             this.$vnode.componentOptions.listeners[element]
           )
         })
-      this.$bus.emit('addPlugins', this.plugin)
+      this[bus].emit('addPlugins', this.plugin)
     }
   }
 }

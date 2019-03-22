@@ -30,6 +30,7 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 //设置鼠标移入区域时样式
 sectionStyle: {fillColor：'#f00', opacity:'0.5'}`
 
+//attrs为元素绘制属性，data为元素对应数据，i为元素序列
 sectionStyle: (attrs, data, i) => {
     //将偶数序列的区域设置为红色
     if (i % 2 === 0) {

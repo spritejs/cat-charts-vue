@@ -3,10 +3,11 @@ import Bar from './components/visuals/s-bar/'
 import Pie from './components/visuals/s-pie/'
 import Line from './components/visuals/s-line/'
 import Radar from './components/visuals/s-radar/'
-import Axis from './components/plugins/s-axis'
-import Grid from './components/plugins/s-Grid'
-import Tooltip from './components/plugins/s-Tooltip'
-import Legend from './components/plugins/s-Legend'
+import Axis from './components/plugins/s-axis/'
+import Grid from './components/plugins/s-Grid/'
+import Tooltip from './components/plugins/s-Tooltip/'
+import Legend from './components/plugins/s-Legend/'
+import { bus } from './utils'
 const components = [Chart, Bar, Pie, Radar, Line, Axis, Grid, Tooltip, Legend]
 
 components.map(component => {
@@ -30,7 +31,7 @@ const install = Vue => {
       }
     }
   })
-  Vue.prototype.$bus = Bus //由于放在原型上
+  Vue.prototype[bus] = Bus //由于放在原型上
 }
 
 const version = '0.2.2'

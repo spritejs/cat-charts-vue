@@ -5,14 +5,7 @@
 </template>
 <script>
 import { Chart, Legend, Axis, Tooltip, Grid } from '@qcharts/core'
-
-const pluginObject = {
-  's-axis': Axis,
-  's-legend': Legend,
-  's-tooltip': Tooltip,
-  's-grid': Grid
-}
-
+import { bus } from '../../utils'
 export default {
   name: 's-chart',
   props: {
@@ -34,10 +27,10 @@ export default {
     }
   },
   created: function() {
-    this.$bus.on('addVisuals', data => {
+    this[bus].on('addVisuals', data => {
       this.visuals.push(data)
     })
-    this.$bus.on('addPlugins', data => {
+    this[bus].on('addPlugins', data => {
       this.plugins.push(data)
     })
   },
