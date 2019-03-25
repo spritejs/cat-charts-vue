@@ -35,8 +35,8 @@
       let chart = this.$refs['chart'].chart;
       let padding = [60,30,30,50];
       let scales = [{label: "Jan", offset: "0%"},{label: "Apr", offset: "60%"},{label: "Jun", offset: "100%"}];
-      chart.emit('axis:ready', {orient:'bottom',padding,scales});
-      chart.emit('axis:ready', {orient:'left',padding,scales});
+      chart.emit('axis:render', {orient:'bottom',padding,scales});
+      chart.emit('axis:render', {orient:'left',padding,scales});
     }
   }
 </script>
