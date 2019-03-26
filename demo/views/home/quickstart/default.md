@@ -22,7 +22,7 @@ Vue.use(install)
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/spritejs/dist/spritejs.min.js"></script>
-<script src="https://unpkg.com/cat-charts/lib/index.js"></script>
+<script src="https://unpkg.com/cat-charts@0.2/lib/index.js"></script>
 ```
 ```javascript
 // 通过cdn的方式使用CatCharts
