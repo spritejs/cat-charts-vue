@@ -17,7 +17,7 @@
       return {
         attrs: {
           pos: ['10%', '10%'],
-          size: ['90%', '80%']
+          size: ['80%', '80%']
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
