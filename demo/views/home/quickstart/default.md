@@ -11,24 +11,25 @@ CatCharts 是一个基于 <a href="https://www.spritejs.com">spritejs</a> , <a h
 ```shell
 npm install cat-charts --save
 ```
-
-2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts
-
-```html
-<script src="https://unpkg.com/cat-charts/lib/index.js"></script>
-```
-
-### 开始绘制图表
-
 ```javascript
-// 通过cdn的方式使用CatCharts
-Vue.use(CatCharts)
-
 // 通过模块引入的方式使用CatCharts
 import { install } from 'cat-charts'
 Vue.use(install)
 ```
 
+2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts，因为CatCharts依赖Vue与spritejs，所以需要先引入这两个
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"></script>
+<script src="https://unpkg.com/cat-charts/lib/index.js"></script>
+```
+```javascript
+// 通过cdn的方式使用CatCharts
+Vue.use(CatCharts)
+```
+
+### 开始绘制图表
 完成一个 CatCharts 的组件或者页面
 
 ```html
