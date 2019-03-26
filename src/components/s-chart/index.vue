@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import { Chart, Legend, Axis, Tooltip, Grid } from '@qcharts/core'
+import { Chart } from '@qcharts/core'
 import { bus } from '../../utils'
 export default {
   name: 's-chart',
