@@ -33,7 +33,7 @@ export default [
 
   {
     title: 'Grid',
-    path: 'Grid',
+    path: 'grid',
     component: generateCommonPage('/plugin/grid/', GridRoutes),
     children: GridRoutes
   }

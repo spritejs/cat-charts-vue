@@ -16,7 +16,8 @@
     data: function() {
       return {
         attrs: {
-          padding: [80, 30, 50, 50]
+          pos: ['10%', '10%'],
+          size: ['90%', '80%']
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
@@ -26,8 +27,8 @@
           { month: 'May', city: 'London', value: 11.9 },
           { month: 'Jun', city: 'London', value: 15.2 }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.city}-${data.month}-${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.city}-${data.month}-${data.value}`
         },
         dataFields: {
           x: 'month',

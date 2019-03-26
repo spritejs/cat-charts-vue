@@ -25,7 +25,9 @@
       return {
         data: [],
         attrs: {
-          padding: [50, 50, 50, 110]
+          padding: [50, 50, 50, 110],
+          pos: ['20%', '5%'],
+          size: ['80%', '90%']
         },
         barData: [
           { value: 11, label: '直接访问' },

@@ -2,16 +2,16 @@
 
 attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
-| 属性名      | 类型    | 默认值            | 描述                                     |
-| ----------- | ------- | ----------------- | ---------------------------------------- |
-| endAngle    | Number  | `Math.PI * 1.5`   | 结束角度                                 |
-| innerRadius | Number  | `0`               | 圆内半径，结合 size 计算得出             |
-| size        | Array   | `['100%','100%']` | 组件大小，可设置百分比或者像素           |
-| padAngle    | Number  | `0`               | 垫角角度                                 |
-| pos         | Array   | `[0, 0]`          | 组件左上角相对于 canvas 容器的像素偏移素 |
-| radius      | Number  | `0.95`            | 圆外半径，结合 size 计算得出             |
-| rose        | Boolean | `false`           | 是否绘制玫瑰图                           |
-| startAngle  | Number  | `Math.PI * -0.5`  | 起始角度                                 |
+| 属性名      | 类型    | 默认值            | 描述                                 |
+| ----------- | ------- | ----------------- | ------------------------------------ |
+| endAngle    | Number  | `Math.PI * 1.5`   | 结束角度                             |
+| innerRadius | Number  | `0`               | 圆内半径，结合 size 计算得出         |
+| size        | Array   | `['100%','100%']` | 组件大小，可设置百分比或者像素       |
+| padAngle    | Number  | `0`               | 垫角角度                             |
+| pos         | Array   | `[0, 0]`          | 组件左上角偏移，可设置百分比或者像素 |
+| radius      | Number  | `0.95`            | 圆外半径，结合 size 计算得出         |
+| rose        | Boolean | `false`           | 是否绘制玫瑰图                       |
+| startAngle  | Number  | `Math.PI * -0.5`  | 起始角度                             |
 
 ### data
 

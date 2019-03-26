@@ -25,7 +25,8 @@
         attrs: {
           stack: true,
           barWidth: 40,
-          padding: [50, 50, 50, 150]
+          pos: ['20%', '10%'],
+          size: ['80%', '80%']
         },
         barData: [
           { department: '销售', type: '预算分配', value: '500' },

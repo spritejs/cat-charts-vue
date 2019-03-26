@@ -25,7 +25,8 @@
         attrs: {
           transpose: true,
           barWidth: 20,
-          padding: [50, 50, 50, 50]
+          pos: ['10%', '15%'],
+          size: ['80%', '80%']
         },
         barData: [
           { department: '销售', type: '预算分配', value: '500' },

@@ -23,7 +23,8 @@
       return {
         attrs: {
           barWidth: 30,
-          padding: [50, 50, 50, 100]
+          pos: ['10%', '5%'],
+          size: ['90%', '90%']
         },
         barData: [
           { value: 11, label: '直接访问-1' },

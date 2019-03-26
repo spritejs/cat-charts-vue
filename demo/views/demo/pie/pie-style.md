@@ -36,8 +36,8 @@
           { value: 1350, label: '视频广告' },
           { value: 1548, label: '搜索引擎' }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.label} ${data.value}`
+        tooltipAttrs: {
+          formatter: data => `${data.label} ${data.value}`
         },
         dataFields: { x: 'label', y: 'value' },
         text: (attrs, data, i) => {
@@ -58,11 +58,9 @@
           }
           return { opacity: 0.5, fillColor: 'red' }
         },
-        guideText: true,
         guideTextHover: (attrs, d, i) => ({
           color: 'red'
         }),
-        guideLine: true,
         guideLineHover: (attrs, d, i) => ({
           color: 'red'
         })

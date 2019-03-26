@@ -19,7 +19,7 @@
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-grid :css-line="{lineDash: [1, 0], lineWidth: 0.5, color:'red'}" />
-    <s-legend />
+    <s-legend :attrs="{vertical:0,pos:['10%','5%']}" />
     <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
@@ -29,7 +29,8 @@
       return {
         attrs: {
           labelPosition: 'top',
-          padding: [50, 50, 50, 150]
+          pos: ['10%', '15%'],
+          size: ['80%', '80%']
         },
         barData: [
           { value: 11, label: '直接访问-1' },
@@ -44,10 +45,27 @@
         },
         dataFields: { x: 'department', y: 'value', category: 'type' },
         text: (attrs, data, i) => {
-          return { text: data.value }
+          let anchor = attrs.anchor || [0, 0]
+          let size = attrs.size
+          let pos = attrs.pos
+          return {
+            rotate: 0,
+            text: data.value,
+            anchor: [0.5, 1],
+            pos: [pos[0] + size[0] / 2, pos[1] - size[1]]
+          }
         },
         textHover: (attrs, data, i) => {
-          return { text: data.value, font: '22px "宋体"' }
+          let anchor = attrs.anchor || [0, 0]
+          let size = attrs.size
+          let pos = attrs.pos
+          return {
+            font: '22px "宋体"',
+            rotate: 0,
+            text: data.value,
+            anchor: [0.5, 1],
+            pos: [pos[0] + size[0] / 2, pos[1] - size[1]]
+          }
         },
         pillar: (attrs, d, i) => {
           if (i % 2 === 0) {

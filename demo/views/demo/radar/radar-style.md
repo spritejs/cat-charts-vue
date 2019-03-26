@@ -71,14 +71,16 @@
           const color = ['#00C8FB', '#D77169']
           return { color: color[i] }
         },
-        point: (attrs, data, i) => {
-          const { category } = data
-          const colorObj = { 实际开销: '#00C8FB', 节能减排: '#D77169' }
-          return {
-            size: 4,
-            fillColor: colorObj[category],
-            color: colorObj[category]
+        point: (attr, data, i) => {
+          const symbols = ['circle', 'triangle', 'square', 'star']
+          const colors = ['red', 'green', 'blue', 'black']
+          let symbol = 'circle'
+          let fillColor = 'red'
+          if (i < 4) {
+            symbol = symbols[i]
+            fillColor = colors[i]
           }
+          return { fillColor, symbol: symbol, size: 8, opacity: 0.8 }
         }
       }
     }
