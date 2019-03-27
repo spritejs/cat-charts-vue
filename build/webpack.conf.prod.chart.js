@@ -9,11 +9,10 @@ module.exports = merge(common, {
     index: path.resolve(__dirname, '../src/')
   },
   module: {
-    // rules: [{
-    //   test: /\.vue$/,
-    //   loader: 'vue-loader',
-    //   exclude: /node_modules/
-    // }]
+    rules: [{
+      test: /\.(s)?css$/,
+      use: ['style-loader', 'css-loader', 'sass-loader']
+    },]
   },
   //devtool: 'source-map',
   output: {
