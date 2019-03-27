@@ -6,7 +6,7 @@ CatCharts 是一个基于 <a href="https://www.spritejs.com">spritejs</a> , <a h
 
 ### 如何使用
 
-1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装
+1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装，Demo：<a href="https://github.com/yaotaiyang/cat-charts-demo">Quickstart</a>
 
 ```shell
 npm install cat-charts --save
