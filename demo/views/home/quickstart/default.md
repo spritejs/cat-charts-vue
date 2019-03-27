@@ -2,11 +2,11 @@
 
 ### 特点
 
-CatCharts 是一个基于 <a href="https://www.spritejs.com">spritejs</a> , <a href="https://www.npmjs.com/package/q-charts">qcharts</a> 封装的 <a href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。
+CatCharts 是一个基于 <a target="_blank" href="https://www.spritejs.com">spritejs</a> , <a  target="_blank" href="https://www.npmjs.com/package/q-charts">qcharts</a> 封装的 <a target="_blank" href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。
 
 ### 如何使用
 
-1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装，Demo：<a href="https://github.com/yaotaiyang/cat-charts-demo">Quickstart</a>
+1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-demo">Quickstart</a>
 
 ```shell
 npm install cat-charts --save
