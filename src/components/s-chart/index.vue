@@ -57,3 +57,6 @@ export default {
   }
 }
 </script>
+<style>
+  .cat-charts{position:relative;height:100%;}
+</style>

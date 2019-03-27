@@ -13,8 +13,8 @@ npm install cat-charts --save
 ```
 ```javascript
 // 通过模块引入的方式使用CatCharts
-import { install } from 'cat-charts'
-Vue.use(install)
+import * as CatCharts from 'cat-charts'
+Vue.use(CatCharts)
 ```
 
 2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts，因为CatCharts依赖Vue与spritejs，所以需要先引入这两个
