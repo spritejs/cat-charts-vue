@@ -46,7 +46,8 @@ Vue.use(CatCharts)
     data: function() {
       return {
         attrs: {
-          padding: [80, 30, 50, 50]
+          pos:['10%','10%'],
+          size:['80%','80%']
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
@@ -71,4 +72,4 @@ Vue.use(CatCharts)
 
 一张折线图就绘制成功
 
-<img src="https://p5.ssl.qhimg.com/t0168ca8499a823f418.png" width="600">
+<img src="https://p5.ssl.qhimg.com/t0168ca8499a823f418.png" width="400">

@@ -8,6 +8,7 @@
     <s-line :attrs="attrs" :data="lineData" :data-fields="dataFields" />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
+    <s-grid />
     <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
