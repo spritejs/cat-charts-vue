@@ -23,15 +23,33 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法可在[定义样式 demo](#/demo/pie/style)中查看，用法如下：
+组件中可以自定义 css 属性的元素如下表：
+
+| 名称                | 描述                      |
+| ------------------- | ------------------------- |
+| css-guideline       | 指示线样式                |
+| css-guideline:hover | 指示线样式                |
+| css-guidetext       | 指示文字样式              |
+| css-guidetext:hover | 鼠标 hover 时指示文字样式 |
+| css-sector          | 扇形样式                  |
+| css-sector:hover    | 鼠标 hover 时扇形样式     |
+| css-text            | 文字样式                  |
+| css-text:hover      | 鼠标 hover 时文字样式     |
+
+使用方法可在[定义样式 demo](#/demo/pie/style)中查看，用法如下：
 
 `<s-pie :css-sector="sectorStyle" />`
 
 在 data 中定义 sector obj 属性或者函数，例如：
 
 ```
+//设置true或false来隐藏组件元素
+//隐藏指示文本
+guidetext: false
+
+//设置spritejs的attr属性来设置样式
 //设置鼠标移入扇形时样式
-sectorStyle: {fillColor：'#f00', opacity:'0.5'}`
+sectorStyle: {fillColor：'#f00', opacity:'0.5'}
 
 //attrs为元素绘制属性，data为元素对应数据，i为元素序列
 sectorStyle: (attrs, data, i) => {
@@ -44,14 +62,3 @@ sectorStyle: (attrs, data, i) => {
     return { opacity: 0.5, fillColor: 'blue' }
   }
 ```
-
-| 名称                | 描述                      |
-| ------------------- | ------------------------- |
-| css-guideline       | 指示线样式                |
-| css-guideline:hover | 指示线样式                |
-| css-guidetext       | 指示文字样式              |
-| css-guidetext:hover | 鼠标 hover 时指示文字样式 |
-| css-sector          | 扇形样式                  |
-| css-sector:hover    | 鼠标 hover 时扇形样式     |
-| css-text            | 文字样式                  |
-| css-text:hover      | 鼠标 hover 时文字样式     |
