@@ -22,7 +22,6 @@
     data: function() {
       return {
         attrs: {
-          padding: [80, 30, 50, 50],
           stack: true
         },
         lineData: [

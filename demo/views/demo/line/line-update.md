@@ -17,9 +17,7 @@
     data: function() {
       return {
         data: [],
-        attrs: {
-          padding: [80, 30, 50, 50]
-        },
+        attrs: {},
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
           { month: 'Feb', city: 'London', value: 4.2 },

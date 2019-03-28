@@ -27,7 +27,8 @@
     data: function() {
       return {
         attrs: {
-          padding: [80, 30, 50, 50]
+          pos:["11%","10%"],
+          size:["78%","80%"]
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },

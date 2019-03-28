@@ -1,36 +1,35 @@
-# cat-charts
-
-A visulization library based on spritejs , qcharts and Vue → <a href="https://www.spritejs.com/catcharts/">详细文档 docs </a>
+## 快速开始
 
 ### 特点
 
-CatCharts 是一个基于 <a href="https://www.spritejs.com">spritejs</a> , <a href="https://www.npmjs.com/package/q-charts">qcharts</a> 封装的 <a href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。
+CatCharts 是一个基于 <a target="_blank" href="https://www.spritejs.com">spritejs</a> , <a  target="_blank" href="https://www.npmjs.com/package/@qcharts/core">qcharts</a> 封装的 <a target="_blank" href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。详细文档→ <a target="_blank" href="https://www.spritejs.com/catcharts/">CatCharts</a> 
 
 ### 如何使用
 
-1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装
+1.通过 npm 获取 CatCharts，我们提供了 CatCharts npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-demo">Quickstart</a>
 
 ```shell
 npm install cat-charts --save
 ```
-
-2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts
-
-```html
-<script src="https://unpkg.com/cat-charts/lib/index.js"></script>
+```javascript
+// 通过模块引入的方式使用CatCharts
+import * as CatCharts from 'cat-charts'
+Vue.use(CatCharts)
 ```
 
-### 开始绘制图表
+2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts，因为CatCharts依赖Vue与spritejs，所以需要先引入这两个
 
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"></script>
+<script src="https://unpkg.com/cat-charts@0.2/lib/index.js"></script>
+```
 ```javascript
 // 通过cdn的方式使用CatCharts
 Vue.use(CatCharts)
-
-// 通过模块引入的方式使用CatCharts
-import { install } from 'cat-charts'
-Vue.use(install)
 ```
 
+### 开始绘制图表
 完成一个 CatCharts 的组件或者页面
 
 ```html
@@ -47,7 +46,8 @@ Vue.use(install)
     data: function() {
       return {
         attrs: {
-          padding: [80, 30, 50, 50]
+          pos:['10%','10%'],
+          size:['80%','80%']
         },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
@@ -72,4 +72,4 @@ Vue.use(install)
 
 一张折线图就绘制成功
 
-<img src="https://p5.ssl.qhimg.com/t0168ca8499a823f418.png" width="600">
+<img src="https://p5.ssl.qhimg.com/t0168ca8499a823f418.png" width="400">
