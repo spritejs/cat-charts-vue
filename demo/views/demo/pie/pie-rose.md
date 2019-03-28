@@ -81,7 +81,7 @@
         },
         dataFields: { x: 'year', y: 'population' },
         text: (attrs, data, i) => {
-          return { text: data.label }
+          return { text: data.population }
         }
       }
     }
