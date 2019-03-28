@@ -783,9 +783,9 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@0.0.19":
-  version "0.0.19"
-  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.0.19.tgz#b531e07aaceb27aa75d2cb6ca33ae5fd37b1e47f"
+"@qcharts/core@0.0.20":
+  version "0.0.20"
+  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.0.20.tgz#80d633e8706f8559d986b4ae830b709197ee24fd"
   dependencies:
     sprite-extend-shapes "^0.1.60"
 
