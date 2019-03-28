@@ -19,15 +19,33 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 ### css 属性
 
-组件中的元素样式均可通过 css 属性自定义，使用方法可在[定义样式 demo](#/demo/line/style)中查看，用法如下：
+组件中可以自定义 css 属性的元素如下表：
+
+| 名称                | 描述                                        |
+| ------------------- | ------------------------------------------- |
+| css-area            | 堆叠图面积样式（堆叠图时生效）              |
+| css-area:hover      | 鼠标 hover 时堆叠图面积样式（堆叠图时生效） |
+| css-guideline       | 指导线样式                                  |
+| css-guideline:hover | 鼠标 hover 时指导线样式                     |
+| css-line            | 线条样式                                    |
+| css-line:hover      | 鼠标 hover 时线条样式                       |
+| css-symbol          | 点样式                                      |
+| css-symbol:hover    | 鼠标 hover 时点样式                         |
+
+使用方法可在[定义样式 demo](#/demo/line/style)中查看，用法如下：
 
 `<s-line :css-area="area" />`
 
 在 data 中定义 area，可以是 obj 属性或者函数，例如：
 
 ```
+//设置true或false来隐藏组件元素
+//隐藏圆点
+symbol: false
+
+//设置spritejs的attr属性来设置样式
 //设置鼠标移入面积时样式
-area: {fillColor：'#f00', opacity:'0.5'}`
+area: {fillColor：'#f00', opacity:'0.5'}
 
 //attrs为元素绘制属性，data为元素对应数据，i为元素序列
 area: (attrs, data, i) => {
@@ -40,17 +58,6 @@ area: (attrs, data, i) => {
     return { opacity: 0.5, fillColor: 'blue' }
   }
 ```
-
-| 名称                | 描述                                        |
-| ------------------- | ------------------------------------------- |
-| css-area            | 堆叠图面积样式（堆叠图时生效）              |
-| css-area:hover      | 鼠标 hover 时堆叠图面积样式（堆叠图时生效） |
-| css-guideline       | 指导线样式                                  |
-| css-guideline:hover | 鼠标 hover 时指导线样式                     |
-| css-line            | 线条样式                                    |
-| css-line:hover      | 鼠标 hover 时线条样式                       |
-| css-symbol          | 点样式                                      |
-| css-symbol:hover    | 鼠标 hover 时点样式                         |
 
 ### event
 
