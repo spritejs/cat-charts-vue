@@ -29,5 +29,10 @@ export default [
     title: '堆叠面积图',
     path: 'stack',
     component: () => import('./line-stack.md')
+  },
+  {
+    title: '事件',
+    path: 'event',
+    component: () => import('./line-event.md')
   }
 ]
