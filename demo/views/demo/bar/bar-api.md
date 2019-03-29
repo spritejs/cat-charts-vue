@@ -37,7 +37,7 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 在 data 中定义 pillarHover，可以是 Boolean、 obj 属性或者函数，例如：
 
-```
+```javascript
 //设置true或false来隐藏组件元素
 //隐藏背景柱
 backgroundpillar: false
@@ -65,4 +65,4 @@ pillarHover: (attrs, data, i) => {
 
 | 名称         | 描述                 | 附带数据    |
 | ------------ | -------------------- | ----------- |
-| pillar:click | 点击 pillar 事件监听 | pillar 属性 |
+| pillar:click | 点击 pillar 事件监听 | pillar 信息 |

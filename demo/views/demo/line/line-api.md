@@ -38,7 +38,7 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 在 data 中定义 area，可以是 obj 属性或者函数，例如：
 
-```
+```javascript
 //设置true或false来隐藏组件元素
 //隐藏圆点
 symbol: false
