@@ -4,7 +4,7 @@
 
 ```html
 <template>
-  <s-chart @render="chartRender">
+  <s-chart @rendered="chartRender">
     <s-bar
       :attrs="attrs"
       :data="barData"

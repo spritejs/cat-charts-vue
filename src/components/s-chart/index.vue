@@ -54,9 +54,17 @@ export default {
       this.chart.add(element)
     })
     this.chart.render()
+  },
+  methods: {
+    append(element) {
+      this.chart.$group.append(element)
+    }
   }
 }
 </script>
 <style>
-  .cat-charts{position:relative;height:100%;}
+.cat-charts {
+  position: relative;
+  height: 100%;
+}
 </style>
