@@ -34,7 +34,7 @@ const install = Vue => {
   Vue.prototype[bus] = Bus //事件总线放在原型上
 }
 
-const version = '0.2.4'
+const version = '0.2.5'
 
 export {
   Chart,

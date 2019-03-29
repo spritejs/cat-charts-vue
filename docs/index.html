@@ -8,6 +8,19 @@
   <title>CatCharts</title>
   <link rel="stylesheet" href="https://s3.ssl.qhres.com/!81ae8bd7/vuep.css">
   <style>
+    @keyframes a {
+    0%,to {
+        transform: rotate(0)
+    }
+
+    20%,60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,80% {
+        transform: rotate(10deg)
+    }
+}
   .github-corner {
     border-bottom: 0;
     position: fixed;
@@ -18,6 +31,9 @@
 }
 .github-corner:hover{
   cursor:pointer;
+}
+.github-corner:hover .octo-arm {
+    animation: a .56s ease-in-out
 }
 .github-corner svg {
     color: #fff;
