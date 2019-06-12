@@ -1,11 +1,24 @@
 <script>
-import { Bar, Pie, Line, Radar } from '@qcharts/core'
+import {
+  Bar,
+  Pie,
+  Line,
+  Radar,
+  Area,
+  Funnel,
+  Gauge,
+  Scatter
+} from '@qcharts/core'
 import { bus } from '../../utils'
 const visualObject = {
   's-line': Line,
   's-bar': Bar,
   's-pie': Pie,
-  's-radar': Radar
+  's-radar': Radar,
+  's-area': Area,
+  's-funnel': Funnel,
+  's-scatter': Scatter,
+  's-gauge': Gauge
 }
 /**
  * 所有组件的基类
@@ -13,23 +26,23 @@ const visualObject = {
  */
 export default {
   props: {
-    attrs: { type: Object, default: () => {} },
-    data: { type: Array, default: [] },
-    dataFields: { type: Object, default: () => {} }
+    color: { type: Array, default: () => [] },
+    rows: { type: String | Array, default: null },
+    attrs: { type: Object, default: () => {} }
   },
   data: () => {
     return {
       visual: null
     }
   },
-  watch: {
-    data: {
-      deep: true,
-      handler(data) {
-        this.visual.source(data)
-      }
-    }
-  },
+  // watch: {
+  //   data: {
+  //     deep: true,
+  //     handler(data) {
+  //       this.visual.source(data)
+  //     }
+  //   }
+  // },
   created: function() {
     if (
       this.$vnode.componentOptions.tag &&
@@ -38,9 +51,7 @@ export default {
       const Shape = visualObject[this.$vnode.componentOptions.tag]
 
       this.visual = new Shape(this.attrs)
-        .source(this.data)
-        .setDataFields(this.dataFields)
-
+      this.visual.color(this.color)
       Object.keys(this.$attrs).forEach(element => {
         if (element.indexOf('css-') === -1) {
           return
@@ -54,7 +65,7 @@ export default {
             this.$vnode.componentOptions.listeners[element]
           )
         })
-      this[bus].emit('addVisuals', this.visual)
+      this[bus].emit('addVisuals', { visual: this.visual, rows: this.rows })
     }
   }
 }

@@ -1,9 +1,8 @@
 <script>
-import { Axis, Grid, Legend, Tooltip } from '@qcharts/core'
+import { Axis, Legend, Tooltip } from '@qcharts/core'
 import { bus } from '../../utils'
 const pluginObject = {
   's-axis': Axis,
-  's-grid': Grid,
   's-legend': Legend,
   's-tooltip': Tooltip
 }

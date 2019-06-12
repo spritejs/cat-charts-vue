@@ -1,20 +1,21 @@
-## 玫瑰图
+## Nightingle Rose Chart 南丁格尔玫瑰图
 
 :::demo
 
 ```html
 <template>
-  <s-chart>
+  <s-chart :data="pieData" :data-fields="dataFields">
     <s-pie
       :attrs="attrs"
-      :data="pieData"
-      :data-fields="dataFields"
-      :css-text="text"
       :css-guideLine="true"
       :css-guideText="true"
+      :css-sector="{lineWidth: 1, color: '#fff'}"
     />
-    <s-legend />
-    <s-tooltip :attrs="tooltipAttrs"/>
+    <s-legend
+      :attrs="legendAttrs"
+      :css-icon="iconStyle"
+      :css-text="textStyle"
+    />
   </s-chart>
 </template>
 <script>
@@ -22,67 +23,23 @@
     data: function() {
       return {
         attrs: {
-          rose: true,
-          startAngle: Math.PI * 1,
-          endAngle: Math.PI * 1.5
+          radius: 0.8,
+          rose: true
         },
         pieData: [
-          {
-            year: '2001',
-            population: 41.8
-          },
-          {
-            year: '2002',
-            population: 38
-          },
-          {
-            year: '2003',
-            population: 33.7
-          },
-          {
-            year: '2004',
-            population: 30.7
-          },
-          {
-            year: '2005',
-            population: 25.8
-          },
-          {
-            year: '2006',
-            population: 31.7
-          },
-          {
-            year: '2007',
-            population: 33
-          },
-          {
-            year: '2008',
-            population: 46
-          },
-          {
-            year: '2009',
-            population: 38.3
-          },
-          {
-            year: '2010',
-            population: 28
-          },
-          {
-            year: '2011',
-            population: 42.5
-          },
-          {
-            year: '2012',
-            population: 30.3
-          }
+          { value: 335, name: '直接访问' },
+          { value: 310, name: '邮件营销' },
+          { value: 280, name: '联盟广告' },
+          { value: 254, name: '视频广告' },
+          { value: 200, name: '搜索引擎' }
         ],
-        tooltipAttrs:{
-        	formatter: data => `居民负债比：${data.year}: ${data.population}%`
-        },
-        dataFields: { x: 'year', y: 'population' },
-        text: (attrs, data, i) => {
-          return { text: data.population }
-        }
+        dataFields: { row: 'name', value: 'value' },
+        legendAttrs: { orient: 'vertical', align: ['right', 'center'] },
+        iconStyle: (attrs, d, i) => ({
+          borderRadius: 10,
+          marginTop: i > 0 ? 15 : 0
+        }),
+        textStyle: (attrs, d, i) => ({ marginTop: i > 0 ? 15 : 0 })
       }
     }
   }

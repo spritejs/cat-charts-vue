@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1560218685119'); /* IE9 */
+  src: url('iconfont.eot?t=1560218685119#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAN0AAsAAAAACGwAAAMoAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqEJINDATYCJAMQCwoABCAFhG0HVBs5B8ieBY5bLkeSLEpWUH2qU1M89I3R/uzOiWhS7XdIdE2XaJREwjOeCZHXLXk1CxUO17KU2aZEoBD3Jnt7x9kUIUWUiJaEBFcF/PKr/uuzvgfQ2f8dHDNd+gaWt0qnjMZRJW06oIH1VwM92T/Iv9gD+A9jNxE0xPcJtJoUxmR/QVklspbApUBclcQ2ZJ2xygZ8aDY0Vtyb4qYGzeV6ecAN/v3x20ZYUzRU4Noju/kKlPU9Y/j/sAsUQTadG8ZDVCxBkrhS6T3HLMouMdPqCZpbgTTKzvL9rz1TSriVbcq2/49XVKIRqG8HW7KmXpUMswm+/4plnx9/ZZ0HROf5ZrTgCeK1gh2vSyn6wE326szNDc/qGXTy3rpXZpVq3vSkoZr09U1CP2JbubbmkV7uUbex4Z5WreDWPKpU67Jr1qQ9E6rM2FiT6YftajY3PTOWeKo7GCoHG9NHNNS0NWYoQ+pW8LdlsrHvbr7+1EvcHPFevfMJytpytbHpZT66ccZ5Re5pXPxzfG4F52cxo+aubGzu92YF+d5yHh/3P7lFjPNb32ErfPrXdjOaWNBnmt809572W+HpRdXykaENvgfdr/QXXjc4LXU1XPcXdXoiA/ChesX0E+o1039Q3pQ/f/h39D7rPmxxSmttl+Cjf3g6t6buuWYFQ/Y/ZR170lcAW6arxNLAlw6kyhS0Qhv/sRl6vU+hH+hcT2g2kEDRZAKqZlPIxC5BgzZb0KjZNrRaVPhwmz6UmcgWLOAShG5XUHR6DlW3R2Ri36DBoF9o1B1m0OpUuD2zzUxItrkU2hgocHsPlgS9jiAHsxWN5SB2aNpoWsEJ1UBlKYGjI6LyhULQAZ3iBrlTjGGMYEL1WlwgfQw0Gj02UL0KBBahZMyQEhlJqj4pQtBrka19KNCGAQpYux6YRKCnQ+h6xrbw9eWAqINGG9rQ1ROtBiiZtDsWLUJUB2ShVtep61b2yzqJYjAMUc8RlJ4WViC7gQZm9TBD9TEVIGAiKAekDVJEKoNIV23E8nrtG96CVuCHMkrUyGjQutuh0cgCBdA5xa8Jh26J2QltFFg4lUQlQwg=') format('woff2'),
+  url('iconfont.woff?t=1560218685119') format('woff'),
+  url('iconfont.ttf?t=1560218685119') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560218685119#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fullscreen:before {
+  content: "\e7ec";
+}
+
+.icon-fullscreen-exit:before {
+  content: "\e7ed";
+}
+
+.icon-caret-right:before {
+  content: "\e8ec";
+}
+

@@ -1,38 +1,32 @@
 export default [
   {
-    title: 'API',
-    path: 'api',
-    component: () => import('./line-api.md')
-  },
-  {
     title: '',
     path: '',
     redirect: 'default'
-    //component: () => import('./line-default.md')
   },
   {
-    title: '折线图',
+    title: '基础折线图',
     path: 'default',
     component: () => import('./line-default.md')
   },
   {
-    title: '定义样式',
-    path: 'style',
-    component: () => import('./line-style.md')
+    title: '双折线图',
+    path: 'double',
+    component: () => import('./line-double.md')
   },
   {
-    title: '数据更新',
-    path: 'update',
-    component: () => import('./line-update.md')
+    title: '曲线折线图',
+    path: 'smooth',
+    component: () => import('./line-smooth.md')
   },
   {
-    title: '堆叠面积图',
-    path: 'stack',
-    component: () => import('./line-stack.md')
+    title: '多折线图',
+    path: 'multi',
+    component: () => import('./line-multi.md')
   },
   {
-    title: '事件',
-    path: 'event',
-    component: () => import('./line-event.md')
+    title: '其它',
+    path: 'others',
+    component: () => import('./line-others.md')
   }
 ]

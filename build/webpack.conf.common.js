@@ -60,13 +60,20 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '../src/'),
+      '@': path.resolve(__dirname, '../src/')
       // 'vue$': 'vue/dist/vue.common'
     }
   },
 
   externals: {
-    spritejs: 'spritejs',
+    // spritejs: 'spritejs',
+    // '@qcharts/core': {
+    //   root: 'qcharts',
+    //   commonjs2: '@qcharts/core/lib/index.js',
+    //   commonjs: '@qcharts/core/lib/index.js',
+    //   amd: '@qcharts/core/lib/index.js',
+    //   umd: 'qcharts'
+    // },
     vue: 'Vue',
     vuep: 'Vuep',
     'vue-router': 'VueRouter'

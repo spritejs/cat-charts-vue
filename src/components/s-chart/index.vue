@@ -14,6 +14,8 @@ export default {
       type: Array,
       default: () => ['100%', '100%']
     },
+    data: { type: Array, default: [] },
+    dataFields: { type: Object, default: () => {} },
     forceFit: {
       type: Boolean,
       default: true
@@ -24,6 +26,14 @@ export default {
       chart: null,
       visuals: [],
       plugins: []
+    }
+  },
+  watch: {
+    data: {
+      deep: true,
+      handler(data) {
+        this.chart.source(data, this.dataFields)
+      }
     }
   },
   created: function() {
@@ -41,14 +51,16 @@ export default {
       pos: this.pos,
       forceFit: this.forceFit
     })
-
+    this.chart.source(this.data, this.dataFields)
     this.$listeners &&
       Object.keys(this.$listeners).forEach(event => {
         this.chart.on(`chart:${event}`, this.$listeners[event])
       })
 
     this.visuals.forEach(element => {
-      this.chart.add(element)
+      element.rows &&
+        element.visual.source(this.chart.dataset.selectRows(element.rows))
+      this.chart.add(element.visual)
     })
     this.plugins.forEach(element => {
       this.chart.add(element)

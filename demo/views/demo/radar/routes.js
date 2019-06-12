@@ -1,28 +1,17 @@
 export default [
   {
-    title: 'API',
-    path: 'api',
-    component: () => import('./radar-api.md')
-  },
-  {
     title: '',
     path: '',
     redirect: 'default'
-    //component: () => import('./radar-default.md')
   },
   {
-    title: '雷达图',
+    title: '基础雷达图',
     path: 'default',
     component: () => import('./radar-default.md')
   },
   {
-    title: '定义样式',
-    path: 'style',
-    component: () => import('./radar-style.md')
-  },
-  {
-    title: '数据更新',
-    path: 'update',
-    component: () => import('./radar-update.md')
+    title: '双色雷达图',
+    path: 'double',
+    component: () => import('./radar-double.md')
   }
 ]

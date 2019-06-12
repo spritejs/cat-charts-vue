@@ -1,109 +1,199 @@
 <template>
   <header>
-    <div class="logo">
-      <router-link class="home" to="/"></router-link>
-      <img
-        class="img-logo"
-        src="http://p0.qhimg.com/d/inn/9f54b5223cfd/cat-charts.png"
-        alt="cat-charts"
-      >
-    </div>
+    <nav class="navbar">
+      <router-link class="navbar-brand" to="/">catcharts</router-link>
 
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/home" :exact="false">介绍</router-link>
-        </li>
-        <li>
-          <router-link :to="{path:'/demo'}">图表示例</router-link>
-        </li>
-        <li>
-          <router-link :to="{path:'/plugin'}">插件示例</router-link>
-        </li>
-      </ul>
+      <button @click="toggleShowMenu" class="navbar-toggler">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 30 30"
+            width="30"
+            height="30"
+            focusable="false"
+          >
+            <title>Menu</title>
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              d="M4 7h22M4 15h22M4 23h22"
+            ></path>
+          </svg>
+        </span>
+      </button>
+
+      <div :class="showMenu ? 'is-show' : ''">
+        <Search/>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/home">首页</router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link to="/doc">API文档</router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link to="/demo">图表示例</router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link to="/plugin">插件示例</router-link>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
 
 <script>
-export default {}
+import Search from './Search.vue'
+
+export default {
+  components: {
+    Search
+  },
+
+  watch: {
+    $route() {
+      this.showMenu = false
+    }
+  },
+
+  data() {
+    return {
+      showMenu: false
+    }
+  },
+
+  methods: {
+    toggleShowMenu() {
+      this.showMenu = !this.showMenu
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-.svg-cat {
-  position: absolute;
-  pointer-events: none;
-  width: 50px;
-  height: 66px;
-  top: 17px;
-  left: 6px;
-}
-@keyframes ani {
-  0% {
-    d: path(
-      'M94.214,54.333c-5.25-3-16.948-0.291-20,0c-1.313,0.125-4.5-1.688-7-5c-1.438-1.906-1.226-6.122,0-9c2.5-5.875,2.847-7.913,5-8c6-0.243,7.578-2.042,10.953-4.667s3.922-6.458,4.047-8.333s1-3,1-3l1-2h-2c0,0-3.125-3.125-6-5s-3.622-2.028-6-2c-5.219,0.063-12.344-0.875-15-1c-1.413-0.066-1.75,4.75-2,13s3.875,9.875,5,12s-2.875,7-5,11s-3.625,5.25-7,6s-6.125-1-9-2s-9.875-4.125-12-5s-8.5-1.5-13-1s-7.125,2.25-11,6s-4,11-4,11c-0.75,4.375,0.445,11.821,4,17c3.45,5.024,7.579,9.315,13,14c11.153,9.636,4.986,24.306,0,24c-14.25-0.875-19.029,5.517-11,10c2.786,1.556,9.498,1.995,12,1c5.5-2.188,10.266-10.167,11-13c1.167-4.5-0.542-15.667-3-20c-2.19-3.86-8.625-10.375-14-17s-5-15-5-15h84h5C98.214,58.333,99.464,57.333,94.214,54.333z M78.214,11.333c2.128,0.149,2.97,2.371,3.536,3.417c0.641,1.183,1.496,3.105,1.464,1.583c-0.03-1.469,0-3,0-3s0.625,2.188,1,4s-2.405,1.844-4,2c-2.36,0.231-7.972-1.74-8-5C72.195,12.272,74.65,11.083,78.214,11.333z M63.214,10.333c-0.956-1.571-2.683-4.583,1-3c3.563,1.531,8.886,1.711,4,7C65.928,16.808,66.006,14.925,63.214,10.333z'
-    );
-  }
-  50% {
-    d: path(
-      'M94.214,54.333c-5.25-3-16.949-0.291-20,0c-1.313,0.125-4.5-1.688-7-5c-1.438-1.906-1.225-6.122,0-9c2.5-5.875,2.847-7.913,5-8c6-0.243,7.578-2.042,10.953-4.667s3.922-6.458,4.047-8.333s1-3,1-3l1-2h-2c0,0-3.125-3.125-6-5s-3.622-2.028-6-2c-5.219,0.063-12.344-0.875-15-1c-1.413-0.066-1.75,4.75-2,13s3.875,9.875,5,12s-2.875,7-5,11s-3.625,5.25-7,6s-6.125-1-9-2s-9.875-4.125-12-5s-8.5-1.5-13-1s-7.125,2.25-11,6s-4,11-4,11c-0.75,4.375,1.445,11.822,5,17c3.45,5.025,10.579,9.316,16,14c11.153,9.636,6.432,22.417,1.911,24.542C10.5,119.75,9.706,132.242,21.5,127.245c3.027-1.283,5.036-2.84,7.375-4.495c5.125-3.625,5.604-9.584,6.339-12.417c1.167-4.5-0.542-15.667-3-20c-2.19-3.861-11.625-10.375-17-17s-6-15-6-15h84h5C98.214,58.333,99.464,57.333,94.214,54.333z M78.214,11.333c2.128,0.149,2.969,2.371,3.536,3.417c0.641,1.183,1.496,3.105,1.464,1.583c-0.031-1.469,0-3,0-3s0.625,2.188,1,4s-2.406,1.844-4,2c-2.36,0.231-7.972-1.74-8-5C72.196,12.272,74.651,11.083,78.214,11.333z M63.214,10.333c-0.956-1.571-2.683-4.583,1-3c3.563,1.531,8.885,1.711,4,7C65.928,16.808,66.006,14.925,63.214,10.333z'
-    );
-  }
-  100% {
-    d: path(
-      'M94.214,54.333c-5.25-3-16.948-0.291-20,0c-1.313,0.125-4.5-1.688-7-5c-1.438-1.906-1.226-6.122,0-9c2.5-5.875,2.847-7.913,5-8c6-0.243,7.578-2.042,10.953-4.667s3.922-6.458,4.047-8.333s1-3,1-3l1-2h-2c0,0-3.125-3.125-6-5s-3.622-2.028-6-2c-5.219,0.063-12.344-0.875-15-1c-1.413-0.066-1.75,4.75-2,13s3.875,9.875,5,12s-2.875,7-5,11s-3.625,5.25-7,6s-6.125-1-9-2s-9.875-4.125-12-5s-8.5-1.5-13-1s-7.125,2.25-11,6s-4,11-4,11c-0.75,4.375,0.445,11.821,4,17c3.45,5.024,7.579,9.315,13,14c11.153,9.636,4.986,24.306,0,24c-14.25-0.875-19.029,5.517-11,10c2.786,1.556,9.498,1.995,12,1c5.5-2.188,10.266-10.167,11-13c1.167-4.5-0.542-15.667-3-20c-2.19-3.86-8.625-10.375-14-17s-5-15-5-15h84h5C98.214,58.333,99.464,57.333,94.214,54.333z M78.214,11.333c2.128,0.149,2.97,2.371,3.536,3.417c0.641,1.183,1.496,3.105,1.464,1.583c-0.03-1.469,0-3,0-3s0.625,2.188,1,4s-2.405,1.844-4,2c-2.36,0.231-7.972-1.74-8-5C72.195,12.272,74.65,11.083,78.214,11.333z M63.214,10.333c-0.956-1.571-2.683-4.583,1-3c3.563,1.531,8.886,1.711,4,7C65.928,16.808,66.006,14.925,63.214,10.333z'
-    );
-  }
-}
-
-.cat {
-  fill: #000;
-  animation: ani 2s infinite ease-out;
-}
-.home {
-  width: 200px;
-  position: absolute;
-  height: 68px;
-  z-index: 10;
-}
-.img-logo {
-  height: 100%;
-  width: 180px;
-  position: relative;
-  pointer-events: none;
-  left: -4px;
-}
 header {
   position: relative;
   z-index: 100;
-  padding: 10px 80px 10px 10px;
-  height: 70px;
-  line-height: 1.5;
-  // background: #fdfdfd;
+  padding: 0 40px;
+  height: 4rem;
   box-shadow: 0 2px 8px rgba(229, 229, 229, 0.5);
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  // color: #fff;
-
-  .logo,
   nav {
-    display: inline-flex;
-  }
-
-  ul {
-    display: inline-flex;
-    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
     padding: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    a {
+      color: #444;
+    }
+
+    button {
+      position: absolute;
+      right: 15px;
+      z-index: 9999;
+      display: none;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button:focus {
+      outline: none;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: 100%;
+    }
+
+    ul {
+      flex-direction: row;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 3rem;
+
+      a {
+        padding: 1.3rem 0;
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgba(32, 32, 32, 1);
+        line-height: 1.375rem;
+      }
+
+      a.router-link-active {
+        border-bottom: 2px solid #1890ff;
+        color: #1890ff;
+      }
+    }
   }
+}
 
-  li {
-    display: inline-flex;
+@media (max-width: 768px) {
+  header {
+    padding: 0;
 
-    + li {
-      margin-left: 1rem;
+    nav {
+      padding: 0 15px;
+      background: #fff;
+      justify-content: center;
+
+      button {
+        display: block;
+      }
+
+      > div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        transform: translateY(-100%);
+        padding-bottom: 1.5rem;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(229, 229, 229, 0.5);
+
+        transition: transform ease-in-out 0.3s;
+      }
+
+      ul {
+        flex-direction: column;
+        padding-left: 1.5rem;
+
+        li {
+          width: 100%;
+          margin: 1rem 0;
+
+          a {
+            width: 100%;
+          }
+
+          a.router-link-active {
+            border-bottom: 0;
+            color: #3273dc !important;
+          }
+        }
+      }
+
+      > div.is-show {
+        transform: translateY(100%);
+      }
     }
   }
 }

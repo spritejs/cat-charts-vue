@@ -3,12 +3,26 @@ import Bar from './components/visuals/s-bar/'
 import Pie from './components/visuals/s-pie/'
 import Line from './components/visuals/s-line/'
 import Radar from './components/visuals/s-radar/'
+import Funnel from './components/visuals/s-funnel/'
+import Scatter from './components/visuals/s-scatter/'
+import Gauge from './components/visuals/s-gauge/'
 import Axis from './components/plugins/s-axis/'
-import Grid from './components/plugins/s-Grid/'
 import Tooltip from './components/plugins/s-Tooltip/'
 import Legend from './components/plugins/s-Legend/'
 import { bus } from './utils'
-const components = [Chart, Bar, Pie, Radar, Line, Axis, Grid, Tooltip, Legend]
+const components = [
+  Chart,
+  Bar,
+  Pie,
+  Radar,
+  Line,
+  Funnel,
+  Gauge,
+  Scatter,
+  Axis,
+  Tooltip,
+  Legend
+]
 
 components.map(component => {
   // 按需加载组件
@@ -42,8 +56,10 @@ export {
   Line,
   Radar,
   Pie,
+  Funnel,
+  Scatter,
+  Gauge,
   Axis,
-  Grid,
   Tooltip,
   Legend,
   install,

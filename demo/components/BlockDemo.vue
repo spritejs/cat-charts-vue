@@ -53,8 +53,8 @@ export default {
   mounted() {
     this.compile(this.code)
     Split([this.$refs['editor'], this.$refs['preview']], {
-        sizes: [50, 50]
-      })
+      sizes: [50, 50]
+    })
   },
   methods: {
     toggle() {
@@ -103,9 +103,7 @@ export default {
       heads.push(
         `<script src="https://s3.ssl.qhres.com/!f868948f/vue.min.js"><\/script>`
       )
-      heads.push(
-        '<style>html,body{height:100%;padding:0;margin:0}</style>'
-      )
+      heads.push('<style>html,body{height:100%;padding:0;margin:0}</style>')
       const scripts = []
       pkgs.forEach(pkg => {
         scripts.push(
@@ -132,7 +130,7 @@ export default {
         Vue.use(CatCharts);
         new Vue(component).$mount('#app')
       <\/script>`)
-
+      // console.log(scripts)
       this.preview = {
         head: heads.join('\n'),
         body: '<div id="app"></div>' + scripts.join('\n')
@@ -171,8 +169,8 @@ h2 {
   margin-top: 30px;
 }
 
-.block-demo  .editor,
-.block-demo  .preview {
+.block-demo .editor,
+.block-demo .preview {
   box-sizing: border-box;
   width: 100%;
   height: 100%;

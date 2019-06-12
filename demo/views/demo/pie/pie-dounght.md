@@ -1,20 +1,17 @@
-## 环图
+## Donut Chart 环图
 
 :::demo
 
 ```html
 <template>
-  <s-chart>
+  <s-chart :data="pieData" :data-fields="dataFields">
     <s-pie
       :attrs="attrs"
-      :data="pieData"
-      :data-fields="dataFields"
-      :css-text="text"
       :css-guideLine="true"
-      :css-guideText="true"
+      :css-guideText="{fontSize: '12px'}"
+      :css-sector="sectorStyle"
     />
-    <s-legend />
-    <s-tooltip :attrs="tooltipAttrs" />
+    <s-legend :attrs="legendAttrs" />
   </s-chart>
 </template>
 <script>
@@ -23,22 +20,53 @@
       return {
         attrs: {
           radius: 0.6,
-          innerRadius: 0.2
+          innerRadius: 0.4
         },
         pieData: [
-          { value: 3350, label: '直接访问' },
-          { value: 3100, label: '邮件营销' },
-          { value: 2340, label: '联盟广告' },
-          { value: 1350, label: '视频广告' },
-          { value: 1548, label: '搜索引擎' }
+          {
+            year: '2001',
+            population: 41.8
+          },
+          {
+            year: '2002',
+            population: 38
+          },
+          {
+            year: '2003',
+            population: 33.7
+          },
+          {
+            year: '2004',
+            population: 30.7
+          },
+          {
+            year: '2005',
+            population: 25.8
+          },
+          {
+            year: '2006',
+            population: 31.7
+          },
+          {
+            year: '2007',
+            population: 33
+          },
+          {
+            year: '2008',
+            population: 46
+          },
+          {
+            year: '2009',
+            population: 38.3
+          },
+          {
+            year: '2010',
+            population: 28
+          }
         ],
-        tooltipAttrs:{
-        	formatter: data => `${data.label} ${data.value}`
-        },
-        dataFields: { x: 'label', y: 'value' },
-        text: (attrs, data, i) => {
-          return { text: data.label }
-        }
+        dataFields: { row: 'year', value: 'population' },
+        sectorStyle: { lineWidth: 1, color: '#fff' },
+        legendAttrs: { orient: 'vertical', align: ['right', 'center'] }
       }
     }
   }

@@ -1,11 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Article from '../components/Article.vue'
 import demos from '../views/demo/routes.js'
 import plugins from '../views/plugin/routes.js'
 import homes from '../views/home/routes.js'
 
 Vue.use(Router)
+
+function withArticleContainer(parentRoutePath, routes) {
+  return {
+    template: '<Article :parentRoutePath="parentRoutePath" :routes="routes" />',
+    components: {
+      Article
+    },
+    data() {
+      return {
+        parentRoutePath,
+        routes
+      }
+    }
+  }
+}
 
 export default new Router({
   mode: 'hash',
@@ -17,24 +32,19 @@ export default new Router({
     {
       path: '/home',
       redirect: '/home/quickstart',
-      component: () => import('../views/home/index.vue'),
+      component: withArticleContainer('homes', homes),
       children: homes
     },
     {
       path: '/demo',
       redirect: '/demo/line',
-      component: () => import('../views/demo/index.vue'),
+      component: withArticleContainer('demo', demos),
       children: demos
     },
     {
       path: '/plugin',
-      component: () => import('../views/plugin/index.vue'),
+      component: withArticleContainer('plugin', plugins),
       children: plugins
-    },
-
-    {
-      path: '/json-editor',
-      component: () => import('../views/JSONEditor.vue')
     }
   ]
 })

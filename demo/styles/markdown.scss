@@ -114,12 +114,9 @@
 .markdown-body pre .tex .formula {
   color: #b3b3b3;
 }
-.markdown-body .nav-item a {
+.markdown-body a {
   text-decoration: none;
   color: #34495e;
-}
-.markdown-body a{
-  color: #3273dc;
 }
 .markdown-body img {
   border: none;
@@ -224,6 +221,9 @@
 }
 .markdown-body p {
   word-spacing: 0.05em;
+  font-size: 14px;
+  color: #5e6d82;
+  line-height: 1.5em;
 }
 .markdown-body a.button {
   padding: 0.75em 2em;
@@ -294,7 +294,7 @@
 .markdown-body figure {
   margin: 1.2em 0;
 }
-.markdown-body p,
+
 .markdown-body ul,
 .markdown-body ol {
   line-height: 1.6em;
@@ -315,17 +315,15 @@
   height: 60px;
 }
 .markdown-body p a {
-  color: #3273dc;
+  color: #42b983;
   font-weight: 500;
 }
 .markdown-body blockquote {
-  padding: 12px 24px 12px 30px;
-  border-left-width: 0.5rem;
-  border-left-style: solid;
-  margin: 1rem 0;
-
-  background-color: #f3f5f7;
-  border-color: #42b983;
+  padding: 8px 16px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  border-left: 5px solid #50bfff;
+  margin: 20px 0;
 }
 
 .markdown-body blockquote.warning {
@@ -335,8 +333,7 @@
 }
 
 .markdown-body blockquote p {
-  margin: 0;
-  padding: 0;
+  margin: 1rem 0;
 }
 
 .markdown-body pre {

@@ -1,14 +1,8 @@
 export default [
   {
-    title: 'API',
-    path: 'api',
-    component: () => import('./pie-api.md')
-  },
-  {
     title: '',
     path: '',
     redirect: 'default'
-    //component: () => import('./pie-default.md')
   },
   {
     title: '饼图',
@@ -16,14 +10,9 @@ export default [
     component: () => import('./pie-default.md')
   },
   {
-    title: '定义样式',
-    path: 'style',
-    component: () => import('./pie-style.md')
-  },
-  {
-    title: '数据更新',
-    path: 'update',
-    component: () => import('./pie-update.md')
+    title: '嵌套饼图',
+    path: 'compose',
+    component: () => import('./pie-nest.md')
   },
   {
     title: '环图',
@@ -31,13 +20,8 @@ export default [
     component: () => import('./pie-dounght.md')
   },
   {
-    title: '玫瑰图',
+    title: '南丁格尔玫瑰图',
     path: 'rose',
     component: () => import('./pie-rose.md')
-  },
-  {
-    title: '图表组合',
-    path: 'compose',
-    component: () => import('./pie-compose.md')
   }
 ]
