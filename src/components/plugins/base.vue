@@ -12,6 +12,7 @@ const pluginObject = {
  */
 export default {
   props: {
+    color: { type: Array, default: () => [] },
     attrs: { type: Object, default: () => {} }
   },
   data: () => {
@@ -27,7 +28,7 @@ export default {
       const Plug = pluginObject[this.$vnode.componentOptions.tag]
 
       this.plugin = new Plug(this.attrs)
-
+      this.plugin.color(this.color)
       Object.keys(this.$attrs).forEach(element => {
         if (element.indexOf('css-') === -1) {
           return

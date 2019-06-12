@@ -1,13 +1,13 @@
 import generateCommonPage from '../generateCommonPage'
 import LineRoutes from './line/routes'
-import AreaRoutes from './Area/routes'
-import FunnelRoutes from './Funnel/routes'
-import radarRoutes from './Radar/routes'
-import scatterRoutes from './Scatter/routes'
-import gaugeRoutes from './Gauge/routes'
-import PieRoutes from './Pie/routes'
-import BarRoutes from './Bar/routes'
-import ColumnRoutes from './Column/routes'
+import AreaRoutes from './area/routes'
+import FunnelRoutes from './funnel/routes'
+import RadarRoutes from './radar/routes'
+import ScatterRoutes from './scatter/routes'
+import GaugeRoutes from './gauge/routes'
+import PieRoutes from './pie/routes'
+import BarRoutes from './bar/routes'
+import ColumnRoutes from './column/routes'
 export default [
   {
     title: '',
@@ -47,14 +47,14 @@ export default [
   {
     title: '雷达图',
     path: 'radar',
-    component: generateCommonPage('/demo/radar/', radarRoutes),
-    children: radarRoutes
+    component: generateCommonPage('/demo/radar/', RadarRoutes),
+    children: RadarRoutes
   },
   {
     title: '散点图',
     path: 'scatter',
-    component: generateCommonPage('/demo/scatter/', scatterRoutes),
-    children: scatterRoutes
+    component: generateCommonPage('/demo/scatter/', ScatterRoutes),
+    children: ScatterRoutes
   },
   {
     title: '漏斗图',
@@ -65,7 +65,7 @@ export default [
   {
     title: '仪表盘',
     path: 'gauge',
-    component: generateCommonPage('/demo/gauge/', gaugeRoutes),
-    children: gaugeRoutes
+    component: generateCommonPage('/demo/gauge/', GaugeRoutes),
+    children: GaugeRoutes
   }
 ]

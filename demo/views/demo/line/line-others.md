@@ -1,6 +1,6 @@
 ## 其它
 
-#### 基础折线图
+#### 样式调整
 
 :::demo
 
@@ -19,7 +19,7 @@
     <s-legend
       :attrs="{align: ['center', 'bottom']}"
       :css-icon="{borderRadius:10}"
-      :css-text="{fontSize：12}"
+      :css-text="{fontSize:12}"
     />
     <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
@@ -76,19 +76,11 @@
 
 ```html
 <template>
-  <s-chart :data="lineData" :data-fields="dataFields">
-    <s-line
-      :data="lineData"
-      :data-fields="dataFields"
-      :css-point="pointStyle"
-    />
+  <s-chart :data="data" :data-fields="dataFields">
+    <s-line :attrs="{smooth:true}" />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-legend
-      :attrs="{align: ['center', 'bottom']}"
-      :css-icon="{borderRadius:10}"
-      :css-text="{fontSize：12}"
-    />
+    <s-legend :attrs="{align: ['center', 'bottom']}" />
     <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
 </template>
@@ -98,7 +90,6 @@
     data: function() {
       return {
         data: [],
-        attrs: {},
         lineData: [
           { product: '茶叶', year: '2016', sales: 81.2 },
           { product: '茶叶', year: '2017', sales: 121.2 },
@@ -128,7 +119,7 @@
           { product: '椰汁', year: '2018', sales: 31.2 }
         ],
         tooltipAttrs: {
-          formatter: data => `${data.city}-${data.month}-${data.value}`
+          formatter: data => `${data.product} ${data.year} ${data.sales}`
         },
         dataFields: { row: 'year', value: 'sales', text: 'product' }
       }
@@ -147,6 +138,57 @@
         }
         num++
         setTimeout(this.changeData, 5000)
+      }
+    }
+  }
+</script>
+```
+
+:::
+
+#### 多图融合
+
+:::demo
+
+```html
+<template>
+  <s-chart :data="lineData" :data-fields="dataFields">
+    <s-bar :attrs="{mouseDisabled:true}" />
+    <s-line :attrs="{axisGap:true}" :css-point="pointStyle" />
+    <s-axis :attrs="{orient:'left'}" />
+    <s-axis :attrs="{orient:'bottom'}" />
+    <s-legend :attrs="{align: ['center', 'bottom']}" />
+    <s-tooltip :attrs="tooltipAttrs" />
+  </s-chart>
+</template>
+<script>
+  export default {
+    data: function() {
+      return {
+        lineData: [
+          { product: '茶叶', year: '2016', sales: 81.2 },
+          { product: '茶叶', year: '2017', sales: 121.2 },
+          { product: '茶叶', year: '2018', sales: 41.2 },
+          { product: '牛奶', year: '2016', sales: 89.2 },
+          { product: '牛奶', year: '2017', sales: 50.6 },
+          { product: '牛奶', year: '2018', sales: 80.2 },
+          { product: '咖啡', year: '2016', sales: 35.2 },
+          { product: '咖啡', year: '2017', sales: 79.6 },
+          { product: '咖啡', year: '2018', sales: 61.2 },
+          { product: '椰汁', year: '2016', sales: 55.2 },
+          { product: '椰汁', year: '2017', sales: 69.6 },
+          { product: '椰汁', year: '2018', sales: 21.2 }
+        ],
+        tooltipAttrs: {
+          formatter: data => `${data.product} ${data.year} ${data.sales}`
+        },
+        dataFields: { row: 'year', value: 'sales', text: 'product' },
+        pointStyle: { color: '#fff' }
+      }
+    },
+    methods: {
+      chartRender() {
+        console.log('chartRender')
       }
     }
   }

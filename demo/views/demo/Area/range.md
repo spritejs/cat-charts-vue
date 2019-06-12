@@ -5,13 +5,17 @@
 ```html
 <template>
   <s-chart :data="data" :data-fields="dataFields">
-    <s-area :css-area="areaStyle" />
+    <s-area
+      :css-area="areaStyle"
+      :css-point="{fillColor:'transparent'}"
+      :css-point:hover="{color:'#fff'}"
+    />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend
       :attrs="{align: ['center', 'bottom']}"
       :css-icon="{borderRadius:10}"
-      :css-text="{fontSize：12}"
+      :css-text="{fontSize:12}"
     />
     <s-tooltip :attrs="tooltipAttrs" />
   </s-chart>
