@@ -76,7 +76,7 @@ export default {}
 header {
   position: relative;
   z-index: 100;
-  padding: 0 80px 0 10px;
+  padding: 10px 80px 10px 10px;
   height: 70px;
   line-height: 1.5;
   // background: #fdfdfd;
