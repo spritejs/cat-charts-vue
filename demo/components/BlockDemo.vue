@@ -116,7 +116,7 @@ export default {
         heads.push(`<style>${style.content}</style>`)
       })
       scripts.push(
-        `<script src="https://s3.ssl.qhres.com/!f868948f/spritejs.min.js"><\/script>`
+        `<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"><\/script>`
       )
       scripts.push(`<script src="./cat-charts.js"><\/script>`)
       scripts.push(`
