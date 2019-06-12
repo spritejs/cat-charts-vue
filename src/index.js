@@ -1,4 +1,5 @@
 import Chart from './components/s-chart/'
+import Area from './components/visuals/s-area/'
 import Bar from './components/visuals/s-bar/'
 import Pie from './components/visuals/s-pie/'
 import Line from './components/visuals/s-line/'
@@ -12,6 +13,7 @@ import Legend from './components/plugins/s-Legend/'
 import { bus } from './utils'
 const components = [
   Chart,
+  Area,
   Bar,
   Pie,
   Radar,
@@ -52,6 +54,7 @@ const version = '0.2.5'
 
 export {
   Chart,
+  Area,
   Bar,
   Line,
   Radar,

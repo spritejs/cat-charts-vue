@@ -11,7 +11,7 @@ export default [
   },
   {
     title: '嵌套饼图',
-    path: 'compose',
+    path: 'nest',
     component: () => import('./pie-nest.md')
   },
   {

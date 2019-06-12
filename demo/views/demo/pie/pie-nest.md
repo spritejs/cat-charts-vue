@@ -12,7 +12,7 @@
       :css-guideLine="true"
       :css-guideText="{fontSize: '12px'}"
     />
-    <s-legend />
+    <s-legend :color="legendColor" />
   </s-chart>
 </template>
 <script>
@@ -44,7 +44,19 @@
           '联盟广告',
           '视频广告'
         ],
-        dataFields: { row: 'name', value: 'value' }
+        dataFields: { row: 'name', value: 'value' },
+        legendColor: [
+          '#5982F6',
+          '#59CB74',
+          '#DA65CC',
+          '#FC6980',
+          '#47A1FF',
+          '#6CD3FF',
+          '#A2E5FF',
+          '#4DCCCB',
+          '#3FDDC7',
+          '#84E0BE'
+        ]
       }
     }
   }
