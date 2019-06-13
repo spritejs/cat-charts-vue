@@ -1,7 +1,13 @@
 <template>
   <header>
     <nav class="navbar">
-      <router-link class="navbar-brand" to="/">catcharts</router-link>
+      <router-link class="navbar-brand" to="/">
+        <img
+          src="https://p4.ssl.qhimg.com/d/inn/6e91b5223cfd/cat-charts.png"
+          height="30"
+          alt="qchart"
+        >
+      </router-link>
 
       <button @click="toggleShowMenu" class="navbar-toggler">
         <span>
@@ -80,10 +86,9 @@ export default {
 header {
   position: relative;
   z-index: 100;
-  padding: 0 40px;
+  padding: 0 40px 0 20px;
   height: 4rem;
   box-shadow: 0 2px 8px rgba(229, 229, 229, 0.5);
-
   nav {
     position: relative;
     width: 100%;

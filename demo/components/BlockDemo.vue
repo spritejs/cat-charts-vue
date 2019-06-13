@@ -1,18 +1,25 @@
 <template>
   <div ref="block" :class="['block-demo', isFullscreen ? 'block-demo--fixed' : '']">
-    <div class="editor">
+    <div class="preview" ref="preview">
+      <preview :value="preview"></preview>
+    </div>
+    <div class="editorArea" ref="editorArea">
       <div class="bock-demo__ctrl">
-        <button @click="fullscreen">{{ isFullscreen ? '还原' : '全屏' }}</button>
-        <!-- <button>复制</button> -->
-        <button @click="syncCode">运行</button>
+        <span title="运行" @click="syncCode" class="icon">
+          <img src="./play.svg" alt="运行">
+        </span>
+        <span v-if="!isFullscreen" title="全屏" @click="fullscreen" class="icon">
+          <img src="./full-screen.svg" alt="全屏">
+        </span>
+        <span v-if="isFullscreen" title="取消全屏" @click="fullscreen" class="icon">
+          <img src="./recovery.svg" alt="取消全屏">
+        </span>
+        <span @click="copyCode" class="icon">
+          <img src="./code-copy.svg" alt="复制代码">
+        </span>
       </div>
       <div class="bock-demo__code">
-        <div ref="editor">
-          <editor :source="source" class="panel" @change="updateCode"></editor>
-        </div>
-        <div ref="preview">
-          <preview :value="preview" class="panel"></preview>
-        </div>
+        <editor :source="source" ref="editor" @change="updateCode"></editor>
       </div>
     </div>
   </div>
@@ -26,6 +33,7 @@ import getImports from '../utils/get-imports'
 import getPkgs from '../utils/get-pkgs'
 import Split from 'split.js'
 import * as params from '../utils/params'
+import './iconfont/iconfont.css'
 
 export default {
   components: {
@@ -52,11 +60,22 @@ export default {
   created() {},
   mounted() {
     this.compile(this.code)
-    Split([this.$refs['editor'], this.$refs['preview']], {
+    Split([this.$refs['preview'], this.$refs['editorArea']], {
       sizes: [50, 50]
     })
   },
   methods: {
+    copyCode() {
+      let val = this.code
+      debugger
+      console.log(this.$refs['editor'])
+      let $text = this.$refs['editor'].$el
+      $text.value = val
+      $text.focus()
+      $text.select()
+      document.execCommand('copy')
+      alert('复制成功！')
+    },
     toggle() {
       this.visible = !this.visible
     },
@@ -146,13 +165,17 @@ h2 {
 }
 .block-demo {
   position: relative;
+  margin-top: 1.2em;
   box-sizing: border-box;
-  height: 500px;
+
+  height: 600px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  border: 1px solid #efefef;
+  border: 1px solid #edeff1;
   background: #fff;
+
+  font-size: 1.2rem;
 }
 
 .block-demo--fixed {
@@ -169,11 +192,17 @@ h2 {
   margin-top: 30px;
 }
 
-.block-demo .editor,
+.block-demo .editorArea,
 .block-demo .preview {
   box-sizing: border-box;
-  width: 100%;
+  width: 50%;
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  .block-demo > .preview {
+    width: 100%;
+  }
 }
 
 .block-demo > .preview {
@@ -183,35 +212,64 @@ h2 {
   overflow: hidden;
 }
 
+.editorArea {
+  background: #f8fafe;
+  border-left: 1px solid #edeff1;
+}
+
 .bock-demo__ctrl {
   height: 45px;
   padding: 0 15px;
   border-bottom: 1px solid #ddd;
-  text-align: left;
+  text-align: right;
+  background: #fff;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 }
-button {
-  line-height: 1.2;
-}
+
 .bock-demo__ctrl button + button {
   margin-left: 10px;
 }
+.block-demo .demo {
+  height: 100%;
+}
 
+.block-demo .demo iframe.chart-frame {
+  width: 100%;
+  height: 100%;
+}
+.block-demo + h4 {
+  margin-top: 0;
+  padding-top: 3.6rem;
+}
 .bock-demo__code {
   height: calc(100% - 46px);
-  display: flex;
-  flex-grow: 1;
 }
-.bock-demo__code > div {
-  width: 50%;
-}
-.bock-demo__code > div.editor {
-  border-right: 1px solid #ddd;
-}
+
+// .bock-demo__code > div.editor {
+//   border-right: 1px solid #ddd;
+// }
 
 .block-demo .demo {
   height: 100%;
+}
+.icon {
+  cursor: pointer;
+  opacity: 0.6;
+  font-size: 20px;
+  margin-left: 12px;
+}
+.icon:hover {
+  opacity: 1;
+}
+
+.copytxt {
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>

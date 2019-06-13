@@ -1,7 +1,5 @@
 <template>
-  <div class="editor">
-    <textarea ref="textarea" class="editor"></textarea>
-  </div>
+  <textarea ref="textarea" class="copytxt"></textarea>
 </template>
 
 <script>
@@ -55,7 +53,7 @@ export default {
         this.$emit('change', editor.getValue())
       })
     )
-
+    debugger
     let value
     // if (location.pathname !== '/') {
     //   value = await this.getFileContent(location.pathname.slice(1))
@@ -112,10 +110,22 @@ export default {
 }
 </script>
 
-<style scoped>
-.editor .CodeMirror {
-  border: 1px solid black;
-  height: 100%;
-  line-height: 1.2rem;
+<style>
+.CodeMirror {
+  height: 100% !important;
+  font-family: Menlo, Monaco, Consolas, Courier, monospace;
+  font-size: 14px;
+}
+.CodeMirror-gutters {
+  background-color: #f7f9fb;
+  border-right: none;
+}
+.copytxt {
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>

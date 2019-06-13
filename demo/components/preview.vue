@@ -1,7 +1,5 @@
 <template>
-  <div class="preview">
-    <div ref="iframe"></div>
-  </div>
+  <div ref="iframe"></div>
 </template>
 
 <script>
