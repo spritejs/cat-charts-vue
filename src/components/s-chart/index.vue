@@ -48,8 +48,7 @@ export default {
     this.chart = new Chart({
       container: this.$el,
       size: this.size,
-      pos: this.pos,
-      forceFit: this.forceFit
+      pos: this.pos
     })
     this.chart.source(this.data, this.dataFields)
     this.$listeners &&

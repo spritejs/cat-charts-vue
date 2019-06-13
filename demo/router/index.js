@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import Article from '../components/Article.vue'
 import demos from '../views/demo/routes.js'
 import plugins from '../views/plugin/routes.js'
-import homes from '../views/home/routes.js'
-
+import docs from '../views/doc/routes.js'
 Vue.use(Router)
 
 function withArticleContainer(parentRoutePath, routes) {
@@ -27,17 +26,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home/quickstart'
+      redirect: '/home'
     },
     {
       path: '/home',
-      redirect: '/home/quickstart',
-      component: withArticleContainer('homes', homes),
-      children: homes
+      component: () => import('../views/home/index.vue')
+    },
+    {
+      path: '/doc',
+      component: withArticleContainer('doc', docs),
+      children: docs
     },
     {
       path: '/demo',
-      redirect: '/demo/line',
       component: withArticleContainer('demo', demos),
       children: demos
     },
