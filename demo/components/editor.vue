@@ -53,7 +53,6 @@ export default {
         this.$emit('change', editor.getValue())
       })
     )
-    debugger
     let value
     // if (location.pathname !== '/') {
     //   value = await this.getFileContent(location.pathname.slice(1))

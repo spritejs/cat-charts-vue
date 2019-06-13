@@ -4,7 +4,7 @@
       <router-link class="navbar-brand" to="/">
         <img
           src="https://p4.ssl.qhimg.com/d/inn/6e91b5223cfd/cat-charts.png"
-          height="30"
+          height="40"
           alt="qchart"
         >
       </router-link>
@@ -101,7 +101,13 @@ header {
     a {
       color: #444;
     }
-
+    .img-logo {
+      height: 100%;
+      width: 180px;
+      position: relative;
+      pointer-events: none;
+      left: -4px;
+    }
     button {
       position: absolute;
       right: 15px;

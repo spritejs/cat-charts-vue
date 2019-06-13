@@ -33,7 +33,6 @@ import getImports from '../utils/get-imports'
 import getPkgs from '../utils/get-pkgs'
 import Split from 'split.js'
 import * as params from '../utils/params'
-import './iconfont/iconfont.css'
 
 export default {
   components: {
