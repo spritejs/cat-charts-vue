@@ -7,6 +7,10 @@
     <title>CatCharts</title>
     <link rel="stylesheet" href="https://s3.ssl.qhres.com/!81ae8bd7/vuep.css" />
     <style>
+      #app {
+        min-width: 400px;
+        min-height: 300px;
+      }
       @keyframes a {
         0%,
         to {
@@ -53,9 +57,11 @@
     <script src="https://s5.ssl.qhres.com/!f868948f/vuep.min.js"></script>
     <script src="https://s3.ssl.qhres.com/!f868948f/vue-router.js"></script>
     <script src="https://s3.ssl.qhres.com/!f868948f/spritejs.min.js"></script>
+    <script src="https://unpkg.com/@qcharts/core/lib/index.js"></script>
     <script src="https://s2.ssl.qhres.com/!f868948f/babel.min.js"></script>
+
     <a
-      href="https://github.com/spritejs/cat-charts"
+      href="https://github.com/spritejs/cat-charts-vue"
       class="github-corner"
       aria-label="View source on Github"
       ><svg viewBox="0 0 250 250" aria-hidden="true">
@@ -64,12 +70,12 @@
             <stop
               offset="0%"
               style="stop-color:rgb(31,123,241);
-              stop-opacity:1"
+            stop-opacity:1"
             />
             <stop
               offset="100%"
               style="stop-color:rgb(57,198,247);
-              stop-opacity:1"
+            stop-opacity:1"
             />
           </linearGradient>
         </defs>

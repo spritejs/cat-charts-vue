@@ -1,27 +1,28 @@
 <template>
   <div ref="block" :class="['block-demo', isFullscreen ? 'block-demo--fixed' : '']">
-    <div class="preview" ref="preview">
+    <div ref="preview" class="preview">
       <preview :value="preview"></preview>
     </div>
-    <div class="editorArea" ref="editorArea">
+    <div ref="editorArea" class="editorArea">
       <div class="bock-demo__ctrl">
-        <span title="运行" @click="syncCode" class="icon">
+        <span title="运行" class="icon" @click="syncCode">
           <img src="./play.svg" alt="运行">
         </span>
-        <span v-if="!isFullscreen" title="全屏" @click="fullscreen" class="icon">
+        <span v-if="!isFullscreen" title="全屏" class="icon" @click="fullscreen">
           <img src="./full-screen.svg" alt="全屏">
         </span>
-        <span v-if="isFullscreen" title="取消全屏" @click="fullscreen" class="icon">
+        <span v-if="isFullscreen" title="取消全屏" class="icon" @click="fullscreen">
           <img src="./recovery.svg" alt="取消全屏">
         </span>
-        <span @click="copyCode" class="icon">
+        <span class="icon" @click="copyCode">
           <img src="./code-copy.svg" alt="复制代码">
         </span>
       </div>
       <div class="bock-demo__code">
-        <editor :source="source" ref="editor" @change="updateCode"></editor>
+        <editor ref="editor" :source="source" @change="updateCode"></editor>
       </div>
     </div>
+    <textarea ref="copytxt" class="copytxt"></textarea>
   </div>
 </template>
 
@@ -66,8 +67,7 @@ export default {
   methods: {
     copyCode() {
       let val = this.code
-      console.log(this.$refs['editor'])
-      let $text = this.$refs['editor'].$el
+      let $text = this.$refs['copytxt']
       $text.value = val
       $text.focus()
       $text.select()
@@ -79,6 +79,9 @@ export default {
     },
     fullscreen() {
       this.isFullscreen = !this.isFullscreen
+      if (window.parent) {
+        window.parent.postMessage({ fullScreen: this.isFullscreen }, '*')
+      }
     },
     syncCode() {
       this.compile(this.code)
@@ -132,8 +135,12 @@ export default {
       styles.forEach(style => {
         heads.push(`<style>${style.content}</style>`)
       })
+
       scripts.push(
         `<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"><\/script>`
+      )
+      scripts.push(
+        `<script src="https://unpkg.com/@qcharts/core/lib/index.js"><\/script>`
       )
       scripts.push(`<script src="./cat-charts.js"><\/script>`)
       scripts.push(`
@@ -225,7 +232,9 @@ h2 {
   justify-content: flex-end;
   align-items: center;
 }
-
+.block-demo--fixed .bock-demo__ctrl {
+  padding-right: 88px;
+}
 .bock-demo__ctrl button + button {
   margin-left: 10px;
 }

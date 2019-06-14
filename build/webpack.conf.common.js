@@ -66,14 +66,14 @@ module.exports = {
   },
 
   externals: {
-    // spritejs: 'spritejs',
-    // '@qcharts/core': {
-    //   root: 'qcharts',
-    //   commonjs2: '@qcharts/core/lib/index.js',
-    //   commonjs: '@qcharts/core/lib/index.js',
-    //   amd: '@qcharts/core/lib/index.js',
-    //   umd: 'qcharts'
-    // },
+    spritejs: 'spritejs',
+    '@qcharts/core': {
+      root: 'qcharts',
+      commonjs2: '@qcharts/core/lib/index.js',
+      commonjs: '@qcharts/core/lib/index.js',
+      amd: '@qcharts/core/lib/index.js',
+      umd: 'qcharts'
+    },
     vue: 'Vue',
     vuep: 'Vuep',
     'vue-router': 'VueRouter'

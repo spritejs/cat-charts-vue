@@ -20,6 +20,24 @@ module.exports = merge(common, {
       {
         test: /\.(s)?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 3000,
+          name: 'static/img/[name].[ext]?[hash]'
+        }
+      },
+
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 3000,
+          name: 'static/fonts/[name].[hash].[ext]'
+        }
       }
     ]
   },
