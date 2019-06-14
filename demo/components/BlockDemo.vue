@@ -66,7 +66,6 @@ export default {
   methods: {
     copyCode() {
       let val = this.code
-      debugger
       console.log(this.$refs['editor'])
       let $text = this.$refs['editor'].$el
       $text.value = val

@@ -25,6 +25,15 @@ export default {
       this.$vnode.componentOptions.tag &&
       pluginObject[this.$vnode.componentOptions.tag]
     ) {
+     
+      if (this.attrs.target) {
+        for (let key of this.global.renderedVisuals.keys()) {
+          if (key === this.attrs.target) {
+            this.attrs.target = this.global.renderedVisuals.get(key)
+            break
+          }
+        }
+      }
       const Plug = pluginObject[this.$vnode.componentOptions.tag]
 
       this.plugin = new Plug(this.attrs)
