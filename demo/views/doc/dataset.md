@@ -113,9 +113,9 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
       :name="'bar1'"
       :attrs="attrs2"
     />
-    <s-legend :attrs="{layoutBy: 'cols',align: ['center','center']}"  />
-    <s-axis :attrs="{layoutBy: 'cols',target:'bar1', orient:'bottom'}" />
-     <s-axis :attrs="{layoutBy: 'cols',target:'bar1', orient:'left'}" :css-axis="false" :css-scale="false"/>
+    <s-legend :attrs="{layoutBy: 'col',align: ['center','center']}"  />
+    <s-axis :attrs="{layoutBy: 'col',target:'bar1', orient:'bottom'}" />
+     <s-axis :attrs="{layoutBy: 'col',target:'bar1', orient:'left'}" :css-axis="false" :css-scale="false"/>
   </s-chart>
 </template>
 <script>
@@ -126,7 +126,7 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
           size: ['80%', '30%']
         },
         attrs2: {
-          layoutBy: 'cols',
+          layoutBy: 'col',
           pos: ['10%', '60%'],
           size: ['80%', '30%']
         },
