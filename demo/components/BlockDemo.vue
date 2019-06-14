@@ -79,6 +79,9 @@ export default {
     },
     fullscreen() {
       this.isFullscreen = !this.isFullscreen
+      if(window.parent){
+        window.parent.postMessage({fullScreen:this.isFullscreen},'*');
+      }
     },
     syncCode() {
       this.compile(this.code)
