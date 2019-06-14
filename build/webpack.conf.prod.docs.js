@@ -11,7 +11,7 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, '../docs'),
     filename: '[name].js',
-    library: 'CatCharts',
+    library: 'CatChartsVue',
     libraryTarget: 'umd',
     chunkFilename: '[name].[hash:7].js',
   },
