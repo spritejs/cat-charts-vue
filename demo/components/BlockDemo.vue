@@ -22,6 +22,7 @@
         <editor ref="editor" :source="source" @change="updateCode"></editor>
       </div>
     </div>
+    <textarea ref="copytxt" class="copytxt"></textarea>
   </div>
 </template>
 
@@ -66,9 +67,7 @@ export default {
   methods: {
     copyCode() {
       let val = this.code
-      debugger
-      console.log(this.$refs['editor'])
-      let $text = this.$refs['editor'].$el
+      let $text = this.$refs['copytxt'];
       $text.value = val
       $text.focus()
       $text.select()
