@@ -11,6 +11,7 @@ import Axis from './components/plugins/s-axis/'
 import Tooltip from './components/plugins/s-Tooltip/'
 import Legend from './components/plugins/s-Legend/'
 import { bus } from './utils'
+import global from './components/global.vue'
 const components = [
   Chart,
   Area,
@@ -48,6 +49,7 @@ const install = Vue => {
     }
   })
   Vue.prototype[bus] = Bus //事件总线放在原型上
+  Vue.prototype.global = global
 }
 
 const version = '0.2.5'

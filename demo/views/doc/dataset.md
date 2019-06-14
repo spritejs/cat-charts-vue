@@ -8,7 +8,7 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
 
 `dataset` 需要设置数据源，同时需要指定 `row`、`value` 等特殊维度属性便可完成数据处理。
 
-:::demo hideEditor
+:::demo
 
 ```javascript
 <template>
@@ -104,25 +104,31 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
 
 ```javascript
 <template>
-  <s-chart :size="['80%', '30%']" :data="barData" :data-fields="dataFields">
-    <s-bar />
-    <s-axis :attrs="{orient:'left'}" />
+  <s-chart :data="barData" :data-fields="dataFields">
+    <s-bar :attrs="{size:['80%','30%']}"  />
+    <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-legend :attrs="{align: ['center', 'bottom']}" />
-  </s-chart>
-  <s-chart :pos="['10%', '60%']" :size="['80%', '30%']" :data="barData" :data-fields="dataFields">
-    <s-bar :attrs="attrs2" />
-    <s-axis :attrs="{orient:'left'}" />
-    <s-axis :attrs="{orient:'bottom'}" />
-    <s-legend :attrs="{align: ['center', 'bottom']}" />
+    <s-legend :attrs="{align: ['center','defualt']}"  />
+    <s-bar
+      :name="'bar1'"
+      :attrs="attrs2"
+    />
+    <s-legend :attrs="{layoutBy: 'cols',align: ['center','center']}"  />
+    <s-axis :attrs="{layoutBy: 'cols',target:'bar1', orient:'bottom'}" />
+     <s-axis :attrs="{layoutBy: 'cols',target:'bar1', orient:'left'}" :css-axis="false" :css-scale="false"/>
   </s-chart>
 </template>
 <script>
   export default {
     data: function() {
       return {
+        attrs1:{
+          size: ['80%', '30%']
+        },
         attrs2: {
-          layoutBy: 'col'
+          layoutBy: 'cols',
+          pos: ['10%', '60%'],
+          size: ['80%', '30%']
         },
         barData: [
           {
@@ -195,6 +201,7 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
     }
   }
 </script>
+
 ```
 
 :::

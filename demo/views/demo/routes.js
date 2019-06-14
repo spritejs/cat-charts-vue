@@ -12,7 +12,7 @@ export default [
   {
     title: '',
     path: '',
-    redirect: 'column'
+    redirect: 'line'
   },
   {
     title: '折线图',

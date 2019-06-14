@@ -67,7 +67,7 @@ export default {
   methods: {
     copyCode() {
       let val = this.code
-      let $text = this.$refs['copytxt'];
+      let $text = this.$refs['copytxt']
       $text.value = val
       $text.focus()
       $text.select()
@@ -79,8 +79,8 @@ export default {
     },
     fullscreen() {
       this.isFullscreen = !this.isFullscreen
-      if(window.parent){
-        window.parent.postMessage({fullScreen:this.isFullscreen},'*');
+      if (window.parent) {
+        window.parent.postMessage({ fullScreen: this.isFullscreen }, '*')
       }
     },
     syncCode() {
@@ -135,11 +135,11 @@ export default {
       styles.forEach(style => {
         heads.push(`<style>${style.content}</style>`)
       })
-      
+
       scripts.push(
         `<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"><\/script>`
       )
-       scripts.push(
+      scripts.push(
         `<script src="https://unpkg.com/@qcharts/core/lib/index.js"><\/script>`
       )
       scripts.push(`<script src="./cat-charts.js"><\/script>`)
@@ -232,7 +232,9 @@ h2 {
   justify-content: flex-end;
   align-items: center;
 }
-.block-demo--fixed .bock-demo__ctrl{padding-right:88px;}
+.block-demo--fixed .bock-demo__ctrl {
+  padding-right: 88px;
+}
 .bock-demo__ctrl button + button {
   margin-left: 10px;
 }

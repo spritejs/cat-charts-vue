@@ -7,6 +7,7 @@
           height="40"
           alt="qchart"
         >
+        Vue
       </router-link>
 
       <button @click="toggleShowMenu" class="navbar-toggler">

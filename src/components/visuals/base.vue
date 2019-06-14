@@ -10,6 +10,7 @@ import {
   Scatter
 } from '@qcharts/core'
 import { bus } from '../../utils'
+// import global from '../global.vue'
 const visualObject = {
   's-line': Line,
   's-bar': Bar,
@@ -28,7 +29,8 @@ export default {
   props: {
     color: { type: Array, default: () => [] },
     rows: { type: String | Array, default: null },
-    attrs: { type: Object, default: () => {} }
+    attrs: { type: Object, default: () => {} },
+    name: { type: String, default: '' }
   },
   data: () => {
     return {
@@ -51,6 +53,7 @@ export default {
       const Shape = visualObject[this.$vnode.componentOptions.tag]
 
       this.visual = new Shape(this.attrs)
+      // this.id && this.visual.id=1
       this.visual.color(this.color)
       Object.keys(this.$attrs).forEach(element => {
         if (element.indexOf('css-') === -1) {
@@ -65,6 +68,8 @@ export default {
             this.$vnode.componentOptions.listeners[element]
           )
         })
+
+      this.name && this.global.renderedVisuals.set(this.name, this.visual)
       this[bus].emit('addVisuals', { visual: this.visual, rows: this.rows })
     }
   }
