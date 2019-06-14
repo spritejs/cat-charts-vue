@@ -32,6 +32,7 @@ function getQueryString(name) {
   #app[data-from='clair']  > .page{margin:0;padding:0}
   #app[data-from='clair'] .side-menu{display:none}
   #app[data-from='clair'] ~ .github-corner{display:none}
+  #app[data-from='clair'] .block-demo--fixed .bock-demo__ctrl{padding-right:15px!important}
 </style>
 <style lang="scss">
 @import './styles/index.scss';
