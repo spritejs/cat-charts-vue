@@ -1,6 +1,6 @@
 ## 固定位置
 
-使用 `Tooltip.position` 可以固定 `tooltip` 的位置。
+使用 `Tooltip.pos` 可以固定 `tooltip` 的位置。
 
 :::demo
 
