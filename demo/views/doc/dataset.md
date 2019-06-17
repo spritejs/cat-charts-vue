@@ -108,7 +108,7 @@ qcharts 内置了 `数据集（dataset）` 用于单独管理数据，从而使�
     <s-bar :attrs="{size:['80%','30%']}"  />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
-    <s-legend :attrs="{align: ['center','defualt']}"  />
+    <s-legend :attrs="{align: ['center','default']}"  />
     <s-bar
       :name="'bar1'"
       :attrs="attrs2"

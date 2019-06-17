@@ -9,14 +9,14 @@ export default [
     redirect: 'api'
   },
   {
-    title: 'Chart 图表主体',
-    path: 'chart',
-    component: () => import('./chart.md')
+    title: '快速开始',
+    path: 'quickstart',
+    component: () => import('./quickstart.md')
   },
   {
-    title: 'Dataset 数据集',
-    path: 'dataset',
-    component: () => import('./dataset.md')
+    title: '图表简介',
+    path: 'introduction',
+    component: () => import('./introduction.md')
   },
   {
     title: 'API',

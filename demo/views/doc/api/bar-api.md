@@ -1,6 +1,6 @@
 ### 图表介绍
 
-Bar Chart, 柱状图、条形图。
+Column Char、Bar Chart, 柱状图和条形图定义方式均为`<s-bar/>`，可设置 attrs 中的 transpose 属性来决定绘制柱状图或者条形图。
 
 ### attrs
 
@@ -19,39 +19,90 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
 组件中可以自定义 css 属性的元素如下表：
 
-| 名称                   | 描述                      |
-| ---------------------- | ------------------------- |
-| backgroundpillar       | 背景柱子样式              |
-| backgroundpillar:hover | 鼠标 hover 时背景柱子样式 |
-| pillar                 | 柱子样式                  |
-| pillar:hover           | 鼠标 hover 时柱子样式     |
-| text                   | 文本样式                  |
-| text:hover             | 鼠标 hover 时文本样式     |
+| 名称                       | 描述                      |
+| -------------------------- | ------------------------- |
+| css-backgroundpillar       | 背景柱子样式              |
+| css-backgroundpillar:hover | 鼠标 hover 时背景柱子样式 |
+| css-pillar                 | 柱子样式                  |
+| css-pillar:hover           | 鼠标 hover 时柱子样式     |
+| css-text                   | 文本样式                  |
+| css-text:hover             | 鼠标 hover 时文本样式     |
 
 使用方法可在[样式调整 demo](#/demo/column/others)中查看，用法如下：
 
-style 设置方式可以是 Boolean、 obj 属性或者函数，例如：
+style 设置方式可以是 Boolean、 obj 属性或者函数，本利给出了`css-pillar`，`css-pillar:hover`，`css-text`三自定义样式例子
 
 ```javascript
-// 新建Bar组件
-const bar = new Bar()
-
-//设置true或false来隐藏组件元素
-//隐藏背景柱
-bar.style('backgroundpillar',false)
-
-//设置spritejs的attr属性来设置样式
-//设置鼠标移入柱子时样式
-bar.style('pillarHover',{fillColor：'#f00', opacity:'0.5'})
-
-//attrs为元素绘制属性，data为元素对应数据，i为元素序列
-bar.style('pillarHover', (attrs, data, i) => {
-    //将偶数序列的柱子设置圆角
-    if (i % 2 === 0) {
+<template>
+  <s-chart :data="data" :data-fields="dataFields">
+    <s-bar
+      :css-text="true"
+      :css-pillar="pillar"
+      :css-pillar:hover="pillarHover"
+    />
+  </s-chart>
+</template>
+<script>
+  export default {
+    data: function() {
       return {
-        borderRadius: 10
+        data: [
+          { value: 3350, label: '直接访问' },
+          { value: 1548, label: '搜索引擎' },
+          { value: 2340, label: '联盟广告' },
+          { value: 1350, label: '视频广告' },
+          { value: 3100, label: '邮件营销' }
+        ],
+        dataFields: { row: '*', value: 'value', text: 'label' },
+        text: (attrs, data, i) => {
+          let anchor = attrs.anchor || [0, 0]
+          let size = attrs.size
+          let pos = attrs.pos
+          return {
+            rotate: 0,
+            text: data.value,
+            anchor: [0.5, 1],
+            pos: [pos[0] + size[0] / 2, pos[1] - size[1]]
+          }
+        },
+        pillar: (attrs, d, i) => {
+          if (i % 2 === 0) {
+            return {
+              border: { width: 1 },
+              borderRadius: 20,
+              fillColor: {
+                vector: [0, 0, 0, 100],
+                colors: [
+                  { color: '#9861E5', offset: 0 },
+                  { color: '#ADDF84', offset: 1 }
+                ]
+              }
+            }
+          }
+          return {
+            border: { width: 1 },
+            opacity: 1.0,
+            fillColor: {
+              vector: [0, 0, 0, 100],
+              colors: [
+                { color: '#84E0BE', offset: 0 },
+                { color: '#FBD54A', offset: 1 }
+              ]
+            },
+            borderRadius: 20
+          }
+        },
+        pillarHover: (attrs, data, i) => {
+          if (i % 2 === 0) {
+            return {
+              borderRadius: 10
+            }
+          }
+          return { opacity: 0.5, fillColor: '#FC6980' }
+        }
       }
     }
-    return { opacity: 0.5, fillColor: 'blue' }
-  })
+  }
+</script>
+
 ```

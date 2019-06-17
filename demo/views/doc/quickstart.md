@@ -28,7 +28,7 @@ Vue.use(CatChartsVue)
 ```
 
 ```javascript
-// 通过cdn的方式使用CatCharts
+// 通过cdn的方式使用CatChartsVue
 Vue.use(CatChartsVue)
 ```
 
@@ -66,7 +66,7 @@ Vue.use(CatChartsVue)
           { date: '05-08', catgory: '图例一', sales: 65.2 }
         ],
         tooltipAttrs: {
-          formatter: data => `${data.city}-${data.month}-${data.value}`
+          formatter: data => `${data.data}-${data.catgory}-${data.sales}`
         },
         dataFields: {
           row: 'catgory',
