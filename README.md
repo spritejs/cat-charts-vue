@@ -2,11 +2,17 @@
 
 ### 特点
 
-CatChartsVue 是一个基于 <a target="_blank" href="https://www.spritejs.com">spritejs</a> , <a  target="_blank" href="https://www.npmjs.com/package/@qcharts/core">qcharts</a> 封装的 <a target="_blank" href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。 <a target="_blank" href="https://www.spritejs.com/cat-charts-vue/">→ 详细文档</a>
+CatChartsVue 是一个基于 <a target="_blank" href="https://www.spritejs.com">spritejs</a> , <a  target="_blank" href="https://www.spritejs.com/q-charts/">QCharts</a> 封装的 <a target="_blank" href="https://vuejs.org/">Vue</a> 图表库，可以让用户以组件的形式组合出各种图表。 <a target="_blank" href="https://www.spritejs.com/cat-charts-vue/">→ 详细文档</a>
+
+Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-demo">Quickstart</a>
 
 ### 如何使用
 
+<<<<<<< HEAD
 1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-demo">Quickstart</a>
+=======
+1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装
+>>>>>>> 30100d9cf1122287f11bdd6ef2153572a178e15d
 
 ```shell
 npm install cat-charts-vue --save
