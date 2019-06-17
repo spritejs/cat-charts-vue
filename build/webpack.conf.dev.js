@@ -13,7 +13,7 @@ module.exports = merge(common, {
   output: {
     path: path.join(__dirname, '../lib'),
     filename: '[name].js',
-    library: 'CatCharts',
+    library: 'CatChartsVue',
     libraryTarget: 'umd'
   },
   devServer: {

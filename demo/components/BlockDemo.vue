@@ -151,7 +151,7 @@ export default {
         component.template = component.template || ${JSON.stringify(
           template.content
         )}
-        Vue.use(CatCharts);
+        Vue.use(CatChartsVue);
         new Vue(component).$mount('#app')
       <\/script>`)
       // console.log(scripts)
