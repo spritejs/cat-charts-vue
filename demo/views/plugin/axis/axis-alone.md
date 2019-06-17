@@ -7,7 +7,7 @@
 ```javascript
 <template>
   <s-chart :data="lineData" :data-fields="dataFields">
-    <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
+    <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
   </s-chart>
 </template>

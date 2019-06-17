@@ -1,30 +1,30 @@
 ## 布局调整
 
-
 :::demo
 
 ```javascript
-const data = [2010, 2011, 2012]
-const { Chart, Legend } = qcharts
-
-const chart = new Chart({ container: '#app' })
-chart.source(data)
-
-const l1 = new Legend({ orient: 'vertical', align: ['left', 'top'] })
-const l2 = new Legend({ orient: 'vertical', align: ['left', 'center'] })
-const l3 = new Legend({ orient: 'vertical', align: ['left', 'bottom'] })
-const l4 = new Legend({ orient: 'vertical', align: ['center', 'top'] })
-const l5 = new Legend({ orient: 'vertical', align: ['center', 'center'] })
-const l6 = new Legend({ orient: 'vertical', align: ['center', 'bottom'] })
-const l7 = new Legend({ orient: 'vertical', align: ['right', 'top'] })
-const l8 = new Legend({ orient: 'vertical', align: ['right', 'center'] })
-const l9 = new Legend({ orient: 'vertical', align: ['right', 'bottom'] })
-
-const legends = [l1, l2, l3, l4, l5, l6, l7, l8, l9]
-
-chart.add(legends)
-
-chart.render()
+<template>
+  <s-chart :data="data">
+    <s-legend :attrs="{ orient: 'vertical', align: ['left', 'top'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['left', 'center'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['left', 'bottom'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['center', 'top'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['center', 'center'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['center', 'bottom'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['right', 'top'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['right', 'center'] }" />
+    <s-legend :attrs="{ orient: 'vertical', align: ['right', 'bottom'] }" />
+  </s-chart>
+</template>
+<script>
+  export default {
+    data: function() {
+      return {
+        data: [2010, 2011, 2012]
+      }
+    }
+  }
+</script>
 ```
 
 :::

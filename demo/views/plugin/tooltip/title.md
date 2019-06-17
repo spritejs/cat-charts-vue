@@ -5,23 +5,22 @@
 :::demo
 
 ```javascript
-const data = [1, 2, 3, 4, 5]
-
-const { Chart, Pie, Legend, Tooltip } = qcharts
-
-const chart = new Chart({
-  container: '#app',
-  size: ['100%', '100%']
-})
-
-chart.source(data)
-
-const pie = new Pie()
-
-const tooltip = new Tooltip({ title: '数字', formatter: d => d.value })
-
-chart.add([pie, tooltip])
-chart.render()
+<template>
+  <s-chart :data="data">
+    <s-pie />
+    <s-tooltip :attrs="attrs"/>
+  </s-chart>
+</template>
+<script>
+  export default {
+    data: function() {
+      return {
+        data: [1, 2, 3, 4, 5],
+        attrs: { title: '数字', formatter: d => d.value }
+      }
+    }
+  }
+</script>
 ```
 
 :::
@@ -29,28 +28,27 @@ chart.render()
 :::demo
 
 ```javascript
-const data = [1, 2, 3, 4, 5]
-
-const { Chart, Pie, Legend, Tooltip } = qcharts
-
-const chart = new Chart({
-  container: '#app',
-  size: ['100%', '100%']
-})
-
-chart.source(data)
-
-const pie = new Pie()
-
-const tooltip = new Tooltip({
-  title: d => {
-    return `数组 ${d[0].value}`
-  },
-  formatter: d => d.value
-})
-
-chart.add([pie, tooltip])
-chart.render()
+<template>
+  <s-chart :data="data">
+    <s-pie />
+    <s-tooltip :attrs="attrs"/>
+  </s-chart>
+</template>
+<script>
+  export default {
+    data: function() {
+      return {
+        data: [1, 2, 3, 4, 5],
+        attrs: {
+          title: d => {
+            return `数组 ${d[0].value}`
+          },
+          formatter: d => d.value
+        }
+      }
+    }
+  }
+</script>
 ```
 
 :::

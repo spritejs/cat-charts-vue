@@ -9,12 +9,6 @@ export default [
     path: 'default',
     component: () => import('./basic.md')
   },
-  // {
-  //   title: '位置调整',
-  //   path: 'position',
-  //   component: () => import('./position.md')
-  // },
-
   {
     title: '布局调整',
     path: 'layout',
@@ -32,10 +26,4 @@ export default [
     path: 'layout-vertical',
     component: () => import('./layout-vertical.md')
   }
-
-  // {
-  //   title: '自定义',
-  //   path: 'personalise',
-  //   component: () => import('./personalise.md')
-  // }
 ]
