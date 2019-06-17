@@ -8,11 +8,7 @@ Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-dem
 
 ### 如何使用
 
-<<<<<<< HEAD
 1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-demo">Quickstart</a>
-=======
-1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装
->>>>>>> 30100d9cf1122287f11bdd6ef2153572a178e15d
 
 ```shell
 npm install cat-charts-vue --save
