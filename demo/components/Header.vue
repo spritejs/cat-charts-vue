@@ -3,7 +3,7 @@
     <nav class="navbar">
       <router-link class="navbar-brand" to="/">
         <img
-          src="https://p4.ssl.qhimg.com/d/inn/8585376e1f91/cat-charts-vue.png"
+          src="https://p0.ssl.qhimg.com/d/inn/5c264e763dda/cat-charts-vue.png"
           height="40"
           alt="qchart"
         >

@@ -1,12 +1,12 @@
 import generateCommonPage from '../generateCommonPage'
-import apiRoutes from './api'
+import visualsRoutes from './visuals'
 import pluginsRoutes from './plugins'
 
 export default [
   {
     title: '',
     path: '',
-    redirect: 'api'
+    redirect: 'quickstart'
   },
   {
     title: '快速开始',
@@ -19,10 +19,10 @@ export default [
     component: () => import('./introduction.md')
   },
   {
-    title: 'API',
-    path: 'api',
-    component: generateCommonPage('/doc/api/', apiRoutes),
-    children: apiRoutes
+    title: 'Visuals',
+    path: 'visuals',
+    component: generateCommonPage('/doc/visuals/', visualsRoutes),
+    children: visualsRoutes
   },
 
   {

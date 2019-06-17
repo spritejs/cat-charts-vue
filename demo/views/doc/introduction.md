@@ -1,10 +1,12 @@
-## 图表介绍
+## Chart 图表主体
 
 CatChartsVue 基于 Vue 为用户封装了常用图表组件，方便用户来构建图表。
 
 ### 组件构成
 
-CatChartsVue 由图表 Chart，图表绘制部分 Visula，图表插件部分 Plugin 组成。其中 Chart 是容器，Visual 绘制图表主体，如饼图，折线图等，Plugin 为图表相关插件，如 axis，tooltip 等
+CatChartsVue 由图表 Chart，图表绘制部分 Visual，图表插件部分 Plugin 组成。其中 Chart 是容器，Visual 绘制图表主体，如饼图，折线图等，Plugin 为图表相关插件，如 axis，tooltip 等，如下图
+
+<p align="center"><img src="http://p6.qhimg.com/t0137055a27f367470b.png" alt="chart-structure" height="400"></p>
 
 | 名称   | 说明                                                                                                                                            | 其它 |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
