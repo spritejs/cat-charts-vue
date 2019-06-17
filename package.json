@@ -29,6 +29,7 @@
     "@emmetio/codemirror-plugin": "^0.5.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "babel-plugin-inline-package-json": "^2.0.0",
     "bootstrap": "^4.3.1",
     "codemirror": "^5.42.2",
     "copy-text-to-clipboard": "^1.0.4",

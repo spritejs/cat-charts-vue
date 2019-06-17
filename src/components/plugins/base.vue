@@ -25,8 +25,7 @@ export default {
       this.$vnode.componentOptions.tag &&
       pluginObject[this.$vnode.componentOptions.tag]
     ) {
-     
-      if (this.attrs.target) {
+      if (this.attrs && this.attrs.target) {
         for (let key of this.global.renderedVisuals.keys()) {
           if (key === this.attrs.target) {
             this.attrs.target = this.global.renderedVisuals.get(key)

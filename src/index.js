@@ -52,7 +52,8 @@ const install = Vue => {
   Vue.prototype.global = global
 }
 
-const version = '0.2.5'
+// eslint-disable-next-line no-undef
+const version = require('../package.json').version
 
 export {
   Chart,
