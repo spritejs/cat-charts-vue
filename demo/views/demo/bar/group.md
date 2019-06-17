@@ -5,7 +5,7 @@
 ```html
 <template>
   <s-chart :data="groupData" :data-fields="dataFields">
-    <s-bar :attrs="attrs" :css-text="true" />
+    <s-bar :attrs="attrs" />
     <s-axis :attrs="{orient:'left'}" :css-grid="false" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />

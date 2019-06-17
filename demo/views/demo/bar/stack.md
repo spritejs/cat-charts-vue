@@ -103,7 +103,7 @@
           }
         ],
         tooltipAttrs: {
-          formatter: data => `${data.label} ${data.value}`
+          formatter: data => `${data.type} ${data.value}`
         },
         dataFields: { row: 'type', value: 'value', text: 'data' }
       }

@@ -5,7 +5,7 @@
 ```html
 <template>
   <s-chart :data="data" :data-fields="dataFields">
-    <s-bar :attrs="attrs" :css-text="true" />
+    <s-bar :attrs="attrs" />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />
