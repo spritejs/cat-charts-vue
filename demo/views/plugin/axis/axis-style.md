@@ -1,54 +1,56 @@
 ## 基础坐标轴
 
-
 :::demo 基础坐标
 
-```html
-<template>
-  <s-chart ref="abc">
-    <s-line :attrs="attrs" :data="lineData" :data-fields="dataFields" />
-    <s-axis :attrs="{orient:'left'}" />
-    <s-axis :css-label="cssLabel" :css-scale="cssScale" :css-axis="cssAxis" :attrs="{orient:'bottom'}" />
-  </s-chart>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        attrs: {
-          padding: [80, 30, 50, 50]
-        },
-        cssAxis:{fillColor:'#0ff'},
-        cssLabel:function(attrs,data,index){
-          if(index % 2 ==0 ){
-            return {rotate:45,anchor:[0,0],color:'#f00'}
-          }else{
-            return {color:'#0ff'}
-          }
-        },
-        cssScale:function(attrs,data,index){
-          if(index % 2 ==0 ){
-            return {fillColor:'#f00'}
-          }else{
-            return {fillColor:'#f0f'}
-          }
-        },
-        lineData: [
-          { month: 'Jan', city: 'London', value: 3.9 },
-          { month: 'Feb', city: 'London', value: 4.2 },
-          { month: 'Mar', city: 'London', value: 5.7 },
-          { month: 'Apr', city: 'London', value: 8.5 },
-          { month: 'May', city: 'London', value: 11.9 },
-          { month: 'Jun', city: 'London', value: 15.2 }
-        ],
-        dataFields: {
-          x: 'month',
-          y: 'value'
+```javascript
+const data = [
+  { month: 'Jan', city: 'London', value: 3.9 },
+  { month: 'Feb', city: 'London', value: 4.2 },
+  { month: 'Mar', city: 'London', value: 5.7 },
+  { month: 'Apr', city: 'London', value: 8.5 },
+  { month: 'May', city: 'London', value: 11.9 },
+  { month: 'Jun', city: 'London', value: 15.2 }
+]
+
+const { Chart, Axis ,Line } = qcharts
+
+const chart = new Chart({
+  container: '#app',
+  size: ['100%', '100%']
+}).source(data, {
+  row: 'city',
+  value: 'value',
+  text: 'month'
+})
+
+const line = new Line()
+
+let xAxis = new Axis({ })
+.style('label',function(attrs,data,i){
+	if(i%2 === 0){
+    	return false
+    }else{
+      if(data.text.indexOf('A')===0){
+        return {
+          rotate:45,
+          translate:[-5,-5],
+          anchor:[0,0],
+          color:'#00f'
         }
+      }else{
+        return {color:'#f00'}
       }
     }
-  }
-</script>
+})
+.style('scale',function(attrs,data,i){
+	if(i%2 === 0){
+    	return false
+    }
+})
+let yAxis = new Axis({ orient: 'left' })
+
+chart.add([line,xAxis,yAxis])
+chart.render()
 ```
 
 :::

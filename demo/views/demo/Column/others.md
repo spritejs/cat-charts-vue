@@ -365,7 +365,6 @@
       this.data = this.barData
       setTimeout(this.changeData, 5000)
     },
-    mounted() {},
     methods: {
       update(data) {},
       changeData() {

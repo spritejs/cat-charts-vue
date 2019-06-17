@@ -36,11 +36,6 @@
         dataFields: { row: 'catgory', value: 'sales', text: 'date' },
         pointStyle: { color: '#fff' }
       }
-    },
-    methods: {
-      chartRender() {
-        console.log('chartRender')
-      }
     }
   }
 </script>

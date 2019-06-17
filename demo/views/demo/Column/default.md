@@ -4,7 +4,7 @@
 
 ```html
 <template>
-  <s-chart :data="barData" :data-fields="dataFields" @rendered="chartRender">
+  <s-chart :data="barData" :data-fields="dataFields">
     <s-bar :css-pillar="barStyle" />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
@@ -32,11 +32,6 @@
         dataFields: { row: '*', value: 'value', text: 'label' },
         barStyle: { fillColor: '#47A1FF' },
         legendText: { text: '图例一' }
-      }
-    },
-    methods: {
-      chartRender() {
-        console.log('chartRender')
       }
     }
   }

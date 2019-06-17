@@ -2,7 +2,7 @@
 
 Area Chart, 面积图。
 
-### attrs
+### attrs 属性
 
 attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 
@@ -28,40 +28,4 @@ attrs 包含若干布局属性，将这些属性放入 Object 对象传入组件
 | css-point       | 点样式                            |
 | css-point:hover | 鼠标 hover 时点样式               |
 
-下例使用三个 style 属性，分别为`css-area`，`css-point`，`css-point:hover`
-
-```javascript
-<template>
-  <s-chart :data="data" :data-fields="dataFields">
-    <s-area
-      :css-area="areaStyle"
-      :css-point="{fillColor:'transparent'}"
-      :css-point:hover="{color:'#fff'}"
-    />
-  </s-chart>
-</template>
-<script>
-  export default {
-    data: function() {
-      return {
-        data: [
-          { date: '05-01', category: '图例一', sales: 15.2 },
-          { date: '05-02', category: '图例一', sales: 39.2 },
-          { date: '05-03', category: '图例一', sales: 31.2 },
-          { date: '05-01', category: '图例二', sales: 10.2 },
-          { date: '05-02', category: '图例二', sales: 30.2 },
-          { date: '05-03', category: '图例二', sales: 25.2 }
-        ],
-        dataFields: { row: 'category', value: 'sales', text: 'date' },
-        areaStyle: function(attrs, data, i) {
-          if (i === 0) {
-            return { fillColor: 'transparent' }
-          } else if (i === 1) {
-            return { fillColor: 'rgba(0,0,0,0.1)' }
-          }
-        }
-      }
-    }
-  }
-</script>
-```
+使用方法可在[样式调整 demo](#/demo/area/others)中查看

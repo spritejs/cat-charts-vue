@@ -2,12 +2,7 @@ export default [
   {
     title: '',
     path: '',
-    redirect:'default'
-  },
-  {
-    title: 'API',
-    path: 'api',
-    component: () => import('./axis-api.md')
+    redirect: 'default'
   },
   {
     title: '基础坐标轴',

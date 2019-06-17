@@ -7,7 +7,7 @@ export default [
   {
     title: '饼图',
     path: 'pie',
-    component: () => import('./Pie.md')
+    component: () => import('./pie.md')
   },
   {
     title: '折线图',
@@ -43,6 +43,6 @@ export default [
   {
     title: '仪表盘',
     path: 'gauge',
-    component: () => import('./Gauge.md')
+    component: () => import('./gauge.md')
   }
 ]

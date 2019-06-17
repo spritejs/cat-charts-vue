@@ -2,7 +2,7 @@
 
 Pie， 饼图。
 
-### attrs
+### attrs 属性
 
 | 属性名           | 类型    | 默认值           | 描述                                 |
 | ---------------- | ------- | ---------------- | ------------------------------------ |
@@ -16,22 +16,17 @@ Pie， 饼图。
 | translateOnClick | Boolean | `true`           | 控制扇形被点击时是否移动             |
 | rose             | Boolean | `false`          | 是否渲染玫瑰图                       |
 
-### style
-
-```javascript
-const pie = new Pie()
-pie.style('text', { color: '#fff' }
-```
+### style 属性
 
 组件中可以自定义 css 属性的元素如下表：
 
-| 名称            | 描述                     |
-| --------------- | ------------------------ |
-| sector          | 扇形样式                 |
-| sector:hover    | 鼠标经过时扇形样式       |
-| text            | 扇形上文字样式           |
-| text:hover      | 鼠标经过时扇形上文字样式 |
-| guideLine       | 指导线样式               |
-| guideLine:hover | 鼠标经过时指导线样式     |
-| guideText       | 指导文字样式             |
-| guideText:hover | 鼠标经过时指导文字样式   |
+| 名称                | 描述                     |
+| ------------------- | ------------------------ |
+| css-sector          | 扇形样式                 |
+| css-sector:hover    | 鼠标经过时扇形样式       |
+| css-text            | 扇形上文字样式           |
+| css-text:hover      | 鼠标经过时扇形上文字样式 |
+| css-guideLine       | 指导线样式               |
+| css-guideLine:hover | 鼠标经过时指导线样式     |
+| css-guideText       | 指导文字样式             |
+| css-guideText:hover | 鼠标经过时指导文字样式   |

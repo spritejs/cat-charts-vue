@@ -3,7 +3,7 @@
 散点图根据数据的 x,y 确定散点的位置，气泡图是散点图的一种扩展，气泡图相较于散点图多一个维度，通过 **areaField** 字段可设置气泡的大小，默认为 areaField 值的大小，也可设置
 **areaRange** 将 areaField 的值进行线性映射。气泡图还可以通过 **labelField** 字段来设置显示的 label 。
 
-### attrs
+### attrs 属性
 
 | 属性          | 说明                                                      | 类型    | 默认值 |
 | ------------- | --------------------------------------------------------- | ------- | ------ |
@@ -13,12 +13,12 @@
 | showGuideLine | hover 时的辅助线,默认不显示辅助线                         | Boolean | false  |
 | layoutWay     | 坐标轴的相关属性                                          | Object  | null   |
 
-### 可设置 style 名称
+### style 属性
 
-| 名称        | 说明                |     |
-| ----------- | ------------------- | --- |
-| point       | 点的样式            |     |
-| point:hover | 点 hover 样式       |     |
-| label       | label 样式          |     |
-| label:hover | label 的 hover 样式 |     |
-| guideline   | 指导线样式          |     |
+| 名称            | 说明                |     |
+| --------------- | ------------------- | --- |
+| css-point       | 点的样式            |     |
+| css-point:hover | 点 hover 样式       |     |
+| css-label       | label 样式          |     |
+| css-label:hover | label 的 hover 样式 |     |
+| css-guideline   | 指导线样式          |     |

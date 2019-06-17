@@ -1,10 +1,5 @@
 export default [
   {
-    title: 'API',
-    path: 'API',
-    component: () => import('./api.md')
-  },
-  {
     title: '',
     path: '',
     redirect: 'default'
@@ -13,6 +8,11 @@ export default [
     title: '基本使用',
     path: 'default',
     component: () => import('./basic.md')
+  },
+  {
+    title: '标题设置',
+    path: 'title',
+    component: () => import('./title.md')
   },
   {
     title: '位置固定',

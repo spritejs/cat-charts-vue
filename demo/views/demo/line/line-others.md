@@ -185,11 +185,6 @@
         dataFields: { row: 'year', value: 'sales', text: 'product' },
         pointStyle: { color: '#fff' }
       }
-    },
-    methods: {
-      chartRender() {
-        console.log('chartRender')
-      }
     }
   }
 </script>

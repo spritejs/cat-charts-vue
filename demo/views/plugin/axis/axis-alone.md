@@ -1,12 +1,13 @@
 ## 基础坐标轴
 
+坐标轴组件会自己根据 chart 的 source 数据进行 layout 计算，并且进行默认布局，也会根据 chart 中的 visual 进行适配
 
 :::demo 基础坐标
 
-```html
+```javascript
 <template>
-  <s-chart ref="chart">
-    <s-axis :attrs="{orient:'left'}" />
+  <s-chart :data="lineData" :data-fields="dataFields">
+    <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
   </s-chart>
 </template>
@@ -14,9 +15,6 @@
   export default {
     data: function() {
       return {
-        attrs: {
-          padding: [80, 30, 50, 50]
-        },
         lineData: [
           { month: 'Jan', city: 'London', value: 3.9 },
           { month: 'Feb', city: 'London', value: 4.2 },
@@ -25,19 +23,12 @@
           { month: 'May', city: 'London', value: 11.9 },
           { month: 'Jun', city: 'London', value: 15.2 }
         ],
-        dataFields: {
-          x: 'month',
-          y: 'value'
-        }
+        dataFields: { row: 'city', value: 'value', text: 'month' }
       }
-    },
-    mounted(){
-      let chart = this.$refs['chart'].chart;
-      let padding = [60,30,30,50];
-      let scales = [{label: "Jan", offset: "0%"},{label: "Apr", offset: "60%"},{label: "Jun", offset: "100%"}];
-      chart.emit('axis:render', {orient:'bottom',pos:[100,100],size:[600,300],scales});
-      chart.emit('axis:render', {orient:'left',pos:[100,100],size:[600,300],scales});
     }
   }
 </script>
+
 ```
+
+:::

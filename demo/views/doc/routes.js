@@ -26,9 +26,9 @@ export default [
   },
 
   {
-    title: 'Plugin',
-    path: 'plugin',
-    component: generateCommonPage('/doc/plugin/', pluginsRoutes),
+    title: 'Plugins',
+    path: 'plugins',
+    component: generateCommonPage('/doc/plugins/', pluginsRoutes),
     children: pluginsRoutes
   }
 
