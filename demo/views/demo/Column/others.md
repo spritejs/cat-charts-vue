@@ -107,7 +107,7 @@
 ```html
 <template>
   <s-chart :data="data" :data-fields="dataFields">
-    <s-bar :css-text="text" />
+    <s-bar />
     <s-axis :attrs="{orient:'left'}" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />
