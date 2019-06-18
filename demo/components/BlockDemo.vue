@@ -164,7 +164,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 h2 {
   margin-bottom: 0;
 }
@@ -186,9 +186,9 @@ h2 {
 .gutter {
   background: #efefef00;
   cursor: col-resize;
-  position:relative;
+  position: relative;
   z-index: 100;
-  left:5px;
+  left: 5px;
 }
 
 .block-demo--fixed {
