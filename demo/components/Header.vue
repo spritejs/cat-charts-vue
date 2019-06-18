@@ -9,7 +9,7 @@
         >
       </router-link>
 
-      <button @click="toggleShowMenu" class="navbar-toggler">
+      <button class="navbar-toggler" @click="toggleShowMenu">
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
       </button>
 
       <div :class="showMenu ? 'is-show' : ''">
-        <Search/>
+        <Search />
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/home">首页</router-link>
@@ -62,15 +62,15 @@ export default {
     Search
   },
 
-  watch: {
-    $route() {
-      this.showMenu = false
-    }
-  },
-
   data() {
     return {
       showMenu: false
+    }
+  },
+
+  watch: {
+    $route() {
+      this.showMenu = false
     }
   },
 
@@ -165,6 +165,7 @@ header {
 
       button {
         display: block;
+        left:15px;
       }
 
       > div {
