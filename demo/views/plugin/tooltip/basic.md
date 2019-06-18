@@ -1,7 +1,5 @@
 ## Tooltip
 
-当实例化 `chart` 后，向 `chart` 添加 `Tooltip` 插件即可，`chart.add(new Tooltip())`。
-
 :::demo
 
 ```javascript
