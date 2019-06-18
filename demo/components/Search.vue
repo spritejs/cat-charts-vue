@@ -1,20 +1,24 @@
 <template>
   <div class="search-box">
-    <input type="text"
-           v-model="query"
-           @blur="reset"
+    <input v-model="query"
+           type="text"
            placeholder="搜索组件.."
-           @keyup.enter="go(null)">
+           @blur="reset"
+           @keyup.enter="go(null)"
+    >
     <transition name="fade">
       <ul v-show="suggestions.length > 0"
+          class="suggestions"
           @mouseleave="blur"
-          class="suggestions">
+      >
         <li v-for="(s, i) in suggestions"
             :key="'suggestion' + i"
             @mouseenter="focus(i)"
-            @mousedown="go(i)">
+            @mousedown="go(i)"
+        >
           <a :href="s.path"
-             @click.prevent>{{ s.title }}</a>
+             @click.prevent
+          >{{ s.title }}</a>
         </li>
       </ul>
     </transition>
@@ -110,7 +114,7 @@ export default {
 .search-box {
   position: relative;
   display: inline-block;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 0 64px;
 }
 
 .search-box input {
