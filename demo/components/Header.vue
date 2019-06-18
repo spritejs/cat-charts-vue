@@ -166,6 +166,7 @@ header {
       button {
         display: block;
         left:15px;
+        right:auto;
       }
 
       > div {
