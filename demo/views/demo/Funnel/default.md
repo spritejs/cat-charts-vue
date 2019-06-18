@@ -20,8 +20,8 @@
     data: function() {
       return {
         attrs: {
-          size: ['50%', '70%'],
-          pos: ['20%', '20%'],
+          size: ['50%', '80%'],
+          pos: ['25%', '10%'],
           align: 'center',
           formatter: d => `${d.value}`
         },

@@ -183,6 +183,14 @@ h2 {
   font-size: 1.2rem;
 }
 
+.gutter {
+  background: #efefef00;
+  cursor: col-resize;
+  position:relative;
+  z-index: 100;
+  left:5px;
+}
+
 .block-demo--fixed {
   position: fixed;
   top: 0;

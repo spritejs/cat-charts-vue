@@ -11,6 +11,7 @@
       :css-guideText="true"
       :css-sector="{lineWidth: 1, color: '#fff'}"
     />
+    <s-legend :attrs="legendAttrs" />
   </s-chart>
 </template>
 <script>
@@ -102,7 +103,8 @@
             population: 41
           }
         ],
-        dataFields: { row: 'year', value: 'population' }
+        dataFields: { row: 'year', value: 'population' },
+        legendAttrs: { orient: 'vertical', align: ['right', 'center'] }
       }
     }
   }
