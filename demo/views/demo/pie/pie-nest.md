@@ -18,7 +18,12 @@
       :css-guideLine="true"
       :css-guideText="{fontSize: '12px'}"
     />
-    <s-legend :color="legendColor" :attrs="legendAttrs" />
+    <s-legend
+      :color="legendColor"
+      :attrs="legendAttrs"
+      :css-icon="legendIconStyle"
+      :css-text="legendTextStyle"
+    />
   </s-chart>
 </template>
 <script>
@@ -42,10 +47,15 @@
           { value: 3450, name: '图例9' },
           { value: 2750, name: '图例10' }
         ],
-        attrs: { radius: 0.5, size: ['80%', '100%'] },
+        attrs: { radius: 0.4, size: ['80%', '100%'], pos: [0, 0] },
         rows1: ['图例一', '图例二', '图例三', '图例四'],
         pieColor: ['#5982F6', '#59CB74', '#DA65CC', '#FC6980'],
-        attrs2: { innerRadius: 0.6, radius: 0.8, size: ['80%', '100%'] },
+        attrs2: {
+          innerRadius: 0.5,
+          radius: 0.7,
+          size: ['80%', '100%'],
+          pos: [0, 0]
+        },
         rows2: [
           '图例1',
           '图例2',
@@ -88,7 +98,13 @@
           '#E37474'
         ],
         legendAttrs: { orient: 'vertical', align: ['right', 'center'] },
-        textStyle: attrs => ({ color: '#fff', text: attrs.name })
+        textStyle: attrs => ({ color: '#fff', text: attrs.name }),
+        legendIconStyle: (attrs, d, i) => ({
+          marginTop: i > 0 ? 10 : 0
+        }),
+        legendTextStyle: (attrs, d, i) => ({
+          marginTop: i > 0 ? 10 : 0
+        })
       }
     }
   }
