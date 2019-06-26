@@ -5,14 +5,19 @@
 ```html
 <template>
   <s-chart :data="pieData" :data-fields="dataFields">
-    <s-pie :attrs="attrs" :rows="rows1" :color="pieColor" />
+    <s-pie
+      :attrs="attrs"
+      :rows="rows1"
+      :color="pieColor"
+      :css-text="{color:'#fff'}"
+    />
     <s-pie
       :attrs="attrs2"
       :rows="rows2"
       :css-guideLine="true"
       :css-guideText="{fontSize: '12px'}"
     />
-    <s-legend :color="legendColor" />
+    <s-legend :color="legendColor" :attrs="legendAttrs" />
   </s-chart>
 </template>
 <script>
@@ -56,7 +61,8 @@
           '#4DCCCB',
           '#3FDDC7',
           '#84E0BE'
-        ]
+        ],
+        legendAttrs: { orient: 'vertical', align: ['right', 'center'] }
       }
     }
   }
