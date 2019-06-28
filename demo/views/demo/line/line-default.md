@@ -34,7 +34,7 @@
           formatter: data => `${data.date} ${data.sales}`
         },
         dataFields: { row: 'catgory', value: 'sales', text: 'date' },
-        pointStyle: { color: '#fff' }
+        pointStyle: { strokeColor: '#fff' }
       }
     }
   }

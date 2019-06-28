@@ -7,8 +7,8 @@
   <s-chart :data="data" :data-fields="dataFields">
     <s-area
       :css-area="areaStyle"
-      :css-point="{fillColor:'transparent'}"
-      :css-point:hover="{color:'#fff'}"
+      :css-point="{fillColor:'transparent',strokeColor:'transparent'}"
+      :css-point:hover="{strokeColor:'#fff'}"
     />
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />

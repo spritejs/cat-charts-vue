@@ -54,6 +54,7 @@
           height:60px;
         }
       }
+      .none{display:none}
     </style>
   </head>
 
@@ -69,7 +70,7 @@
 
     <a
       href="https://github.com/spritejs/cat-charts-vue"
-      class="github-corner"
+      class="none github-corner"
       aria-label="View source on Github"
       ><svg viewBox="0 0 250 250" aria-hidden="true">
         <defs>
@@ -102,5 +103,10 @@
           class="octo-body"
         ></path></svg
     ></a>
+    <script>
+      document.body.onload = function(){
+        document.querySelector('.github-corner').classList.remove('none')
+      }
+    </script>
   </body>
 </html>

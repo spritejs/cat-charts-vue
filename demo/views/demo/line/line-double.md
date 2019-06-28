@@ -53,7 +53,7 @@
           value: 'sales',
           text: 'date'
         },
-        pointStyle: { color: '#fff' }
+        pointStyle: { strokeColor: '#fff' }
       }
     }
   }

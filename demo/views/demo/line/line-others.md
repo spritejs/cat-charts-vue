@@ -51,7 +51,7 @@
           value: 'sales',
           text: 'product'
         },
-        pointStyle: { pointType: 'star', size: 8 },
+        pointStyle: { pointType: 'star', size: 8,strokeColor:'transparent' },
         pointHoverStyle: function(attrs, data, i, j) {
           //设置symbol样式
           if (data.sales > 60) {
@@ -77,7 +77,7 @@
 ```html
 <template>
   <s-chart :data="data" :data-fields="dataFields">
-    <s-line :attrs="{smooth:true}" />
+    <s-line :attrs="{smooth:true}" :css-point="{strokeColor:'transparent'}"/>
     <s-axis :attrs="{orient:'left'}" :css-axis="false" :css-scale="false" />
     <s-axis :attrs="{orient:'bottom'}" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />
@@ -183,7 +183,7 @@
           formatter: data => `${data.product} ${data.year} ${data.sales}`
         },
         dataFields: { row: 'year', value: 'sales', text: 'product' },
-        pointStyle: { color: '#fff' }
+        pointStyle: { strokeColor: '#fff' }
       }
     }
   }
