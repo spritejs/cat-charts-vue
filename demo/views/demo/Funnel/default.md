@@ -10,6 +10,7 @@
       :css-guideLine="true"
       :css-guideText="true"
       :css-polygon:hover="{opacity:0.5}"
+      :css-polygon="{ strokeColor:'transparent'}"
     />
     <s-tooltip :attrs="tooltipAttrs" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />

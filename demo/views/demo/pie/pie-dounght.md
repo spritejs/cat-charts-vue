@@ -65,7 +65,7 @@
           }
         ],
         dataFields: { row: 'year', value: 'population' },
-        sectorStyle: { lineWidth: 1, color: '#fff' },
+        sectorStyle: { lineWidth: 1, strokeColor: '#fff', },
         legendAttrs: { orient: 'vertical', align: ['right', 'center'] }
       }
     }

@@ -5,8 +5,8 @@
 ```html
 <template>
   <s-chart :data="data" :data-fields="dataFields">
-    <s-funnel :attrs="rightAttrs" :css-guideLine="true" :css-guideText="true" />
-    <s-funnel :attrs="leftAttrs" :css-guideLine="true" :css-guideText="true" />
+    <s-funnel :attrs="rightAttrs" :css-guideLine="true" :css-guideText="true" :css-polygon="{ strokeColor:'transparent'}"/>
+    <s-funnel :attrs="leftAttrs" :css-guideLine="true" :css-guideText="true" :css-polygon="{ strokeColor:'transparent'}"/>
     <s-tooltip :attrs="tooltipAttrs" />
     <s-legend :attrs="{align: ['center', 'bottom']}" />
   </s-chart>

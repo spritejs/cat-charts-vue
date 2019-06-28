@@ -9,7 +9,7 @@
       :attrs="attrs"
       :css-guideLine="true"
       :css-guideText="true"
-      :css-sector="{lineWidth: 1, color: '#fff'}"
+      :css-sector="{lineWidth: 1, strokeColor: '#fff'}"
     />
     <s-legend
       :attrs="legendAttrs"
