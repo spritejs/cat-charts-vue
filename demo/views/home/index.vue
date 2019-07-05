@@ -63,7 +63,7 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.desr{padding:20px;}
+.desr{padding:20px}
 section {
   min-height: 600px;
 
