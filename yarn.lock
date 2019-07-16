@@ -783,13 +783,21 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/@qcharts/core/-/core-0.1.3.tgz#af541b55412c084940d3c934a95e83957b773677"
+"@qcharts/core@^0.1.12":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@qcharts/core/-/core-0.1.14.tgz#ca10d6c35db67e4485fc08fa7770ecbfe271a64b"
+  integrity sha512-5Hr5isgLs5BeJSkm3bhqEf3tj/N3ETB4cB0wIVqLOIypAvAZrrJvIOGrM2FCBiRde4JSLTO/ec+gUUdR42DCCg==
   dependencies:
-    d3-geo "^1.11.3"
-    d3-interpolate "^1.3.2"
-    sprite-extend-shapes "^1.0.6"
+    "@spritejs/shapes" "^1.1.5"
+
+"@spritejs/shapes@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@spritejs/shapes/-/shapes-1.1.5.tgz#2ca29810908227bbd020d30de2c9b780f26b1d03"
+  integrity sha512-Ikncs9idy5pZTZgwM3Ej5XCLjP/kssVE4JbILuREIGKRSvUFl58dbHpoKibt0ka79SY2vb5VGnSbtlcdROvszg==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    sprite-draggable "0.1.15"
+    svg-path-to-canvas "^1.11.3"
 
 "@vue/component-compiler-utils@^2.5.1":
   version "2.6.0"
@@ -1935,26 +1943,6 @@ currently-unhandled@^0.4.1:
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
-
-d3-array@1:
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
-
-d3-color@1:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/d3-color/-/d3-color-1.2.3.tgz#6c67bb2af6df3cc8d79efcc4d3a3e83e28c8048f"
-
-d3-geo@^1.11.3:
-  version "1.11.3"
-  resolved "https://registry.npmjs.org/d3-geo/-/d3-geo-1.11.3.tgz#5bb08388f45e4b281491faa72d3abd43215dbd1c"
-  dependencies:
-    d3-array "1"
-
-d3-interpolate@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-1.3.2.tgz#417d3ebdeb4bc4efcc8fd4361c55e4040211fd68"
-  dependencies:
-    d3-color "1"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -5604,14 +5592,6 @@ sprite-draggable@0.1.15:
   dependencies:
     sprite-math "^1.0.5"
 
-sprite-extend-shapes@^1.0.6:
-  version "1.0.12"
-  resolved "https://registry.npmjs.org/sprite-extend-shapes/-/sprite-extend-shapes-1.0.12.tgz#61787ff7164821e68a1b25e9ecf99d570d59fa6c"
-  dependencies:
-    "@babel/runtime" "^7.2.0"
-    sprite-draggable "0.1.15"
-    svg-path-to-canvas "^1.11.1"
-
 sprite-flex-layout@^1.0.7:
   version "1.0.7"
   resolved "https://registry.npmjs.org/sprite-flex-layout/-/sprite-flex-layout-1.0.7.tgz#8de6081a9891ca8f08841251cabf49358dcd8daf"
@@ -5810,14 +5790,6 @@ supports-color@^6.1.0:
   resolved "https://registry.npmjs.org/supports-color/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
   dependencies:
     has-flag "^3.0.0"
-
-svg-path-to-canvas@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.npmjs.org/svg-path-to-canvas/-/svg-path-to-canvas-1.11.1.tgz#2b25a66e4a73b057eefbd147e7bca8e170e358b9"
-  dependencies:
-    babel-runtime "^6.26.0"
-    point-at-length "^1.1.0"
-    sprite-math "^1.0.5"
 
 svg-path-to-canvas@^1.11.3:
   version "1.11.3"
