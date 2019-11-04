@@ -57,15 +57,15 @@ export default {
     isJSON: false,
     isFullscreen: false
   }),
-  created() {},
-  mounted() {
+  created () { },
+  mounted () {
     this.compile(this.code)
     Split([this.$refs['preview'], this.$refs['editorArea']], {
       sizes: [50, 50]
     })
   },
   methods: {
-    copyCode() {
+    copyCode () {
       let val = this.code
       let $text = this.$refs['copytxt']
       $text.value = val
@@ -74,22 +74,22 @@ export default {
       document.execCommand('copy')
       alert('复制成功！')
     },
-    toggle() {
+    toggle () {
       this.visible = !this.visible
     },
-    fullscreen() {
+    fullscreen () {
       this.isFullscreen = !this.isFullscreen
       if (window.parent) {
         window.parent.postMessage({ fullScreen: this.isFullscreen }, '*')
       }
     },
-    syncCode() {
+    syncCode () {
       this.compile(this.code)
     },
-    updateCode(code) {
+    updateCode (code) {
       this.code = code
     },
-    async compile(code) {
+    async compile (code) {
       this.code = code
       if (!code) {
         return
@@ -128,7 +128,7 @@ export default {
       pkgs.forEach(pkg => {
         scripts.push(
           `<script src=//packd.now.sh/${pkg.module}${pkg.path}?name=${
-            pkg.name
+          pkg.name
           }><\/script>`
         )
       })
@@ -140,7 +140,7 @@ export default {
         `<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"><\/script>`
       )
       scripts.push(
-        `<script src="https://unpkg.com/@qcharts/core/lib/index.js"><\/script>`
+        `<script src="https://unpkg.com/@qcharts/core@0.2/dist/index.js"><\/script>`
       )
       scripts.push(`<script src="./cat-charts.js"><\/script>`)
       scripts.push(`
@@ -149,8 +149,8 @@ export default {
         ${scriptContent}
         var component = exports.default;
         component.template = component.template || ${JSON.stringify(
-          template.content
-        )}
+        template.content
+      )}
         Vue.use(CatChartsVue);
         new Vue(component).$mount('#app')
       <\/script>`)

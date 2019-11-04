@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>cat-charts-vue</title>
-    <link rel="shortcut icon" href="https://s0.ssl.qhres.com/static/ab5a0cc1ba02443b.ico" />
+    <link
+      rel="shortcut icon"
+      href="https://s0.ssl.qhres.com/static/ab5a0cc1ba02443b.ico"
+    />
     <link rel="stylesheet" href="https://s3.ssl.qhres.com/!81ae8bd7/vuep.css" />
     <style>
       #app {
@@ -49,12 +52,14 @@
         width: 80px;
       }
       @media (max-width: 768px) {
-        .github-corner svg{
-          width:60px;
-          height:60px;
+        .github-corner svg {
+          width: 60px;
+          height: 60px;
         }
       }
-      .none{display:none}
+      .none {
+        display: none;
+      }
     </style>
   </head>
 
@@ -65,7 +70,7 @@
     <script src="https://s5.ssl.qhres.com/!f868948f/vuep.min.js"></script>
     <script src="https://s3.ssl.qhres.com/!f868948f/vue-router.js"></script>
     <script src="https://s3.ssl.qhres.com/!f868948f/spritejs.min.js"></script>
-    <script src="https://unpkg.com/@qcharts/core/lib/index.js"></script>
+    <script src="https://unpkg.com/@qcharts/core@0.2/dist/index.js"></script>
     <script src="https://s2.ssl.qhres.com/!f868948f/babel.min.js"></script>
 
     <a
@@ -104,7 +109,7 @@
         ></path></svg
     ></a>
     <script>
-      document.body.onload = function(){
+      document.body.onload = function() {
         document.querySelector('.github-corner').classList.remove('none')
       }
     </script>
