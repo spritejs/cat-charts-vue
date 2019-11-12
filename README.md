@@ -8,7 +8,7 @@ Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-dem
 
 ### 如何使用
 
-1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-demo">Quickstart</a>
+1.通过 npm 获取 CatChartsVue，我们提供了 CatChartsVue npm 包，通过下面的命令即可完成安装，Demo：<a target="_blank" href="https://github.com/longwind91/cat-charts-vue-demo">Quickstart</a>
 
 ```shell
 npm install cat-charts-vue --save
@@ -20,7 +20,7 @@ import * as CatChartsVue from 'cat-charts-vue'
 Vue.use(CatChartsVue)
 ```
 
-2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts，因为 CatCharts 依赖 Vue 与 spritejs，所以需要先引入这两个
+2.通过 cdn 获取 CatCharts，通过下面的标签引入 CatCharts，因为 CatCharts 依赖 Vue 与 spritejs，所以需要先引入这两个，Demo：<a target="_blank" href="https://github.com/yaotaiyang/cat-charts-vue-demo">Quickstart</a>
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

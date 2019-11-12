@@ -1,3 +1,4 @@
+<template></template>
 <script>
 import { Axis, Legend, Tooltip } from '@qcharts/core'
 import { bus } from '../../utils'
