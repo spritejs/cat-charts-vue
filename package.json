@@ -1,6 +1,6 @@
 {
   "name": "cat-charts-vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A visulization library based on spritejs and sprite-extend-shapes",
   "main": "lib/index.js",
   "browser": "lib/index.js",
