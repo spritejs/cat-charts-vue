@@ -11,7 +11,7 @@ import Axis from './components/plugins/s-axis/'
 import Tooltip from './components/plugins/s-Tooltip/'
 import Legend from './components/plugins/s-Legend/'
 import { bus } from './utils'
-import global from './components/global.vue'
+import global from './components/global.js'
 const components = [
   Chart,
   Area,
