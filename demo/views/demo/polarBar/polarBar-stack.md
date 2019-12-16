@@ -132,7 +132,7 @@
           }
         ],
         tooltipAttrs: {
-          formatter: data => `${d.product}: ${d.sales}`
+          formatter: data => `${data.product}: ${data.sales}`
         },
         dataFields: {
           row: 'year',
