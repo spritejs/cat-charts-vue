@@ -22,6 +22,7 @@ export default [
   {
     title: '南丁格尔玫瑰图',
     path: 'rose',
+    hidden: true,
     component: () => import('./pie-rose.md')
   }
 ]

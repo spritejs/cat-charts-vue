@@ -8,7 +8,8 @@ import {
   Area,
   Funnel,
   Gauge,
-  Scatter
+  Scatter,
+  PolarBar
 } from '@qcharts/core'
 import { bus } from '../../utils'
 // import global from '../global.vue'
@@ -20,7 +21,8 @@ const visualObject = {
   's-area': Area,
   's-funnel': Funnel,
   's-scatter': Scatter,
-  's-gauge': Gauge
+  's-gauge': Gauge,
+  's-polarBar': PolarBar
 }
 /**
  * 所有组件的基类

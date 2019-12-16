@@ -8,6 +8,7 @@ import GaugeRoutes from './gauge/routes'
 import PieRoutes from './pie/routes'
 import BarRoutes from './bar/routes'
 import ColumnRoutes from './column/routes'
+import PolarBarRoutes from './polarBar/routes'
 export default [
   {
     title: '',
@@ -67,5 +68,11 @@ export default [
     path: 'gauge',
     component: generateCommonPage('/demo/gauge/', GaugeRoutes),
     children: GaugeRoutes
+  },
+  {
+    title: '极坐标柱状图',
+    path: 'polarBar',
+    component: generateCommonPage('/demo/polarBar/', PolarBarRoutes),
+    children: PolarBarRoutes
   }
 ]

@@ -15,7 +15,7 @@
       :attrs="attrs2"
       :rows="rows2"
       :color="pieColor2"
-      :css-guideLine="true"
+      :css-guideline="true"
       :css-guideText="{fontSize: '12px'}"
     />
     <s-legend

@@ -7,7 +7,7 @@
   <s-chart :data="pieData" :data-fields="dataFields">
     <s-pie
       :attrs="attrs"
-      :css-guideLine="true"
+      :css-guideline="true"
       :css-guideText="{fontSize: '12px'}"
       :css-sector="sectorStyle"
     />
@@ -65,7 +65,7 @@
           }
         ],
         dataFields: { row: 'year', value: 'population' },
-        sectorStyle: { lineWidth: 1, strokeColor: '#fff', },
+        sectorStyle: { lineWidth: 1, strokeColor: '#fff' },
         legendAttrs: { orient: 'vertical', align: ['right', 'center'] }
       }
     }
