@@ -5,15 +5,15 @@
         <ul>
           <template v-for="(item, i) in routes">
             <li v-if="!item.redirect" :key="i">
-              <div v-if="item.children">
+              <div v-if="item.children&&!item.hidden">
                 <div class="menu menu-title" @click="menuTitleClick(item.path)">
                   <span>{{item.title}}</span>
-                  <img src="./down.svg" :class="{transfrom0:item.path===showPath}">
+                  <img src="./down.svg" :class="{transfrom0:item.path===showPath}" />
                 </div>
                 <transition name="collapse">
                   <ul v-show="item.path===showPath">
                     <template v-for="(subItem,index) in item.children">
-                      <li v-if="!subItem.redirect" :key="index">
+                      <li v-if="!subItem.redirect&&!subItem.hidden" :key="index">
                         <router-link
                           :to="'/' + parentRoutePath +  '/'+item.path+'/' + subItem.path"
                           class="menu menu-item"
@@ -46,14 +46,14 @@
         >
           <path
             d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
-          ></path>
+          />
         </svg>
       </button>
     </aside>
 
     <article class="markdown-article">
       <router-view class="markdown-body"></router-view>
-      <Top/>
+      <Top />
     </article>
   </div>
 </template>

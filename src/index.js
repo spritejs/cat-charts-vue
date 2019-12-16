@@ -7,6 +7,7 @@ import Radar from './components/visuals/s-radar/'
 import Funnel from './components/visuals/s-funnel/'
 import Scatter from './components/visuals/s-scatter/'
 import Gauge from './components/visuals/s-gauge/'
+import PolarBar from './components/visuals/s-polarBar/'
 import Axis from './components/plugins/s-axis/'
 import Tooltip from './components/plugins/s-Tooltip/'
 import Legend from './components/plugins/s-Legend/'
@@ -21,6 +22,7 @@ const components = [
   Line,
   Funnel,
   Gauge,
+  PolarBar,
   Scatter,
   Axis,
   Tooltip,
@@ -65,6 +67,7 @@ export {
   Funnel,
   Scatter,
   Gauge,
+  PolarBar,
   Axis,
   Tooltip,
   Legend,

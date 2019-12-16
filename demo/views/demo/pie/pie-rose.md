@@ -7,7 +7,7 @@
   <s-chart :data="pieData" :data-fields="dataFields">
     <s-pie
       :attrs="attrs"
-      :css-guideLine="true"
+      :css-guideline="true"
       :css-guideText="true"
       :css-sector="{lineWidth: 1, strokeColor: '#fff'}"
     />
