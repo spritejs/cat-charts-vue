@@ -9,10 +9,12 @@ module.exports = merge(common, {
     index: path.resolve(__dirname, '../src/')
   },
   module: {
-    rules: [{
-      test: /\.(s)?css$/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
-    },]
+    rules: [
+      {
+        test: /\.(s)?css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
   },
   //devtool: 'source-map',
   output: {
@@ -21,8 +23,11 @@ module.exports = merge(common, {
     library: 'CatChartsVue',
     libraryTarget: 'umd'
   },
-  plugins: [
-    new uglify(),
-    new BundleAnalyzer()
-  ]
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@qcharts/core': '@qcharts/core/dist/index.js'
+    }
+  },
+  plugins: [new uglify(), new BundleAnalyzer()]
 })
