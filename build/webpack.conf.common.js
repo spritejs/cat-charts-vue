@@ -69,9 +69,9 @@ module.exports = {
     spritejs: 'spritejs',
     '@qcharts/core': {
       root: 'qcharts',
-      commonjs2: '@qcharts/core/lib/index.js',
-      commonjs: '@qcharts/core/lib/index.js',
-      amd: '@qcharts/core/lib/index.js',
+      commonjs2: '@qcharts/core/dist/index.js',
+      commonjs: '@qcharts/core/dist/index.js',
+      amd: '@qcharts/core/dist/index.js',
       umd: 'qcharts'
     },
     vue: 'Vue',

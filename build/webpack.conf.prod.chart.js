@@ -23,11 +23,5 @@ module.exports = merge(common, {
     library: 'CatChartsVue',
     libraryTarget: 'umd'
   },
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      '@qcharts/core': '@qcharts/core/dist/index.js'
-    }
-  },
   plugins: [new uglify(), new BundleAnalyzer()]
 })
