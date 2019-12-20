@@ -23,7 +23,7 @@ Vue.use(CatChartsVue)
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/spritejs/dist/spritejs.min.js"></script>
-<script src="https://unpkg.com/@qcharts/core/lib/index.js"></script>
+<script src="https://unpkg.com/@qcharts/core/dist/index.js"></script>
 <script src="https://unpkg.com/cat-charts-vue/lib/index.js"></script>
 ```
 
