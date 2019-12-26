@@ -137,7 +137,7 @@ export default {
       })
 
       scripts.push(
-        `<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"><\/script>`
+        `<script src="https://unpkg.com/spritejs@2/dist/spritejs.min.js"><\/script>`
       )
       scripts.push(
         `<script src="https://unpkg.com/@qcharts/core@0.2/dist/index.js"><\/script>`
