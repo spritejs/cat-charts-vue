@@ -1,6 +1,6 @@
 {
   "name": "cat-charts-vue",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A visulization library based on spritejs and sprite-extend-shapes",
   "main": "lib/index.js",
   "browser": "lib/index.js",
@@ -79,7 +79,7 @@
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
-    "@qcharts/core": "^0.2.26",
+    "@qcharts/core": "^0.2.30",
     "spritejs": "^2.27.18"
   }
 }
