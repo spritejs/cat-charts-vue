@@ -783,10 +783,10 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npm.taobao.org/@qcharts/core/download/@qcharts/core-0.2.14.tgz#d5ebaad5c70af8b1e593fd8eb1f06ee518d4778a"
-  integrity sha1-1euq1ccK+LHlk/2OsfBu5RjUd4o=
+"@qcharts/core@^0.2.30":
+  version "0.2.33"
+  resolved "https://registry.yarnpkg.com/@qcharts/core/-/core-0.2.33.tgz#325a9df3a4f875e328c2ea172a4fae17015afab2"
+  integrity sha512-7Q3qJa4bsvunNJjADgtk6CxibC84K2lULAfRYuksgQTUGqliVNJxWmN0mR07z7ef5xnl6Mxrljchlv3NKk+I6A==
   dependencies:
     "@spritejs/shapes" "^1.1.7"
 
@@ -6446,8 +6446,9 @@ xtend@^4.0.0, xtend@~4.0.1:
   resolved "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.npmjs.org/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
