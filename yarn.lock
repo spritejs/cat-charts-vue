@@ -783,10 +783,10 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npm.taobao.org/@qcharts/core/download/@qcharts/core-0.2.14.tgz#d5ebaad5c70af8b1e593fd8eb1f06ee518d4778a"
-  integrity sha1-1euq1ccK+LHlk/2OsfBu5RjUd4o=
+"@qcharts/core@^0.2.30":
+  version "0.2.33"
+  resolved "https://registry.yarnpkg.com/@qcharts/core/-/core-0.2.33.tgz#325a9df3a4f875e328c2ea172a4fae17015afab2"
+  integrity sha512-7Q3qJa4bsvunNJjADgtk6CxibC84K2lULAfRYuksgQTUGqliVNJxWmN0mR07z7ef5xnl6Mxrljchlv3NKk+I6A==
   dependencies:
     "@spritejs/shapes" "^1.1.7"
 
@@ -1636,8 +1636,9 @@ code-point-at@^1.0.0:
   resolved "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
 codemirror@^5.42.2:
-  version "5.44.0"
-  resolved "https://registry.npmjs.org/codemirror/-/codemirror-5.44.0.tgz#80dc2a231eeb7aab25ec2405cdca37e693ccf9cc"
+  version "5.58.2"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
+  integrity sha512-K/hOh24cCwRutd1Mk3uLtjWzNISOkm4fvXiMO7LucCrqbh6aJDdtqUziim3MZUI6wOY0rvY1SlL1Ork01uMy6w==
 
 collection-visit@^1.0.0:
   version "1.0.0"
