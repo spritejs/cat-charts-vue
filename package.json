@@ -54,7 +54,7 @@
     "is-absolute-url": "^2.1.0",
     "markdown-it": "^8.4.2",
     "markdown-it-container": "^2.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "parse-package-name": "^0.1.0",
     "progress-bar-webpack-plugin": "^1.12.1",
     "query-string": "^6.0.0",
