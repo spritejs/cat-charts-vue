@@ -783,10 +783,10 @@
   version "0.2.1"
   resolved "https://registry.npmjs.org/@emmetio/variable-resolver/-/variable-resolver-0.2.1.tgz#ce11b51584669a340986690cf0ec269e44c63fba"
 
-"@qcharts/core@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.npm.taobao.org/@qcharts/core/download/@qcharts/core-0.2.14.tgz#d5ebaad5c70af8b1e593fd8eb1f06ee518d4778a"
-  integrity sha1-1euq1ccK+LHlk/2OsfBu5RjUd4o=
+"@qcharts/core@^0.2.30":
+  version "0.2.33"
+  resolved "https://registry.yarnpkg.com/@qcharts/core/-/core-0.2.33.tgz#325a9df3a4f875e328c2ea172a4fae17015afab2"
+  integrity sha512-7Q3qJa4bsvunNJjADgtk6CxibC84K2lULAfRYuksgQTUGqliVNJxWmN0mR07z7ef5xnl6Mxrljchlv3NKk+I6A==
   dependencies:
     "@spritejs/shapes" "^1.1.7"
 
@@ -1993,8 +1993,9 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.0.1"
